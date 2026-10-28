@@ -5,7 +5,7 @@
 <meta property="og:title" content="המסע שלכם בווייטנאם · 6 יעדים · 14 לילות"><meta property="og:description" content="האנוי · סאפה · נין בין · שייט בהאלונג · דה נאנג · הוי אן">
 <meta property="og:image" content="https://osnat-travel.com/preview/vietnam/og-vietnam-v4.jpg?v=4"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://osnat-travel.com/preview/vietnam/og-vietnam-v4.jpg?v=4"><meta property="og:image:alt" content="המסע שלכם בווייטנאם · 6 יעדים · 14 לילות">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Secular+One&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#050B16;--navy:#0B1626;--gold:#E2B95F;--neon:#2EE6D6;--txt:#E8EEF7;--mut:#9AA8BC}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Rubik,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden}
@@ -14,7 +14,7 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradi
 .glass{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:20px}
 .grad{background:linear-gradient(90deg,var(--gold),#fff3c9,var(--neon));-webkit-background-clip:text;background-clip:text;color:transparent}
 header{position:fixed;top:0;inset-inline:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 5%;transition:.3s}header.sc{background:rgba(5,11,22,.75);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
-header img{height:44px;border-radius:8px}.call{border:1px solid var(--gold);color:var(--gold);padding:7px 16px;border-radius:30px;font-weight:500;transition:.3s}.call:hover{background:var(--gold);color:var(--bg)}
+header img{height:44px;border-radius:8px}.call em{font-style:normal}.call{border:1px solid var(--gold);color:var(--gold);padding:7px 16px;border-radius:30px;font-weight:500;transition:.3s}.call:hover{background:var(--gold);color:var(--bg)}
 .prog{position:fixed;top:0;right:0;height:3px;z-index:30;background:linear-gradient(90deg,var(--neon),var(--gold));width:0}
 .hero{position:relative;height:100svh;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
 .slides div{position:absolute;inset:-4%;background-size:cover;background-position:center;opacity:0;animation:kb 30s infinite}
@@ -74,9 +74,19 @@ header:not(.sc) .call{color:#F5D78E;border-color:#F5D78E}
 .arrive{color:var(--navy);background:rgba(255,255,255,.7);border-color:rgba(14,159,150,.5)}
 .cta{color:#fff;box-shadow:0 20px 50px rgba(11,31,58,.2)}.cta .grad{background:linear-gradient(90deg,#F5D78E,#5FF0E3);-webkit-background-clip:text;background-clip:text}.cta .b.o{color:#fff;border-color:rgba(255,255,255,.5)}
 footer{border-top:1px solid rgba(11,31,58,.08)}.soc a{border-color:rgba(11,31,58,.15);background:#fff}
+</style><style id="brandcss">
+header{min-height:84px}header img{height:68px!important;border-radius:12px;box-shadow:0 6px 18px rgba(11,31,58,.18);transition:.3s}
+.brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;white-space:nowrap;pointer-events:none;direction:ltr}
+.brand b{font-family:Cinzel,serif;font-weight:600;font-size:1.25rem;letter-spacing:.32em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.brand span{color:#F5D78E;font-size:.8rem}.fl{display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,#F5D78E)}.fl.r{background:linear-gradient(270deg,transparent,#F5D78E)}
+header.sc .brand b{color:#0B1F3A;text-shadow:none}header.sc .brand span{color:#B8862B}header.sc .fl{background:linear-gradient(90deg,transparent,#B8862B)}header.sc .fl.r{background:linear-gradient(270deg,transparent,#B8862B)}
+.snav{top:84px}
+@media(max-width:900px){.fl{width:30px}.brand b{font-size:1rem;letter-spacing:.2em}}
+@media(max-width:600px){header{min-height:70px;padding:8px 4%}header img{height:54px!important}.brand{gap:5px}.brand b{font-size:.72rem;letter-spacing:.14em}.fl{width:14px}.brand span{font-size:.55rem}.call{padding:8px 11px}.call em{display:none}.snav{top:70px!important}}
+@media(max-width:350px){.brand .fl,.brand span{display:none}}
 </style></head><body>
 <div class="prog" id="prog"></div>
-<header id="hd"><a href="https://osnat-travel.com/"><img src="../../assets/logo.png" alt="OSNAT TRAVEL"></a><a class="call" href="tel:0506413749">📞 050-6413749</a></header>
+<header id="hd"><a href="https://osnat-travel.com/"><img src="../../assets/logo.png" alt="OSNAT TRAVEL"></a><div class="brand" aria-hidden="true"><i class="fl"></i><span>✦</span><b>OSNAT TRAVEL AGENCY</b><span>✦</span><i class="fl r"></i></div><a class="call" href="tel:0506413749">📞 <em>050-6413749</em></a></header>
 <section class="hero"><div class="slides"><div style="background-image:url(img/halong.jpg)"></div><div style="background-image:url(img/hanoi.jpg)"></div><div style="background-image:url(img/ninhbinh.jpg)"></div><div style="background-image:url(img/sapa.jpg)"></div><div style="background-image:url(img/hoian.jpg)"></div></div>
 <div class="hc0"><span class="eyebrow">YOUR VIETNAM STORY</span><h1>המסע שלכם<br><span class="grad">בווייטנאם</span></h1><p>מסע שנבנה במיוחד בשבילכם. כל יעד הוא פרק במסע שלכם — המלונות, החוויות ודרכי המעבר במקום אחד.</p>
 <div class="counters"><div class="cnt glass"><b data-c="6">0</b><span>יעדים</span></div><div class="cnt glass"><b data-c="6">0</b><span>תחנות</span></div><div class="cnt glass"><b data-c="14">0</b><span>לילות</span></div></div>

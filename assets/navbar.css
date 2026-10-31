@@ -1,0 +1,34 @@
+/* OSNAT TRAVEL – shared sticky navbar */
+.on-nav{position:fixed;top:0;inset-inline:0;z-index:100000;direction:rtl;font-family:Heebo,Assistant,Arial,sans-serif;display:flex;align-items:center;gap:14px;min-height:72px;padding:6px 4%;background:rgba(11,22,38,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 24px rgba(0,0,0,.25);border-bottom:1px solid rgba(201,164,92,.35);box-sizing:border-box}
+.on-nav *{box-sizing:border-box}
+.on-nav a{text-decoration:none}
+.on-logo img{display:block;width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(232,207,148,.45),0 6px 18px rgba(0,0,0,.3)}
+.on-links{display:flex;gap:4px;margin-inline-start:6px}
+.on-links a{color:#fff;font-size:16px;font-weight:500;padding:8px 14px;border-radius:999px;transition:.25s}
+.on-links a:hover,.on-links a.cur{color:#0B1626;background:linear-gradient(135deg,#E8CF94,#C9A45C)}
+.on-brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;white-space:nowrap;pointer-events:none;direction:ltr}
+.on-brand b{font-family:Cinzel,serif;font-weight:600;font-size:1.1rem;letter-spacing:.3em;color:#fff}
+.on-brand span{color:#E8CF94;font-size:.75rem}.on-brand i{display:block;width:50px;height:1px;background:linear-gradient(90deg,transparent,#E8CF94)}.on-brand i.r{background:linear-gradient(270deg,transparent,#E8CF94)}
+.on-end{margin-inline-start:auto;display:flex;align-items:center;gap:8px}
+.on-ic{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(232,207,148,.7);background:rgba(255,255,255,.1);color:#E8CF94;transition:.3s}
+.on-ic svg{width:17px;height:17px;fill:currentColor}
+.on-ic:hover{transform:translateY(-3px);color:#fff}
+.on-ic.fb:hover{background:#1877F2;border-color:#1877F2}.on-ic.ig:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:#d6249f}.on-ic.wa:hover{background:#25D366;border-color:#25D366}
+.on-home{width:42px;height:42px;background:linear-gradient(135deg,#E8CF94,#C9A45C);color:#0B1626;border-color:#E8CF94;margin-inline-start:6px}
+.on-home svg{width:20px;height:20px}
+.on-burger{display:none;width:40px;height:40px;border:1px solid rgba(232,207,148,.7);border-radius:10px;background:transparent;color:#E8CF94;cursor:pointer;padding:0;place-items:center}
+.on-burger svg{width:22px;height:22px;fill:currentColor}
+body.on-has-nav{padding-top:72px}
+body.on-has-nav.on-overlay{padding-top:0}
+.on-nav~.hb-bar,.hb-bar{display:none!important}
+@media(max-width:1100px){.on-brand{display:none}}
+@media(max-width:760px){
+ .on-nav{min-height:62px;gap:8px;padding:6px 3%}
+ body.on-has-nav{padding-top:62px}
+ .on-logo img{width:46px;height:46px}
+ .on-burger{display:grid}
+ .on-links{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;background:rgba(11,22,38,.97);padding:10px 4% 16px;margin:0;border-bottom:1px solid rgba(201,164,92,.35)}
+ .on-nav.open .on-links{display:flex}
+ .on-links a{font-size:18px;padding:12px 16px}
+ .on-end{gap:5px}.on-ic{width:32px;height:32px}.on-ic svg{width:15px;height:15px}.on-home{width:38px;height:38px;margin-inline-start:2px}
+}

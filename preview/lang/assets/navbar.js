@@ -25,12 +25,19 @@
   '<button class="on-burger" type="button" aria-label="'+T.menu+'" aria-expanded="false">'+s('menu')+'</button>'+
   '<div class="on-links"><a href="/blog/">'+T.blog+'</a><a href="'+PK+'"'+(rest==='packages/'?' class="cur" aria-current="page"':'')+'>'+T.pk+'</a><a href="'+HOME+'#about">'+T.about+'</a></div>'+
   '<div class="on-brand" aria-hidden="true"><i></i><span>✦</span><b>OSNAT TRAVEL AGENCY</b><span>✦</span><i class="on-r"></i></div>'+
-  '<div class="on-end"><div class="on-lang" role="group" aria-label="'+T.lang+'">'+[['he','עב','עברית'],['en','EN','English'],['ar','ع','العربية']].map(function(x){return '<a href="'+url(x[0],rest)+'" hreflang="'+x[0]+'" lang="'+x[0]+'" title="'+x[2]+'" data-l="'+x[0]+'"'+(x[0]===L?' class="cur" aria-current="true"':'')+'>'+x[1]+'</a>'}).join('')+'</div><a class="on-ic fb" href="https://www.facebook.com/OSNAT.Travel/" target="_blank" rel="noopener" aria-label="Facebook">'+s('fb')+'</a>'+
+  '<div class="on-end"><div class="on-lang"><button type="button" class="on-lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="'+T.lang+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.9a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h2.9c.3 1.3.8 2.5 1.4 3.6A8 8 0 0 1 5.1 16zM8 8H5.1a8 8 0 0 1 4.3-3.6C8.8 5.5 8.3 6.7 8 8zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg><span>'+{he:'עב',en:'EN',ar:'ع'}[L]+'</span><svg class="on-car" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button><ul class="on-lang-menu" role="menu" hidden>'+[['he','עברית'],['en','English'],['ar','العربية']].map(function(x){return '<li role="none"><a role="menuitem" href="'+url(x[0],rest)+'" hreflang="'+x[0]+'" lang="'+x[0]+'" dir="'+(x[0]==='en'?'ltr':'rtl')+'" data-l="'+x[0]+'"'+(x[0]===L?' class="cur" aria-current="true"':'')+'>'+x[1]+(x[0]===L?' <b aria-hidden="true">✓</b>':'')+'</a></li>'}).join('')+'</ul></div><a class="on-ic fb" href="https://www.facebook.com/OSNAT.Travel/" target="_blank" rel="noopener" aria-label="Facebook">'+s('fb')+'</a>'+
   '<a class="on-ic ig" href="https://www.instagram.com/osnat.travel.agency/" target="_blank" rel="noopener" aria-label="Instagram">'+s('ig')+'</a>'+
   '<a class="on-ic wa" href="https://wa.me/972506413749" target="_blank" rel="noopener" aria-label="WhatsApp">'+s('wa')+'</a>'+
   '<a class="on-ic on-home" href="'+HOME+'" aria-label="'+T.home+'" title="'+T.home+'">'+s('home')+'</a></div>';
  B.insertBefore(n,B.firstChild);B.classList.add('on-has-nav');if(B.hasAttribute('data-nav-overlay'))B.classList.add('on-overlay');
  var b=n.querySelector('.on-burger');b.onclick=function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)};
+ var lb=n.querySelector('.on-lang-btn'),lm=n.querySelector('.on-lang-menu');
+ function lset(o,f){lm.hidden=!o;lb.setAttribute('aria-expanded',o);if(o&&f)lm.querySelector('a').focus()}
+ lb.addEventListener('click',function(e){e.stopPropagation();lset(lm.hidden,false)});
+ lb.addEventListener('keydown',function(e){if(e.key==='ArrowDown'){e.preventDefault();lset(true,true)}});
+ lm.addEventListener('keydown',function(e){var a=[].slice.call(lm.querySelectorAll('a')),i=a.indexOf(document.activeElement);if(e.key==='ArrowDown'){e.preventDefault();a[(i+1)%a.length].focus()}if(e.key==='ArrowUp'){e.preventDefault();a[(i+a.length-1)%a.length].focus()}});
+ document.addEventListener('click',function(e){if(!n.querySelector('.on-lang').contains(e.target))lset(false)});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lm.hidden){lset(false);lb.focus()}});
  n.querySelectorAll('.on-lang a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('osnatLang',a.dataset.l)}catch(e){}})});
  n.querySelectorAll('.on-links a').forEach(function(a){a.onclick=function(){n.classList.remove('open')}});
 

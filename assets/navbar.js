@@ -15,7 +15,7 @@
  n.innerHTML='<a class="on-logo" href="/" aria-label="OSNAT TRAVEL – דף הבית"><img src="/assets/logo.png" alt="OSNAT TRAVEL"></a>'+
   '<button class="on-burger" type="button" aria-label="תפריט" aria-expanded="false">'+s('menu')+'</button>'+
   '<div class="on-links"><a href="/blog/"'+cur('/blog/')+'>בלוג</a><a href="/packages/"'+cur('/packages/')+'>חבילות</a><a href="/#about">אודות</a></div>'+
-  '<div class="on-brand" aria-hidden="true"><i></i><span>✦</span><b>OSNAT TRAVEL AGENCY</b><span>✦</span><i class="r"></i></div>'+
+  '<div class="on-brand" aria-hidden="true"><i></i><span>✦</span><b>OSNAT TRAVEL AGENCY</b><span>✦</span><i class="on-r"></i></div>'+
   '<div class="on-end"><a class="on-ic fb" href="https://www.facebook.com/OSNAT.Travel/" target="_blank" rel="noopener" aria-label="Facebook">'+s('fb')+'</a>'+
   '<a class="on-ic ig" href="https://www.instagram.com/osnat.travel.agency/" target="_blank" rel="noopener" aria-label="Instagram">'+s('ig')+'</a>'+
   '<a class="on-ic wa" href="https://wa.me/972506413749" target="_blank" rel="noopener" aria-label="WhatsApp">'+s('wa')+'</a>'+

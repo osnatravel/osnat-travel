@@ -29,7 +29,6 @@ body{margin:0;font-family:Heebo,Arial,sans-serif;background:var(--ivory);color:v
 img{max-width:100%;display:block}
 a{color:var(--navy)}
 bdi{unicode-bidi:isolate}
-.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block;white-space:nowrap}
 .wrap{max-width:920px;margin:0 auto;padding:22px 16px 96px}
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;background:var(--white);border:1px solid rgba(200,169,107,.55);border-radius:28px;padding:22px;box-shadow:0 12px 32px rgba(16,42,67,.06)}
 .brand{font-family:Cinzel,serif;letter-spacing:.18em;font-size:.78rem;color:var(--navy);margin:0 0 10px}
@@ -57,16 +56,11 @@ section[id]{scroll-margin-top:132px}
 .date{flex:none;background:var(--navy);color:var(--white);border-radius:14px;min-width:74px;text-align:center;padding:8px 6px;font-weight:800;line-height:1.2}
 .date small{display:block;font-weight:500;font-size:.75rem;opacity:.85}
 .sub{color:var(--ink);margin:0 0 8px}
-.addr{background:var(--ivory);border-radius:12px;padding:10px 12px;margin:10px 0}
-.addr bdi{font-weight:700}
 .steps{list-style:none;margin:8px 0 0;padding:0}
 .steps li{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
 .when{font-weight:800;background:var(--ivory);border:1px solid var(--gold);border-radius:12px;text-align:center;padding:8px 4px;height:max-content;font-size:.92rem}
 .when.n{background:var(--gold);border-color:var(--gold)}
 .note{font-size:.92rem;color:var(--ink);margin:8px 0 12px}
-.menu{list-style:none;margin:8px 0 12px;padding:0}
-.menu li{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:10px 0;border-top:1px dashed rgba(200,169,107,.85)}
-.menu b{font-weight:800;white-space:nowrap}
 .shot{margin:12px 0 16px}
 .shot img{width:100%;height:230px;object-fit:cover;border-radius:16px;background:var(--ivory)}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 16px}
@@ -118,7 +112,6 @@ h1{font-size:1.55rem}
 </section>
 
 <nav class="jump" aria-label="ניווט במסלול">
-<a href="#dionysos">שישי בערב</a>
 <a href="#thu">חמישי</a>
 <a href="#fri">שישי</a>
 <a href="#sat">שבת</a>
@@ -126,30 +119,6 @@ h1{font-size:1.55rem}
 <a href="#sun">ראשון</a>
 <a href="#check">לסגור</a>
 </nav>
-
-<section class="card" id="dionysos">
-<p class="kicker">שישי בערב | המסעדה המומלצת</p>
-<h2>Dionysos Taverna — הבחירה הראשונה שלי</h2>
-<p class="sub">מסעדה יוונית ים-תיכונית על גדת הדנובה, עם התמחות בדגים, פירות ים ומנות על הגריל.</p>
-<p class="addr">כתובת: <bdi dir="ltr">Budapest, Belgrád rkp. 16, 1056 Hungary</bdi></p>
-<p>כ-15-20 דקות הליכה ממזח Legenda באזור Vigadó tér, לאורך הנהר.</p>
-<p><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Belgr%C3%A1d+rkp.+16%2C+1056+Budapest" target="_blank" rel="noopener">גוגל מפות · Belgrád rkp. 16, 1056 Budapest</a></p>
-<h3>מהתפריט</h3>
-<p class="note">לפי <a href="https://dionysos.hu" target="_blank" rel="noopener">dionysos.hu</a>. המחירים עשויים להשתנות.</p>
-<ul class="menu">
-<li><span>לברק שלם על גריל פחמים (Lavraki)</span><b><bdi dir="ltr">14,000 Ft</bdi></b></li>
-<li><span>דניס שלם על גריל פחמים (Tsipoura)</span><b><bdi dir="ltr">14,000 Ft</bdi></b></li>
-<li><span>דג אדום על הגריל</span><b><bdi dir="ltr">9,000 Ft</bdi></b></li>
-<li><span>פלטת דגים ופירות ים לשניים</span><b><bdi dir="ltr">54,200 Ft</bdi></b></li>
-</ul>
-<p>הדניס והלברק מוגשים ברוטב שמן זית ולימון, לצד סלט וממרח שום.</p>
-<p class="note">להזמין שולחן ליום שישי בשעה <bdi dir="ltr">20:15</bdi>, אחרי שיט של <bdi dir="ltr">18:40-19:40</bdi>. המסעדה פתוחה עד חצות, אבל צריך לוודא שיש שולחן פנוי.</p>
-<p>טלפון: <a class="ltr" href="tel:+36705858135">+36 70 585 8135</a></p>
-<div class="btns">
-<a class="btn btn-gold" href="https://dionysos.hu" target="_blank" rel="noopener">הזמנת שולחן ב-Dionysos</a>
-<a class="btn btn-navy" href="tel:+36705858135">חייגו למסעדה</a>
-</div>
-</section>
 
 <section class="card" id="thu">
 <div class="day-h">

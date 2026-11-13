@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>דילים נבחרים | OSNAT TRAVEL</title>
-<meta name="description" content="דילים נבחרים של OSNAT TRAVEL: באטומי ובוקרשט, טיסות ישירות ומלון, מחיר לאדם בחדר זוגי.">
+<meta name="description" content="דילים נבחרים של OSNAT TRAVEL: טיסות ישירות ומלון, מחיר לאדם בחדר זוגי.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#F7F4ED">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:site_name" content="OSNAT TRAVEL AGENCY">
 <meta property="og:title" content="דילים נבחרים | OSNAT TRAVEL">
-<meta property="og:description" content="באטומי ובוקרשט: טיסות ישירות, מלון, ומחיר לאדם בחדר זוגי.">
+<meta property="og:description" content="דילים נבחרים: טיסות ישירות, מלון, ומחיר לאדם בחדר זוגי.">
 <meta property="og:url" content="https://osnat-travel.com/preview/deals/">
-<meta property="og:image" content="https://osnat-travel.com/batumi-kingsolomon/img/d1.jpg">
+<meta property="og:image" content="https://osnat-travel.com/preview/blog/bucharest/img/athenaeum.jpg">
 <link rel="canonical" href="https://osnat-travel.com/preview/deals/">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -52,7 +52,7 @@ h1{font-size:clamp(32px,8vw,52px);line-height:1.15;font-weight:800;margin:8px 0 
 .search input{width:100%;min-height:48px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);font-size:16px}
 .search input:focus{outline:2px solid var(--navy);outline-offset:2px}
 .search input::placeholder{color:var(--muted)}
-.grid{display:grid;gap:18px}
+.grid{display:grid;gap:18px;justify-content:center}
 .deal{background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 28px rgba(16,42,67,.06);display:flex;flex-direction:column;min-width:0}
 .deal[hidden],.empty[hidden],.toast[hidden]{display:none !important}
 .photo{position:relative;aspect-ratio:16/10;margin:0;background:var(--ivory)}
@@ -71,7 +71,9 @@ h2{margin:0;font-size:clamp(26px,6vw,32px);line-height:1.2;font-weight:800}
 .inc h3{margin:0 0 6px;font-size:16px;font-weight:800}
 .inc ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .inc li:before{content:"✓ ";color:var(--gold);font-weight:800}
-.bag{margin:0;font-size:14px;color:var(--muted)}
+.bag,.lock{margin:0;font-size:14px}
+.bag{color:var(--muted)}
+.lock{font-weight:700}
 .cancel{margin:0;background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-weight:600}
 .tail{margin-top:auto;display:grid;gap:12px}
 .price{border-top:1px dashed var(--line);padding-top:12px}
@@ -116,7 +118,7 @@ footer{text-align:center;padding:8px 16px 36px;color:var(--navy);font-size:14px}
   .wrap{padding:36px 28px 64px}
   .tools{flex-direction:row;align-items:center;justify-content:space-between}
   .search{width:min(380px,46%)}
-  .grid{grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+  .grid{grid-template-columns:repeat(auto-fit,minmax(340px,520px));gap:22px;align-items:stretch}
   .body{padding:20px 20px 18px}
 }
 @media(hover:hover){
@@ -136,13 +138,12 @@ footer{text-align:center;padding:8px 16px 36px;color:var(--navy);font-size:14px}
     <p class="eyebrow">OSNAT TRAVEL</p>
     <h1>דילים נבחרים</h1>
     <div class="rule"></div>
-    <p class="lead">באטומי ובוקרשט לסוף נובמבר. בכל כרטיס: תאריכים, מלון, בסיס אירוח, טיסות ישירות ומחיר לאדם בחדר זוגי.</p>
+    <p class="lead">דילים נבחרים לסוף נובמבר. בכל כרטיס: תאריכים, מלון, בסיס אירוח, טיסות ישירות ומחיר לאדם בחדר זוגי.</p>
   </header>
 
   <div class="tools">
     <div class="chips" role="group" aria-label="סינון לפי מדינה">
       <button type="button" class="chip on" data-country="all" aria-pressed="true">הכל</button>
-      <button type="button" class="chip" data-country="georgia" aria-pressed="false">גאורגיה</button>
       <button type="button" class="chip" data-country="romania" aria-pressed="false">רומניה</button>
     </div>
     <div class="search">
@@ -152,58 +153,9 @@ footer{text-align:center;padding:8px 16px 36px;color:var(--navy);font-size:14px}
   </div>
 
   <div class="grid" id="deals">
-    <article class="deal" id="batumi" data-country="georgia" data-depart="2026-11-29" data-search="batumi georgia wyndham israir באטומי גאורגיה ישראייר">
-      <figure class="photo">
-        <img src="/batumi-kingsolomon/img/d1.jpg" alt="קו החוף של באטומי ביום בהיר" width="1600" height="900">
-        <figcaption>תמונת יעד · לא צילום המלון</figcaption>
-      </figure>
-      <div class="body">
-        <p class="country">גאורגיה</p>
-        <h2>באטומי</h2>
-        <p class="dates"><bdi dir="ltr">29.11–3.12.2026</bdi> · 4 לילות</p>
-        <p class="hotel"><bdi dir="ltr">Wyndham Batumi</bdi></p>
-        <p class="board">לינה וארוחת בוקר</p>
-        <div class="flights">
-          <p class="fl-name">טיסות ישירות · ישראייר</p>
-          <p>הלוך <bdi dir="ltr">29.11 · 08:15</bdi></p>
-          <p>חזור <bdi dir="ltr">3.12 · 14:15</bdi></p>
-        </div>
-        <p class="desc">סוף נובמבר בבאטומי: ארבעה לילות בעיר שיושבת על הים השחור, עם טיסות ישירות של ישראייר ולינה ב-Wyndham Batumi שכוללת ארוחת בוקר. החבילה מרכזת את הטיסה ואת המלון במקום אחד.</p>
-        <div class="inc">
-          <h3>כולל</h3>
-          <ul>
-            <li>טיסות ישירות הלוך-חזור</li>
-            <li>4 לילות במלון</li>
-            <li>ארוחת בוקר</li>
-          </ul>
-        </div>
-        <p class="bag">כבודה: לפי חברת התעופה, יפורט בהצעה</p>
-        <p class="cancel">ביטול חינם של המלון עד <bdi dir="ltr">17.11.2026</bdi>.</p>
-        <div class="tail">
-          <div class="price">
-            <p class="pp"><bdi dir="ltr">₪1,850</bdi></p>
-            <p class="per">לאדם בחדר זוגי</p>
-            <p class="couple"><bdi dir="ltr">₪3,700</bdi> לזוג</p>
-            <p class="asof">המחיר נכון ל-13.11.2026, בכפוף לזמינות וט.ל.ח</p>
-          </div>
-          <div class="actions">
-            <a class="btn wa" href="https://wa.me/972506413749?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%9C%20%D7%9C%D7%91%D7%90%D7%98%D7%95%D7%9E%D7%99%2C%2029.11%E2%80%933.12.2026%2C%20%D7%9E%D7%9C%D7%95%D7%9F%20Wyndham%20Batumi%2C%20%E2%82%AA1%2C850%20%D7%9C%D7%90%D7%93%D7%9D%20%D7%91%D7%97%D7%93%D7%A8%20%D7%96%D7%95%D7%92%D7%99" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.4a10.1 10.1 0 0 0 4.65 1.14h.01c5.46 0 9.9-4.4 9.9-9.83C21.95 6.4 17.5 2 12.04 2zm5.76 14.15c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.12.1-1.81-.11-.41-.13-.95-.31-1.64-.61-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.24-.27.64-.39.85-.39h.61c.2 0 .46-.04.72.55.26.64.9 2.2.98 2.36.08.16.13.35.03.56-.1.21-.15.34-.3.52-.14.18-.3.4-.43.54-.14.14-.29.3-.12.58.16.27.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.27 1.4.28.14.44.12.6-.07.17-.2.7-.81.89-1.09.19-.27.38-.23.64-.14.26.1 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.7-.17 1.38z"/></svg>
-              וואטסאפ
-            </a>
-            <button type="button" class="btn share" data-text="באטומי, 29.11–3.12.2026, Wyndham Batumi, ₪1,850 לאדם בחדר זוגי">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5 15.4 17M15.4 7 8.6 10.5"/></svg>
-              שיתוף
-            </button>
-          </div>
-          <p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Seaside_of_Batumi.jpg" target="_blank" rel="noopener">Giorgi Balakhadze</a> / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> · 12.7.2016 · resized</p>
-        </div>
-      </div>
-    </article>
-
     <article class="deal" id="bucharest" data-country="romania" data-depart="2026-11-22" data-search="bucharest romania capitol tarom בוקרשט רומניה טארום">
       <figure class="photo">
-        <img src="/preview/blog/bucharest/img/athenaeum.jpg" alt="האתנאום הרומני בבוקרשט ביום בהיר" width="1600" height="900" loading="lazy">
+        <img src="/preview/blog/bucharest/img/athenaeum.jpg" alt="האתנאום הרומני בבוקרשט ביום בהיר" width="1600" height="900">
         <figcaption>תמונת יעד · לא צילום המלון</figcaption>
       </figure>
       <div class="body">
@@ -225,7 +177,8 @@ footer{text-align:center;padding:8px 16px 36px;color:var(--navy);font-size:14px}
             <li>4 לילות במלון</li>
           </ul>
         </div>
-        <p class="bag">כבודה: לפי חברת התעופה, יפורט בהצעה</p>
+        <p class="bag">כבודה: טרולי לכל נוסע (ללא מזוודה גדולה; ניתן להוסיף בתוספת תשלום)</p>
+        <p class="lock">הטיסות אינן ניתנות לביטול</p>
         <p class="cancel">ביטול חינם של המלון עד <bdi dir="ltr">18.11.2026</bdi>.</p>
         <div class="tail">
           <div class="price">
@@ -264,8 +217,7 @@ footer{text-align:center;padding:8px 16px 36px;color:var(--navy);font-size:14px}
 <footer>
   <p class="legal">המחיר נכון ל-13.11.2026, בכפוף לזמינות וט.ל.ח</p>
   <div class="credits">
-    <p>קרדיט תמונות. הקבצים באתר הוקטנו, והרישיון נשאר אותו רישיון.</p>
-    <p>באטומי, צילום 12.7.2016: <a href="https://commons.wikimedia.org/wiki/File:Seaside_of_Batumi.jpg">Seaside of Batumi.jpg</a>, Giorgi Balakhadze, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+    <p>קרדיט תמונות. הקובץ באתר הוקטן, והרישיון נשאר אותו רישיון.</p>
     <p>בוקרשט, האתנאום, צילום 26.9.2009: <a href="https://commons.wikimedia.org/wiki/File:Romanian_Athenaeum_(3973688533).jpg">Romanian Athenaeum (3973688533).jpg</a>, Filip Maljković, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</p>
   </div>
   <p class="copy">© OSNAT TRAVEL AGENCY</p>

@@ -89,8 +89,9 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
       <input id="q" type="search" placeholder="חיפוש לפי יעד, מלון או תאריך" autocomplete="off">
     </div>
     <div class="chips" role="group" aria-label="סינון לפי מדינה">
-      <button type="button" class="chip on" data-country="all" aria-pressed="true">הכל</button>
-      <button type="button" class="chip" data-country="romania" aria-pressed="false">רומניה</button>
+      <button type="button" class="chip on" data-country="all" data-label="הכל" aria-pressed="true">הכל</button>
+      <button type="button" class="chip" data-country="romania" data-label="רומניה" aria-pressed="false">רומניה</button>
+      <button type="button" class="chip" data-country="hungary" data-label="הונגריה" aria-pressed="false">הונגריה</button>
     </div>
   </div>
   <div class="grid" id="deals">
@@ -120,6 +121,33 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
       </a>
       <p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Bucure%C8%99ti_-_Hotel_Capitol_(2025).jpg">Chainwit</a> / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
     </article>
+    <article class="deal" data-country="hungary" data-depart="2026-12-20" data-search="budapest hungary museum israir בודפשט הונגריה ישראייר מוזיאון">
+      <a class="card" href="/preview/deals/budapest-museum/">
+        <div class="photo">
+          <img src="/preview/blog/budapest/img/parliament.jpg" alt="בניין הפרלמנט בבודפשט, תמונת העיר ולא המלון" width="1200" height="800">
+          <div class="onphoto">
+            <span class="tag">הונגריה</span>
+            <span class="tag">לינה וארוחת בוקר</span>
+            <span class="tag">תמונת העיר</span>
+            <span class="tag"><bdi dir="ltr">20/12 · 07:20</bdi></span>
+          </div>
+          <div class="nameplate">
+            <h2>בודפשט</h2>
+            <p><bdi dir="ltr">Hotel Museum Budapest</bdi></p>
+          </div>
+        </div>
+        <div class="meta">
+          <span><bdi dir="ltr">20/12/2026</bdi></span>
+          <span>ישראייר</span>
+          <span>טרולי 7 ק״ג לכל נוסע</span>
+        </div>
+        <div class="foot">
+          <p class="pp"><bdi dir="ltr">₪2,290</bdi><small>לאדם בחדר זוגי</small></p>
+          <span class="go">לפרטים נוספים</span>
+        </div>
+      </a>
+      <p class="credit">City photo, not the hotel: <a href="https://commons.wikimedia.org/wiki/File:Budapest_Parliament_4604.JPG">Dirk Beyer</a> / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></p>
+    </article>
   </div>
   <p class="empty" id="empty" hidden>אין דילים שמתאימים לחיפוש.</p>
 </main>
@@ -144,8 +172,7 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
     chips.forEach(function(chip){
       var k=chip.getAttribute('data-country');
       var n=k==='all'?all.length:all.filter(function(c){return c.getAttribute('data-country')===k}).length;
-      var label=k==='all'?'הכל':'רומניה';
-      chip.textContent=label+' ('+n+')';
+      chip.textContent=chip.getAttribute('data-label')+' ('+n+')';
     });
   }
   function norm(s){return (s||'').toLowerCase().replace(/\s+/g,' ').trim()}

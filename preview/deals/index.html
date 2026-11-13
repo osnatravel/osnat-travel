@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>דילים נבחרים | OSNAT TRAVEL</title>
+<meta name="description" content="דילים נבחרים של OSNAT TRAVEL: באטומי ובוקרשט, טיסות ישירות ומלון, מחיר לאדם בחדר זוגי.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F4ED">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="OSNAT TRAVEL AGENCY">
+<meta property="og:title" content="דילים נבחרים | OSNAT TRAVEL">
+<meta property="og:description" content="באטומי ובוקרשט: טיסות ישירות, מלון, ומחיר לאדם בחדר זוגי.">
+<meta property="og:url" content="https://osnat-travel.com/preview/deals/">
+<meta property="og:image" content="https://osnat-travel.com/batumi-kingsolomon/img/d1.jpg">
+<link rel="canonical" href="https://osnat-travel.com/preview/deals/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/navbar.css">
+<style>
+:root{
+  --navy:#102A43;
+  --gold:#C8A96B;
+  --ivory:#F7F4ED;
+  --white:#fff;
+  --line:rgba(200,169,107,.55);
+  --muted:rgba(16,42,67,.72);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:light}
+body{margin:0;font-family:Heebo,Arial,sans-serif;background:var(--ivory);color:var(--navy);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 48px}
+.intro{text-align:center;padding-top:8px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em}
+h1{font-size:clamp(32px,8vw,52px);line-height:1.15;font-weight:800;margin:8px 0 0}
+.rule{width:64px;height:1px;background:var(--gold);margin:16px auto 0;position:relative}
+.rule:after{content:"";position:absolute;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);top:-3px;left:calc(50% - 3.5px)}
+.lead{max-width:38rem;margin:16px auto 0;font-size:18px;font-weight:400}
+.tools{position:sticky;top:72px;z-index:20;display:flex;flex-direction:column;gap:12px;margin:26px 0 18px;padding:10px 0;background:var(--ivory)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--gold);background:var(--white);cursor:pointer;font-weight:600}
+.chip.on{background:var(--gold);border-color:var(--gold)}
+.search{position:relative}
+.search input{width:100%;min-height:48px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);font-size:16px}
+.search input:focus{outline:2px solid var(--navy);outline-offset:2px}
+.search input::placeholder{color:var(--muted)}
+.grid{display:grid;gap:18px}
+.deal{background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 28px rgba(16,42,67,.06);display:flex;flex-direction:column;min-width:0}
+.deal[hidden],.empty[hidden],.toast[hidden]{display:none !important}
+.photo{position:relative;aspect-ratio:16/10;margin:0;background:var(--ivory)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo figcaption{position:absolute;inset-inline:10px;bottom:10px;background:rgba(247,244,237,.94);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;width:max-content;max-width:calc(100% - 20px)}
+.body{padding:18px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.country{margin:0;font-size:13px;font-weight:700;letter-spacing:.04em}
+h2{margin:0;font-size:clamp(26px,6vw,32px);line-height:1.2;font-weight:800}
+.dates{margin:0;font-size:16px;font-weight:600}
+.hotel{margin:0;font-size:18px;font-weight:700}
+.board{margin:0;display:inline-flex;align-self:flex-start;background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:600;font-size:14px}
+.flights{background:var(--ivory);border-radius:16px;padding:12px 14px;display:grid;gap:4px}
+.flights p{margin:0}
+.fl-name{font-weight:700}
+.desc{margin:0}
+.inc h3{margin:0 0 6px;font-size:16px;font-weight:800}
+.inc ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.inc li:before{content:"✓ ";color:var(--gold);font-weight:800}
+.bag{margin:0;font-size:14px;color:var(--muted)}
+.cancel{margin:0;background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-weight:600}
+.tail{margin-top:auto;display:grid;gap:12px}
+.price{border-top:1px dashed var(--line);padding-top:12px}
+.pp{margin:0;font-size:clamp(36px,8vw,46px);font-weight:800;line-height:1;letter-spacing:-.02em}
+.per{margin:4px 0 0;font-weight:600}
+.couple{margin:2px 0 0;font-size:18px;font-weight:700}
+.asof{margin:8px 0 0;font-size:13px;color:var(--muted)}
+.actions{display:flex;gap:8px}
+.btn{flex:1;min-height:48px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;font-weight:800;text-decoration:none;cursor:pointer;border:1.5px solid var(--gold);background:var(--white)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.wa{background:var(--gold)}
+.btn:focus-visible,.chip:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.credit{margin:0;font-size:11px;color:var(--muted);direction:ltr;text-align:left}
+.credit a{text-decoration:underline}
+.empty{margin:8px 0 0;background:var(--white);border:1px dashed var(--line);border-radius:16px;padding:18px;text-align:center;font-weight:600}
+.miss{margin-top:28px;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px 18px;text-align:center;box-shadow:0 10px 28px rgba(16,42,67,.05)}
+.miss h2{font-size:clamp(24px,5vw,32px)}
+.miss p{margin:10px auto 0;max-width:34rem}
+.miss .btn{flex:none;margin-top:16px;padding-inline:22px}
+footer{text-align:center;padding:8px 16px 36px;color:var(--navy);font-size:14px}
+.legal{font-weight:700}
+.credits{max-width:760px;margin:14px auto 0;font-size:12px;color:var(--muted);line-height:1.7}
+.credits a{text-decoration:underline}
+.copy{margin-top:10px;font-size:13px}
+.toast{position:fixed;z-index:30;bottom:18px;left:50%;transform:translateX(-50%);background:var(--white);color:var(--navy);border:1px solid var(--gold);border-radius:999px;padding:12px 18px;font-weight:700;box-shadow:0 8px 24px rgba(16,42,67,.12)}
+.on-nav{background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 6px 22px rgba(16,42,67,.06)}
+.on-links a{color:var(--navy)}
+.on-links a:hover,.on-links a.cur{color:var(--navy);background:var(--gold)}
+.on-brand b{color:var(--navy);text-shadow:none}
+.on-brand span{color:var(--gold)}
+.on-brand i{background:linear-gradient(90deg,transparent,var(--gold))}
+.on-brand i.on-r{background:linear-gradient(270deg,transparent,var(--gold))}
+.on-ic{color:var(--navy);border-color:var(--gold);background:var(--ivory)}
+.on-ic:hover{color:var(--navy)}
+.on-home{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.on-burger{color:var(--navy);border-color:var(--gold);background:var(--white)}
+@media(max-width:760px){
+  .tools{top:62px}
+  .on-links{background:var(--white);border-bottom:1px solid var(--line)}
+}
+@media(min-width:840px){
+  .wrap{padding:36px 28px 64px}
+  .tools{flex-direction:row;align-items:center;justify-content:space-between}
+  .search{width:min(380px,46%)}
+  .grid{grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+  .body{padding:20px 20px 18px}
+}
+@media(hover:hover){
+  .deal{transition:transform .25s ease,box-shadow .25s ease}
+  .deal:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(16,42,67,.1)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .deal{transition:none}
+}
+</style>
+<script src="/assets/navbar.js" defer></script>
+</head>
+<body>
+<main class="wrap">
+  <header class="intro">
+    <p class="eyebrow">OSNAT TRAVEL</p>
+    <h1>דילים נבחרים</h1>
+    <div class="rule"></div>
+    <p class="lead">באטומי ובוקרשט לסוף נובמבר. בכל כרטיס: תאריכים, מלון, בסיס אירוח, טיסות ישירות ומחיר לאדם בחדר זוגי.</p>
+  </header>
+
+  <div class="tools">
+    <div class="chips" role="group" aria-label="סינון לפי מדינה">
+      <button type="button" class="chip on" data-country="all" aria-pressed="true">הכל</button>
+      <button type="button" class="chip" data-country="georgia" aria-pressed="false">גאורגיה</button>
+      <button type="button" class="chip" data-country="romania" aria-pressed="false">רומניה</button>
+    </div>
+    <div class="search">
+      <label class="sr" for="q">חיפוש דיל</label>
+      <input id="q" type="search" placeholder="חיפוש לפי יעד, מלון או תאריך" autocomplete="off" enterkeyhint="search">
+    </div>
+  </div>
+
+  <div class="grid" id="deals">
+    <article class="deal" id="batumi" data-country="georgia" data-depart="2026-11-29" data-search="batumi georgia wyndham israir באטומי גאורגיה ישראייר">
+      <figure class="photo">
+        <img src="/batumi-kingsolomon/img/d1.jpg" alt="קו החוף של באטומי ביום בהיר" width="1600" height="900">
+        <figcaption>תמונת יעד · לא צילום המלון</figcaption>
+      </figure>
+      <div class="body">
+        <p class="country">גאורגיה</p>
+        <h2>באטומי</h2>
+        <p class="dates"><bdi dir="ltr">29.11–3.12.2026</bdi> · 4 לילות</p>
+        <p class="hotel"><bdi dir="ltr">Wyndham Batumi</bdi></p>
+        <p class="board">לינה וארוחת בוקר</p>
+        <div class="flights">
+          <p class="fl-name">טיסות ישירות · ישראייר</p>
+          <p>הלוך <bdi dir="ltr">29.11 · 08:15</bdi></p>
+          <p>חזור <bdi dir="ltr">3.12 · 14:15</bdi></p>
+        </div>
+        <p class="desc">סוף נובמבר בבאטומי: ארבעה לילות בעיר שיושבת על הים השחור, עם טיסות ישירות של ישראייר ולינה ב-Wyndham Batumi שכוללת ארוחת בוקר. החבילה מרכזת את הטיסה ואת המלון במקום אחד.</p>
+        <div class="inc">
+          <h3>כולל</h3>
+          <ul>
+            <li>טיסות ישירות הלוך-חזור</li>
+            <li>4 לילות במלון</li>
+            <li>ארוחת בוקר</li>
+          </ul>
+        </div>
+        <p class="bag">כבודה: לפי חברת התעופה, יפורט בהצעה</p>
+        <p class="cancel">ביטול חינם של המלון עד <bdi dir="ltr">17.11.2026</bdi>.</p>
+        <div class="tail">
+          <div class="price">
+            <p class="pp"><bdi dir="ltr">₪1,850</bdi></p>
+            <p class="per">לאדם בחדר זוגי</p>
+            <p class="couple"><bdi dir="ltr">₪3,700</bdi> לזוג</p>
+            <p class="asof">המחיר נכון ל-13.11.2026, בכפוף לזמינות וט.ל.ח</p>
+          </div>
+          <div class="actions">
+            <a class="btn wa" href="https://wa.me/972506413749?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%9C%20%D7%9C%D7%91%D7%90%D7%98%D7%95%D7%9E%D7%99%2C%2029.11%E2%80%933.12.2026%2C%20%D7%9E%D7%9C%D7%95%D7%9F%20Wyndham%20Batumi%2C%20%E2%82%AA1%2C850%20%D7%9C%D7%90%D7%93%D7%9D%20%D7%91%D7%97%D7%93%D7%A8%20%D7%96%D7%95%D7%92%D7%99" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.4a10.1 10.1 0 0 0 4.65 1.14h.01c5.46 0 9.9-4.4 9.9-9.83C21.95 6.4 17.5 2 12.04 2zm5.76 14.15c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.12.1-1.81-.11-.41-.13-.95-.31-1.64-.61-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.24-.27.64-.39.85-.39h.61c.2 0 .46-.04.72.55.26.64.9 2.2.98 2.36.08.16.13.35.03.56-.1.21-.15.34-.3.52-.14.18-.3.4-.43.54-.14.14-.29.3-.12.58.16.27.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.27 1.4.28.14.44.12.6-.07.17-.2.7-.81.89-1.09.19-.27.38-.23.64-.14.26.1 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.7-.17 1.38z"/></svg>
+              וואטסאפ
+            </a>
+            <button type="button" class="btn share" data-text="באטומי, 29.11–3.12.2026, Wyndham Batumi, ₪1,850 לאדם בחדר זוגי">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5 15.4 17M15.4 7 8.6 10.5"/></svg>
+              שיתוף
+            </button>
+          </div>
+          <p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Seaside_of_Batumi.jpg" target="_blank" rel="noopener">Giorgi Balakhadze</a> / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> · 12.7.2016 · resized</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deal" id="bucharest" data-country="romania" data-depart="2026-11-22" data-search="bucharest romania capitol tarom בוקרשט רומניה טארום">
+      <figure class="photo">
+        <img src="/preview/blog/bucharest/img/athenaeum.jpg" alt="האתנאום הרומני בבוקרשט ביום בהיר" width="1600" height="900" loading="lazy">
+        <figcaption>תמונת יעד · לא צילום המלון</figcaption>
+      </figure>
+      <div class="body">
+        <p class="country">רומניה</p>
+        <h2>בוקרשט</h2>
+        <p class="dates"><bdi dir="ltr">22–26.11.2026</bdi> · 4 לילות</p>
+        <p class="hotel"><bdi dir="ltr">Hotel Capitol Bucharest</bdi></p>
+        <p class="board">לינה בלבד</p>
+        <div class="flights">
+          <p class="fl-name">טיסות ישירות · טארום</p>
+          <p>הלוך <bdi dir="ltr">22.11</bdi>: המראה מתל אביב <bdi dir="ltr">00:20</bdi>, נחיתה בבוקרשט <bdi dir="ltr">03:05</bdi></p>
+          <p>חזור <bdi dir="ltr">26.11</bdi>: המראה מבוקרשט <bdi dir="ltr">09:50</bdi>, נחיתה בתל אביב <bdi dir="ltr">12:25</bdi></p>
+        </div>
+        <p class="desc">סוף נובמבר בבוקרשט: ארבעה לילות בעיר, עם טיסות ישירות של טארום ולינה ב-Hotel Capitol. את הביקור אפשר לבנות סביב הליכה בשדרות, בעיר העתיקה ובפארקים, והחבילה מרכזת את הטיסות ואת הלינה.</p>
+        <div class="inc">
+          <h3>כולל</h3>
+          <ul>
+            <li>טיסות ישירות</li>
+            <li>4 לילות במלון</li>
+          </ul>
+        </div>
+        <p class="bag">כבודה: לפי חברת התעופה, יפורט בהצעה</p>
+        <p class="cancel">ביטול חינם של המלון עד <bdi dir="ltr">18.11.2026</bdi>.</p>
+        <div class="tail">
+          <div class="price">
+            <p class="pp"><bdi dir="ltr">₪1,990</bdi></p>
+            <p class="per">לאדם בחדר זוגי</p>
+            <p class="couple"><bdi dir="ltr">₪3,980</bdi> לזוג</p>
+            <p class="asof">המחיר נכון ל-13.11.2026, בכפוף לזמינות וט.ל.ח</p>
+          </div>
+          <div class="actions">
+            <a class="btn wa" href="https://wa.me/972506413749?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%93%D7%99%D7%9C%20%D7%9C%D7%91%D7%95%D7%A7%D7%A8%D7%A9%D7%98%2C%2022%E2%80%9326.11.2026%2C%20%D7%9E%D7%9C%D7%95%D7%9F%20Hotel%20Capitol%20Bucharest%2C%20%E2%82%AA1%2C990%20%D7%9C%D7%90%D7%93%D7%9D%20%D7%91%D7%97%D7%93%D7%A8%20%D7%96%D7%95%D7%92%D7%99" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.4a10.1 10.1 0 0 0 4.65 1.14h.01c5.46 0 9.9-4.4 9.9-9.83C21.95 6.4 17.5 2 12.04 2zm5.76 14.15c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.12.1-1.81-.11-.41-.13-.95-.31-1.64-.61-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.24-.27.64-.39.85-.39h.61c.2 0 .46-.04.72.55.26.64.9 2.2.98 2.36.08.16.13.35.03.56-.1.21-.15.34-.3.52-.14.18-.3.4-.43.54-.14.14-.29.3-.12.58.16.27.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.27 1.4.28.14.44.12.6-.07.17-.2.7-.81.89-1.09.19-.27.38-.23.64-.14.26.1 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.7-.17 1.38z"/></svg>
+              וואטסאפ
+            </a>
+            <button type="button" class="btn share" data-text="בוקרשט, 22–26.11.2026, Hotel Capitol Bucharest, ₪1,990 לאדם בחדר זוגי">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5 15.4 17M15.4 7 8.6 10.5"/></svg>
+              שיתוף
+            </button>
+          </div>
+          <p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Romanian_Athenaeum_(3973688533).jpg" target="_blank" rel="noopener">Filip Maljković</a> / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a> · 26.9.2009 · resized</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <p class="empty" id="empty" hidden>אין דילים שמתאימים לסינון או לחיפוש.</p>
+
+  <section class="miss">
+    <h2>לא מצאתם את מה שחיפשתם?</h2>
+    <p>כתבו לנו יעד, תאריכים וכמה נוסעים, ונחזור עם כיוון שמתאים לכם.</p>
+    <a class="btn wa" href="https://wa.me/972506413749?text=%D7%94%D7%99%D7%99%2C%20%D7%9C%D7%90%20%D7%9E%D7%A6%D7%90%D7%AA%D7%99%20%D7%91%D7%93%D7%A3%20%D7%94%D7%93%D7%99%D7%9C%D7%99%D7%9D%20%D7%90%D7%AA%20%D7%9E%D7%94%20%D7%A9%D7%97%D7%99%D7%A4%D7%A9%D7%AA%D7%99%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%96%D7%A8%D7%94%20%D7%91%D7%94%D7%AA%D7%90%D7%9E%D7%94" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.4a10.1 10.1 0 0 0 4.65 1.14h.01c5.46 0 9.9-4.4 9.9-9.83C21.95 6.4 17.5 2 12.04 2zm5.76 14.15c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.12.1-1.81-.11-.41-.13-.95-.31-1.64-.61-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.24-.27.64-.39.85-.39h.61c.2 0 .46-.04.72.55.26.64.9 2.2.98 2.36.08.16.13.35.03.56-.1.21-.15.34-.3.52-.14.18-.3.4-.43.54-.14.14-.29.3-.12.58.16.27.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.27 1.4.28.14.44.12.6-.07.17-.2.7-.81.89-1.09.19-.27.38-.23.64-.14.26.1 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.7-.17 1.38z"/></svg>
+      דברו איתנו בוואטסאפ
+    </a>
+  </section>
+</main>
+<footer>
+  <p class="legal">המחיר נכון ל-13.11.2026, בכפוף לזמינות וט.ל.ח</p>
+  <div class="credits">
+    <p>קרדיט תמונות. הקבצים באתר הוקטנו, והרישיון נשאר אותו רישיון.</p>
+    <p>באטומי, צילום 12.7.2016: <a href="https://commons.wikimedia.org/wiki/File:Seaside_of_Batumi.jpg">Seaside of Batumi.jpg</a>, Giorgi Balakhadze, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+    <p>בוקרשט, האתנאום, צילום 26.9.2009: <a href="https://commons.wikimedia.org/wiki/File:Romanian_Athenaeum_(3973688533).jpg">Romanian Athenaeum (3973688533).jpg</a>, Filip Maljković, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</p>
+  </div>
+  <p class="copy">© OSNAT TRAVEL AGENCY</p>
+</footer>
+<p class="toast" id="toast" hidden role="status"></p>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.deal'));
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var empty=document.getElementById('empty');
+  var input=document.getElementById('q');
+  var toast=document.getElementById('toast');
+  var country='all';
+  var q='';
+  var timer;
+
+  function dayKey(d){return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()}
+  var today=dayKey(new Date());
+  cards.forEach(function(card){
+    var p=card.getAttribute('data-depart').split('-').map(Number);
+    if(p[0]*10000+p[1]*100+p[2]<today){
+      card.hidden=true;
+      card.setAttribute('data-past','1');
+    }
+  });
+
+  function norm(s){return (s||'').toLowerCase().replace(/\s+/g,' ').trim()}
+  function apply(){
+    var n=0;
+    cards.forEach(function(card){
+      if(card.getAttribute('data-past')==='1'){card.hidden=true;return}
+      var okC=country==='all'||card.getAttribute('data-country')===country;
+      var blob=norm(card.getAttribute('data-search')+' '+card.innerText);
+      var show=okC&&(!q||blob.indexOf(q)!==-1);
+      card.hidden=!show;
+      if(show)n++;
+    });
+    empty.hidden=n!==0;
+  }
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      country=chip.getAttribute('data-country');
+      chips.forEach(function(c){
+        var on=c===chip;
+        c.classList.toggle('on',on);
+        c.setAttribute('aria-pressed',on?'true':'false');
+      });
+      apply();
+    });
+  });
+  input.addEventListener('input',function(){q=norm(input.value);apply()});
+
+  function say(msg){
+    toast.textContent=msg;
+    toast.hidden=false;
+    clearTimeout(timer);
+    timer=setTimeout(function(){toast.hidden=true},2200);
+  }
+  function legacyCopy(url){
+    var t=document.createElement('textarea');
+    t.value=url;
+    t.setAttribute('readonly','');
+    t.style.position='fixed';
+    t.style.inset='0';
+    t.style.opacity='0';
+    document.body.appendChild(t);
+    t.focus();
+    t.select();
+    var ok=false;
+    try{ok=document.execCommand('copy')}catch(e){}
+    document.body.removeChild(t);
+    return ok;
+  }
+  function copyLink(url){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){say('הקישור הועתק')}).catch(function(){
+        if(legacyCopy(url))say('הקישור הועתק');
+      });
+      return;
+    }
+    if(legacyCopy(url))say('הקישור הועתק');
+  }
+  document.querySelectorAll('.share').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var card=btn.closest('.deal');
+      var url=location.origin+location.pathname+location.search+'#'+card.id;
+      var data={title:card.querySelector('h2').textContent.trim()+' | OSNAT TRAVEL',text:btn.getAttribute('data-text'),url:url};
+      if(navigator.share){
+        navigator.share(data).catch(function(err){
+          if(err&&err.name==='AbortError')return;
+          copyLink(url);
+        });
+        return;
+      }
+      copyLink(url);
+    });
+  });
+
+  apply();
+  var id=location.hash.slice(1);
+  if(/^[A-Za-z][\w-]*$/.test(id)){
+    var target=document.getElementById(id);
+    if(target&&!target.hidden)target.scrollIntoView({block:'center'});
+  }
+})();
+</script>
+</body>
+</html>

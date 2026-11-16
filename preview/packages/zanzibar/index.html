@@ -32,7 +32,7 @@ button{font:inherit;color:inherit;background:none}
 .wrap{max-width:1080px;margin:0 auto;padding:16px 16px 28px}
 .layout{display:grid;gap:16px}
 .hero{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-#mainimg{display:block;width:100%;height:220px;max-height:220px;object-fit:cover;object-position:center 40%;background:var(--ivory);cursor:zoom-in}
+.shot{display:block;width:100%;height:220px;max-height:220px;object-fit:cover;object-position:center 40%;background:var(--ivory);cursor:zoom-in}
 .thumbs{display:flex;gap:8px;padding:8px}
 .thumbs button{flex:1;min-width:0;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer}
 .thumbs button.on{border-color:var(--gold)}
@@ -97,7 +97,7 @@ footer{text-align:center;padding:8px 16px 20px}
   .wrap{padding:24px 28px 48px}
   .layout{grid-template-columns:minmax(0,1fr) 320px;align-items:start}
   .side{position:sticky;top:84px}
-  #mainimg{height:320px;max-height:320px}
+  .shot{height:320px;max-height:320px}
 }
 </style>
 <script src="/assets/navbar.js" defer></script>
@@ -106,8 +106,8 @@ footer{text-align:center;padding:8px 16px 20px}
 <main class="wrap">
   <div class="layout">
     <div>
-      <figure class="hero">
-        <img id="mainimg" src="img/paje.jpg" alt="חוף פאג'ה בשפל, תמונת האזור ולא המלון" width="960" height="720">
+      <figure class="hero gallery">
+        <img id="mainimg" class="shot" src="img/paje.jpg" alt="חוף פאג'ה בשפל, תמונת האזור ולא המלון" width="960" height="720">
         <div class="thumbs">
           <button type="button" class="on" data-src="img/paje.jpg" data-alt="חוף פאג'ה בשפל, תמונת האזור ולא המלון" data-cap="Paje beach · Matt Kieffer · CC BY-SA 2.0 · area photo, not the hotel"><img src="img/paje.jpg" alt=""></button>
           <button type="button" data-src="img/nungwi.jpg" data-alt="חוף נונגווי, תמונת האזור ולא המלון" data-cap="Nungwi beach · Mangapwani · CC BY-SA 4.0 · area photo, not the hotel"><img src="img/nungwi.jpg" alt=""></button>
@@ -135,7 +135,18 @@ footer{text-align:center;padding:8px 16px 20px}
         <div class="kv"><span>חדר</span><span>וילה דלוקס, חדר שינה אחד, נוף לגן</span></div>
         <div class="kv"><span>מיקום</span><span>על החוף</span></div>
         <div class="kv"><span>בסיס אירוח</span><span>לינה וארוחת בוקר</span></div>
-        <p class="note">התמונות בעמוד הן של חוף פאג'ה והאזור, לא של המלון.</p>
+        <div class="gallery" style="margin-top:12px">
+          <img class="shot" src="img/kivuli-03.jpg" alt="קאבה על החוף ב-Kivuli Beach Resort" width="667" height="1000">
+          <div class="thumbs">
+            <button type="button" class="on" data-src="img/kivuli-03.jpg" data-alt="קאבה על החוף ב-Kivuli Beach Resort"><img src="img/kivuli-03.jpg" alt=""></button>
+            <button type="button" data-src="img/kivuli-01.jpg" data-alt="כניסה לווילה ב-Kivuli Beach Resort"><img src="img/kivuli-01.jpg" alt=""></button>
+            <button type="button" data-src="img/kivuli-02.jpg" data-alt="הבריכה ב-Kivuli Beach Resort"><img src="img/kivuli-02.jpg" alt=""></button>
+            <button type="button" data-src="img/kivuli-04.jpg" data-alt="חדר להמחשה ב-Kivuli Beach Resort"><img src="img/kivuli-04.jpg" alt=""></button>
+            <button type="button" data-src="img/kivuli-05.jpg" data-alt="מסעדה ובר ב-Kivuli Beach Resort"><img src="img/kivuli-05.jpg" alt=""></button>
+            <button type="button" data-src="img/kivuli-06.jpg" data-alt="מיטות שיזוף על החוף ב-Kivuli Beach Resort"><img src="img/kivuli-06.jpg" alt=""></button>
+          </div>
+          <p class="note">תמונות: באדיבות המלון. החדר להמחשה.</p>
+        </div>
       </section>
 
       <section class="card">
@@ -144,7 +155,18 @@ footer{text-align:center;padding:8px 16px 20px}
         <div class="kv"><span>מלון</span><span><bdi dir="ltr">Z Hotel (Z2)</bdi> · מלון 4★ על החוף</span></div>
         <div class="kv"><span>חדר</span><span>חדר קווין עם נוף לבריכה</span></div>
         <div class="kv"><span>בסיס אירוח</span><span>לינה וארוחת בוקר</span></div>
-        <p class="note">התמונות בעמוד הן של חוף נונגווי והאזור, לא של המלון.</p>
+        <div class="gallery" style="margin-top:12px">
+          <img class="shot" src="img/zhotel-01.jpg" alt="Z Hotel על החוף בנונגווי" width="1000" height="749">
+          <div class="thumbs">
+            <button type="button" class="on" data-src="img/zhotel-01.jpg" data-alt="Z Hotel על החוף בנונגווי"><img src="img/zhotel-01.jpg" alt=""></button>
+            <button type="button" data-src="img/zhotel-02.jpg" data-alt="מבט אווירי והבריכה ב-Z Hotel"><img src="img/zhotel-02.jpg" alt=""></button>
+            <button type="button" data-src="img/zhotel-03.jpg" data-alt="חדר להמחשה ב-Z Hotel"><img src="img/zhotel-03.jpg" alt=""></button>
+            <button type="button" data-src="img/zhotel-04.jpg" data-alt="בריכת אינפיניטי ב-Z Hotel"><img src="img/zhotel-04.jpg" alt=""></button>
+            <button type="button" data-src="img/zhotel-05.jpg" data-alt="מסעדה עם נוף לים ב-Z Hotel"><img src="img/zhotel-05.jpg" alt=""></button>
+            <button type="button" data-src="img/zhotel-06.jpg" data-alt="החוף ושטח Z Hotel"><img src="img/zhotel-06.jpg" alt=""></button>
+          </div>
+          <p class="note">תמונות: באדיבות המלון. החדר להמחשה.</p>
+        </div>
       </section>
 
       <section class="card">
@@ -152,7 +174,6 @@ footer{text-align:center;padding:8px 16px 20px}
         <ul class="inc">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>טיסות ישירות עם מזוודה 20 ק״ג</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>7 לילות בשני מלונות על הים עם ארוחת בוקר</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>העברות מהשדה לפאג'ה, מפאג'ה לנונגווי ומנונגווי לשדה</span></li>
         </ul>
       </section>
 
@@ -203,7 +224,7 @@ footer{text-align:center;padding:8px 16px 20px}
 <footer>
   <p class="legal">המחיר נכון ל-16.11.2026, בכפוף לזמינות וט.ל.ח</p>
   <div class="credits">
-    <p>אין כאן צילום של Kivuli Beach Resort או של Z Hotel. התמונות הן של האזור.</p>
+    <p>תמונות המלונות: באדיבות המלון. החדרים להמחשה. תמונות החוף, מנמבה ו-The Rock הן של האזור.</p>
     <p>פאג'ה, 15.10.2008: <a href="https://commons.wikimedia.org/wiki/File:Paje_beach_at_low_tide.jpg">Paje beach at low tide.jpg</a>, Matt Kieffer, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</p>
     <p>נונגווי, 9.7.2023: <a href="https://commons.wikimedia.org/wiki/File:Paradise_at_Nungwi,_Kaskazini_A,_Unguja_North,_Zanzibar.jpg">Paradise at Nungwi</a>, Mangapwani, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
     <p>מנמבה, 23.8.2019: <a href="https://commons.wikimedia.org/wiki/File:Mnemba_Island_-_Zanzibar_-_Flickr_-_Jorge_Lascar.jpg">Mnemba Island</a>, Jorge Láscar, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</p>
@@ -225,19 +246,24 @@ document.addEventListener('DOMContentLoaded',function(){
     b.addEventListener('click',function(e){e.stopPropagation();var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false')});
     document.addEventListener('click',function(e){if(!d.contains(e.target)){m.hidden=true;b.setAttribute('aria-expanded','false')}});
   }
-  var img=document.getElementById('mainimg'),cap=document.getElementById('cap'),lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
+  var lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
   function openLb(src,alt){lbimg.src=src;lbimg.alt=alt||'';lb.hidden=false}
   function closeLb(){lb.hidden=true}
   document.getElementById('lbx').onclick=closeLb;
   lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb()});
-  img.addEventListener('click',function(){openLb(img.getAttribute('src'),img.alt)});
-  document.querySelectorAll('.thumbs button').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.thumbs button').forEach(function(b){b.classList.toggle('on',b===btn)});
-      img.src=btn.getAttribute('data-src');img.alt=btn.getAttribute('data-alt');
-      cap.textContent=btn.getAttribute('data-cap');
-      openLb(btn.getAttribute('data-src'),btn.getAttribute('data-alt'));
+  document.querySelectorAll('.gallery').forEach(function(g){
+    var shot=g.querySelector('.shot');
+    var cap=g.querySelector('.cap');
+    shot.addEventListener('click',function(){openLb(shot.getAttribute('src'),shot.alt)});
+    g.querySelectorAll('.thumbs button').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        g.querySelectorAll('.thumbs button').forEach(function(b){b.classList.toggle('on',b===btn)});
+        shot.src=btn.getAttribute('data-src');
+        shot.alt=btn.getAttribute('data-alt');
+        if(cap&&btn.getAttribute('data-cap'))cap.textContent=btn.getAttribute('data-cap');
+        openLb(btn.getAttribute('data-src'),btn.getAttribute('data-alt'));
+      });
     });
   });
 });

@@ -8,6 +8,7 @@
  function run(){var t=today(),B=document.body,bd=B.getAttribute('data-depart');
   if(bd&&t>=bd){off(B);var wa=document.querySelector('.vn-exp-wa');if(wa)[].forEach.call(document.querySelectorAll('a[href^="https://wa.me/972506413749"]'),function(a){a.href=wa.href});
    document.title=document.title.replace(/\d{1,2}(?:[–-]\d{1,2}(?:\.\d{1,2})?)?\.\d{1,2}\.\d{4}/g,'').replace(/\s{2,}/g,' ')}
+  [].forEach.call(document.querySelectorAll('[data-until]'),function(e){if(t>e.getAttribute('data-until')){e.hidden=true;e.style.display='none'}});
   [].forEach.call(document.querySelectorAll('[data-depart]'),function(c){if(c!==B&&t>=c.getAttribute('data-depart'))off(c)})}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();

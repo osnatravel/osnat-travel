@@ -240,3 +240,17 @@ h2.vh{line-height:1.25!important;margin:2px 0 22px!important}
 .vn-pb .pb-cur{font-family:Rubik,Arial,sans-serif!important;font-weight:500;-webkit-text-fill-color:currentColor}
 .vn-pb .pb-price .pb-cur{font-size:clamp(1.6rem,4vw,2rem);color:#B8862B}
 .vn-pb .pb-chip .pb-cur{font-size:.95em;color:var(--vn-navy)}
+
+/* Flight times – labeled rows, no direction arrows */
+.pg-deal .flt{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.pg-deal .flt-row{display:grid;grid-template-columns:4.8em minmax(0,1fr) auto;align-items:center;gap:8px 12px;background:rgba(14,159,150,.07);border:1px solid rgba(14,159,150,.2);border-radius:14px;padding:12px 16px}
+.pg-deal .flt-lbl{color:#0E9F96;font-weight:500;font-size:.9rem}
+.pg-deal .flt-place{color:var(--vn-ink);font-weight:500;min-width:0}
+.pg-deal .flt-time{font-family:"Secular One",Rubik,sans-serif;font-size:1.35rem;line-height:1.15;color:var(--vn-ink);text-align:start;white-space:nowrap}
+.pg-deal .flt-next{display:block;font-family:Rubik,sans-serif;font-size:.78rem;font-weight:400;color:var(--vn-mut);white-space:nowrap;margin-top:3px}
+@media(max-width:400px){
+  .pg-deal .flt-row{grid-template-columns:1fr auto;padding:10px 12px}
+  .pg-deal .flt-lbl{grid-column:1;grid-row:1}
+  .pg-deal .flt-place{grid-column:1;grid-row:2}
+  .pg-deal .flt-time{grid-column:2;grid-row:1/span 2;align-self:center}
+}

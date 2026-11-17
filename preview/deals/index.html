@@ -76,6 +76,7 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
 @media(min-width:800px){.grid{grid-template-columns:1fr 1fr}.wrap{padding:32px 28px 56px}}
 </style>
 <script src="/assets/navbar.js" defer></script>
+<script src="/assets/js/pkg-expiry.js" defer></script>
 </head>
 <body>
 <main class="wrap">
@@ -102,7 +103,7 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
           <div class="onphoto">
             <span class="tag">רומניה</span>
             <span class="tag">לינה בלבד</span>
-            <span class="tag"><bdi dir="ltr">22/11 · 00:20</bdi></span>
+            <span class="tag" data-exp="date"><bdi dir="ltr">22/11 · 00:20</bdi></span>
           </div>
           <div class="nameplate">
             <h2>בוקרשט</h2>
@@ -110,12 +111,12 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
           </div>
         </div>
         <div class="meta">
-          <span><bdi dir="ltr">22/11/2026</bdi></span>
+          <span data-exp="date"><bdi dir="ltr">22/11/2026</bdi></span>
           <span><bdi dir="ltr">Tarom</bdi></span>
           <span>טרולי לכל נוסע</span>
         </div>
         <div class="foot">
-          <p class="pp"><bdi dir="ltr">₪1,990</bdi><small>לאדם בחדר זוגי</small></p>
+          <p class="pp" data-exp="price"><bdi dir="ltr">₪1,990</bdi><small>לאדם בחדר זוגי</small></p>
           <span class="go">לפרטים נוספים</span>
         </div>
       </a>
@@ -129,7 +130,7 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
             <span class="tag">הונגריה</span>
             <span class="tag">לינה וארוחת בוקר</span>
             <span class="tag">תמונת העיר</span>
-            <span class="tag"><bdi dir="ltr">20/12 · 07:20</bdi></span>
+            <span class="tag" data-exp="date"><bdi dir="ltr">20/12 · 07:20</bdi></span>
           </div>
           <div class="nameplate">
             <h2>בודפשט</h2>
@@ -137,12 +138,12 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
           </div>
         </div>
         <div class="meta">
-          <span><bdi dir="ltr">20/12/2026</bdi></span>
+          <span data-exp="date"><bdi dir="ltr">20/12/2026</bdi></span>
           <span>ישראייר</span>
           <span>טרולי 7 ק״ג לכל נוסע</span>
         </div>
         <div class="foot">
-          <p class="pp"><bdi dir="ltr">₪2,290</bdi><small>לאדם בחדר זוגי</small></p>
+          <p class="pp" data-exp="price"><bdi dir="ltr">₪2,290</bdi><small>לאדם בחדר זוגי</small></p>
           <span class="go">לפרטים נוספים</span>
         </div>
       </a>
@@ -162,11 +163,6 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
   var input=document.getElementById('q');
   var country='all', q='';
   function key(d){return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()}
-  var today=key(new Date());
-  cards.forEach(function(card){
-    var p=card.getAttribute('data-depart').split('-').map(Number);
-    if(p[0]*10000+p[1]*100+p[2]<today){card.hidden=true;card.setAttribute('data-past','1')}
-  });
   function counts(){
     var all=cards.filter(function(c){return c.getAttribute('data-past')!=='1'});
     chips.forEach(function(chip){
@@ -179,7 +175,7 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
   function apply(){
     var n=0;
     cards.forEach(function(card){
-      if(card.getAttribute('data-past')==='1'){card.hidden=true;return}
+      if(card.getAttribute('data-past')==='1'){card.hidden=false;n++;return}
       var okC=country==='all'||card.getAttribute('data-country')===country;
       var blob=norm(card.getAttribute('data-search')+' '+card.innerText);
       var show=okC&&(!q||blob.indexOf(q)!==-1);
@@ -202,6 +198,7 @@ footer{text-align:center;padding:8px 16px 28px;font-size:14px}
   input.addEventListener('input',function(){q=norm(input.value);apply()});
   counts();
   apply();
+  document.addEventListener('DOMContentLoaded',function(){counts();apply()});
 })();
 </script>
 </body>

@@ -1,0 +1,44 @@
+{
+ "hanoi": {
+  "file": "File:Hoan Kiem Lake, Turtle Tower, Daytime (20231223) (53489228584).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hoan_Kiem_Lake,_Turtle_Tower,_Daytime_(20231223)_(53489228584).jpg",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "author": "Takeshi Aida from Hong Kong, Hong Kong"
+ },
+ "hue": {
+  "file": "File:Meridian Gate, Hue (I).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Meridian_Gate,_Hue_(I).jpg",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "author": "Supanut Arunoprayote"
+ },
+ "danang": {
+  "file": "File:Golden Bridge at Ba Na Hills 20250718.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Golden_Bridge_at_Ba_Na_Hills_20250718.jpg",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "author": "DvTor8303"
+ },
+ "hoian": {
+  "file": "File:Hội An, Chùa Cầu, 2020-01 CN-01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ch%C3%B9a_C%E1%BA%A7u,_2020-01_CN-01.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Steffen Schmitz"
+ },
+ "nhatrang": {
+  "file": "File:Nha Trang Beach, Vietnam.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Nha_Trang_Beach,_Vietnam.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Ken Eckert"
+ },
+ "saigon": {
+  "file": "File:Ho Chi Minh City, Notre-Dame Basilica, 2020-01 CN-01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City,_Notre-Dame_Basilica,_2020-01_CN-01.jpg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Steffen Schmitz"
+ }
+}

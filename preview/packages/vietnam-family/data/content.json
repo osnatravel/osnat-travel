@@ -1,0 +1,662 @@
+{
+ "meta": {
+  "title": "וייטנאם המשפחתית: חודש של חופים, פנסים וקיסרים",
+  "brand": "OSNAT TRAVEL AGENCY | חופשות בהתאמה אישית",
+  "lead": "משפחת קדמי – 2 הורים ו-3 בנות (15, 11, 8)",
+  "dates": "29.7–25.8.2027 (גמיש)",
+  "checked": "17.11.2026",
+  "whatsapp": "https://wa.me/972506413749?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%94%D7%98%D7%99%D7%95%D7%9C%20%D7%94%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%20%D7%9C%D7%95%D7%95%D7%99%D7%99%D7%98%D7%A0%D7%90%D7%9D%20%2829.7%E2%80%9325.8.2027%29%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8",
+  "footer": "המחיר נכון ל-17.11.2026, בכפוף לזמינות וט.ל.ח",
+  "palette": {
+   "navy": "#102A43",
+   "gold": "#C8A96B",
+   "ivory": "#F7F4ED",
+   "white": "#FFFFFF"
+  }
+ },
+ "intro": "באוגוסט החוף המרכזי של וייטנאם – הואה, דה נאנג, הוי אן ונה טראנג – חם ויבש יחסית לצפון ולדרום. יש בו חופים ארוכים, אתרי מורשת והמון חוויות לבנות בכל הגילים.",
+ "weather": {
+  "note": "באוגוסט יורדים במרכז כ-70–100 מ״מ גשם בחודש, הרבה פחות מבצפון ובדרום. אוגוסט הוא גם תחילת עונת הטייפונים, ולכן מומלץ ביטוח שמכסה שיבושים."
+ },
+ "stops": [
+  {
+   "id": "hanoi",
+   "name": "האנוי",
+   "nights": 3,
+   "dates": "29.7–1.8",
+   "role": "שער כניסה – כאן נוחתת הטיסה הישירה",
+   "highlights": [
+    "מופע בובות המים – קצר ומצחיק, מתאים במיוחד לבת ה-8",
+    "טיול ערב ברובע העתיק ולאורך אגם הואן קיים"
+   ],
+   "landmark": {
+    "file": "img/hanoi-landmark.jpg",
+    "credit": "Takeshi Aida from Hong Kong, Hong Kong / Wikimedia Commons, CC BY-SA 2.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Hoan_Kiem_Lake,_Turtle_Tower,_Daytime_(20231223)_(53489228584).jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+   }
+  },
+  {
+   "id": "hue",
+   "name": "הואה",
+   "nights": 3,
+   "dates": "1.8–4.8",
+   "role": "העיר הקיסרית",
+   "highlights": [
+    "העיר הקיסרית – אתר מורשת עולמית של אונסק״ו",
+    "קברי הקיסרים ונהר הבושם – בבוקר מוקדם, לפני החום",
+    "בדרך לדה נאנג: מעבר האי ואן ברכב פרטי עם עצירות נוף"
+   ],
+   "landmark": {
+    "file": "img/hue-landmark.jpg",
+    "credit": "Supanut Arunoprayote / Wikimedia Commons, CC BY 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Meridian_Gate,_Hue_(I).jpg",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+   }
+  },
+  {
+   "id": "danang",
+   "name": "דה נאנג",
+   "nights": 7,
+   "dates": "4.8–11.8",
+   "role": "בסיס חוף",
+   "highlights": [
+    "Ba Na Hills וגשר הזהב – רכבל, כפר צרפתי ופארק שעשועים",
+    "הרי השיש – מערות, פגודות ותצפיות, עם מעלית",
+    "חוף My Khe – חוף עירוני ארוך"
+   ],
+   "landmark": {
+    "file": "img/danang-landmark.jpg",
+    "credit": "DvTor8303 / Wikimedia Commons, CC0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Golden_Bridge_at_Ba_Na_Hills_20250718.jpg",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+   }
+  },
+  {
+   "id": "hoian",
+   "name": "הוי אן",
+   "nights": 6,
+   "dates": "11.8–17.8",
+   "role": "העיר העתיקה והפנסים",
+   "highlights": [
+    "העיר העתיקה – אתר מורשת עולמית של אונסק״ו; שייט פנסים בערב על הנהר",
+    "ליל הפנסים ב-15.8.2027 (ה-14 בחודש הירחי)",
+    "סדנת בישול עם סיור בשוק וסירת סל",
+    "אופניים בין שדות האורז וחוף An Bang"
+   ],
+   "landmark": {
+    "file": "img/hoian-landmark.jpg",
+    "credit": "Steffen Schmitz / Wikimedia Commons, CC BY-SA 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ch%C3%B9a_C%E1%BA%A7u,_2020-01_CN-01.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   }
+  },
+  {
+   "id": "nhatrang",
+   "name": "נה טראנג",
+   "nights": 5,
+   "dates": "17.8–22.8",
+   "optional": true,
+   "role": "ים ופארק – אופציונלי",
+   "highlights": [
+    "VinWonders Nha Trang – פארק שעשועים ומים על אי, עם רכבל מעל הים",
+    "ים ושנורקלינג – מהמקומות הפחות גשומים באוגוסט"
+   ],
+   "landmark": {
+    "file": "img/nhatrang-landmark.jpg",
+    "credit": "Ken Eckert / Wikimedia Commons, CC BY-SA 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Nha_Trang_Beach,_Vietnam.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   }
+  },
+  {
+   "id": "end",
+   "name": "האנוי או סייגון",
+   "nights": 3,
+   "dates": "22.8–25.8",
+   "role": "לפי טיסת החזור – ישירה מהאנוי או קונקשן מסייגון; משתי הערים יש טיסה ישירה מנה טראנג",
+   "highlights": [
+    "האנוי: חזרה לאגם המערב לפני הטיסה",
+    "סייגון: קתדרלת נוטרדאם והעיר הגדולה"
+   ],
+   "landmark": {
+    "file": "img/saigon-landmark.jpg",
+    "credit": "Steffen Schmitz / Wikimedia Commons, CC BY-SA 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City,_Notre-Dame_Basilica,_2020-01_CN-01.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   }
+  }
+ ],
+ "route_short_variant": [
+  [
+   "האנוי",
+   3
+  ],
+  [
+   "הואה",
+   3
+  ],
+  [
+   "דה נאנג",
+   9
+  ],
+  [
+   "הוי אן",
+   9
+  ],
+  [
+   "האנוי",
+   3
+  ]
+ ],
+ "hotels": {
+  "hanoi": [
+   {
+    "name": "InterContinental Hanoi Westlake",
+    "stars": 5,
+    "area": "טאי הו, על אגם המערב (סמוך לבית חב״ד האנוי)",
+    "features": [
+     "בריכה חיצונית גדולה עם נוף לאגם (07:00–19:00)",
+     "דירות Overwater Residence של 2 ו-3 חדרי שינה עם מטבח (129–172 מ״ר)",
+     "חדרי Twin של 43 מ״ר עם מרפסת",
+     "Sunset Bar על המים"
+    ],
+    "description_he": "מלון שקט על המים באגם המערב, רחוק מספיק מהמולת העיר ועדיין דקות מהרובע העתיק. דירות שני חדרי השינה עם מטבח ומרפסת נותנות לכל המשפחה מרחב משלה אחרי טיסה ארוכה, והבריכה מול האגם היא הפסקת צהריים מושלמת לבנות. הוא גם קרוב לבית חב״ד בטאי הו.",
+    "photos": [
+     "img/hanoi-intercontinental-westlake-1.jpg",
+     "img/hanoi-intercontinental-westlake-2.jpg",
+     "img/hanoi-intercontinental-westlake-3.jpg",
+     "img/hanoi-intercontinental-westlake-4.jpg"
+    ],
+    "photo_source": "https://hanoi.intercontinental.com/",
+    "source_urls": [
+     "https://hanoi.intercontinental.com/",
+     "https://hanoi.intercontinental.com/accommodation",
+     "https://hanoi.intercontinental.com/accommodation/2-bedroom-suite-overwater-residence",
+     "https://hanoi.intercontinental.com/services"
+    ],
+    "also_for": "end"
+   }
+  ],
+  "hue": [
+   {
+    "name": "Pilgrimage Village Boutique Resort & Spa",
+    "stars": null,
+    "area": "הואה, בתוך גן טרופי",
+    "features": [
+     "חדרי משפחה (Family Superior/Deluxe) ווילות משפחתיות",
+     "פינת ילדים עם משחקים ויצירה",
+     "בריכות, ספא וסדנת בישול",
+     "הסעה חינם לעיר ולחוף המקומי"
+    ],
+    "description_he": "ריזורט ירוק ושקט בין העצים, עם חדרי משפחה ווילות שבהן כולם יחד אבל עם פרטיות. אחרי בוקר בעיר הקיסרית חוזרים לבריכה, הבת הקטנה נהנית מפינת הילדים, והגדולות יכולות להצטרף לסדנת בישול. הסעה חינם לעיר חוסכת מוניות.",
+    "photos": [
+     "img/hue-pilgrimage-village-1.jpg",
+     "img/hue-pilgrimage-village-2.jpg",
+     "img/hue-pilgrimage-village-3.jpg"
+    ],
+    "photo_source": "https://www.pilgrimagevillage.com/",
+    "source_urls": [
+     "https://www.pilgrimagevillage.com/"
+    ],
+    "stars_note": "דירוג כוכבים לא אומת – לא להציג כוכבים עד אימות"
+   }
+  ],
+  "danang": [
+   {
+    "name": "Furama Resort Danang",
+    "stars": null,
+    "area": "על חוף דה נאנג, בין העיר להוי אן",
+    "features": [
+     "על חוף דה נאנג",
+     "198 חדרים ו-68 וילות בריכה",
+     "3 בריכות",
+     "5 אזורי ילדים ומועדון ילדים",
+     "חבילות משפחה; שאטל לעיר העתיקה של הוי אן"
+    ],
+    "description_he": "ריזורט חוף קלאסי עם גנים, שלוש בריכות וחוף ארוך – בסיס נוח לשבוע שלם. יש מועדון ואזורי ילדים לבת ה-8 וים ובריכות לבנות הגדולות, והמיקום בין דה נאנג להוי אן מקצר את הנסיעות ל-Ba Na Hills ולהרי השיש.",
+    "photos": [
+     "img/danang-furama-resort-1.jpg",
+     "img/danang-furama-resort-2.jpg",
+     "img/danang-furama-resort-3.jpg",
+     "img/danang-furama-resort-4.jpg"
+    ],
+    "photo_source": "https://furamavietnam.com/",
+    "source_urls": [
+     "https://furamavietnam.com/"
+    ],
+    "stars_note": "דירוג כוכבים לא אומת – לא להציג כוכבים עד אימות"
+   }
+  ],
+  "hoian": [
+   {
+    "name": "Allegro Hoi An",
+    "stars": null,
+    "area": "צמוד לעיר העתיקה – הליכה",
+    "features": [
+     "Family Suite של 55 מ״ר עם נוף לעיר העתיקה",
+     "Junior Connecting – סוויטות מחוברות של 94 מ״ר למשפחות עם ילדים גדולים",
+     "בריכה"
+    ],
+    "description_he": "מלון בוטיק בסגנון הוי אן, במרחק הליכה מהעיר העתיקה – כך שאפשר לצאת לשייט הפנסים ולחזור ברגל. הסוויטות המחוברות מתאימות בדיוק למשפחה עם נערה בת 15 שרוצה קצת פרטיות, והבריכה מחכה בצהריים החמים.",
+    "photos": [
+     "img/hoian-allegro-1.jpg",
+     "img/hoian-allegro-2.jpg",
+     "img/hoian-allegro-3.jpg",
+     "img/hoian-allegro-4.jpg"
+    ],
+    "photo_source": "https://lhaghotels.com/hotels/allegrohoian/",
+    "source_urls": [
+     "https://lhaghotels.com/hotels/allegrohoian/"
+    ],
+    "stars_note": "דירוג כוכבים לא אומת – לא להציג כוכבים עד אימות"
+   },
+   {
+    "name": "Anantara Hoi An Resort",
+    "stars": null,
+    "area": "על גדת הנהר, פחות מקילומטר הליכה מהעיר העתיקה",
+    "features": [
+     "Two Bedroom River Suite",
+     "בריכה מחוממת",
+     "אופניים חינם; חוף An Bang כ-5 ק״מ",
+     "שייט בנהר"
+    ],
+    "description_he": "ריזורט קולוניאלי מואר על גדת הנהר, פחות מקילומטר הליכה מהעיר העתיקה. סוויטת שני חדרי השינה מול הנהר נותנת מקום לכולן, והאופניים החינמיים מזמינים רכיבה משפחתית בין שדות האורז ועד החוף.",
+    "photos": [
+     "img/hoian-anantara-1.jpg",
+     "img/hoian-anantara-2.jpg",
+     "img/hoian-anantara-3.jpg",
+     "img/hoian-anantara-4.jpg"
+    ],
+    "photo_source": "https://www.anantara.com/en/hoi-an",
+    "source_urls": [
+     "https://www.anantara.com/en/hoi-an"
+    ],
+    "stars_note": "דירוג כוכבים לא אומת – לא להציג כוכבים עד אימות"
+   }
+  ],
+  "nhatrang": [
+   {
+    "name": "InterContinental Nha Trang",
+    "stars": 5,
+    "area": "רחוב טראן פו, מול חוף נה טראנג",
+    "features": [
+     "Family 2 Bedroom Ocean View Suite – 145 מ״ר: חדר הורים + חדר עם מיטת קומותיים; עד 3 מבוגרים ו-2 ילדים מתחת ל-12 עם מיטה נוספת",
+     "מועדון ילדים Planet Trekker",
+     "3 בריכות כולל בריכת ילדים",
+     "אזור חוף ייעודי מעבר לכביש"
+    ],
+    "description_he": "מלון חוף עם סוויטות משפחתיות אמיתיות: חדר להורים וחדר עם מיטת קומותיים לבנות, מטבח ומרפסת מול הים. מועדון הילדים ושלוש הבריכות דואגים לבת ה-8, והחוף ממש מעבר לכביש. התצורה של הסוויטה (3 מבוגרים ו-2 ילדים מתחת ל-12 עם מיטה נוספת) מתאימה בדיוק להרכב המשפחה.",
+    "photos": [
+     "img/nhatrang-intercontinental-1.jpg",
+     "img/nhatrang-intercontinental-2.jpg",
+     "img/nhatrang-intercontinental-3.jpg",
+     "img/nhatrang-intercontinental-4.jpg"
+    ],
+    "photo_source": "https://nhatrang.intercontinental.com/",
+    "source_urls": [
+     "https://nhatrang.intercontinental.com/",
+     "https://nhatrang.intercontinental.com/residences/2-bedroom-suite-ocean-view-1-king-1-bunk-bed/",
+     "https://nhatrang.intercontinental.com/facilities/planet-trekker/",
+     "https://www.ihg.com/intercontinental/hotels/us/en/nha-trang/nhach/hoteldetail/amenities"
+    ]
+   }
+  ],
+  "end": [
+   {
+    "name": "Hotel Nikko Saigon (אם מסיימים בסייגון)",
+    "stars": 5,
+    "area": "מחוז 1, הו צ׳י מין",
+    "features": [
+     "דירת 2 חדרי שינה של 101 מ״ר (מיטת קינג + טווין, עד 4) עם מטבח",
+     "דירת 3 חדרי שינה",
+     "בריכת גן בקומה הרביעית"
+    ],
+    "description_he": "לסיום בסייגון: דירות משפחתיות עם מטבח וסלון, ובריכת גן להתרעננות בין סיורים בעיר הגדולה. בהאנוי נחזור ל-InterContinental Westlake.",
+    "photos": [
+     "img/saigon-hotel-nikko-1.jpg"
+    ],
+    "photo_note": "רק תמונה אחת זמינה מהאתר הרשמי (שאר התמונות נטענות ב-JavaScript)",
+    "photo_source": "https://hotelnikkosaigon.com.vn/",
+    "source_urls": [
+     "https://hotelnikkosaigon.com.vn/",
+     "https://hotelnikkosaigon.com.vn/accommodations/two-bed-room-apartment/"
+    ]
+   }
+  ]
+ },
+ "flights_explainer": {
+  "direct": {
+   "title": "טיסה ישירה – ארקיע לתל אביב–האנוי",
+   "points": [
+    "הטיסה הישירה היחידה מישראל לווייטנאם, כ-11:35 שעות",
+    "בלוח הנוכחי (Wego, 2.10.2026): שני 22:30 (IZ595) ולילה שבין רביעי לחמישי 00:05 (IZ699); ימי הטיסה לקיץ 2027 טרם אומתו",
+    "האנוי כלולה בלוח 2027 של ארקיע (למטייל), וארקיע הודיעה שתמשיך בקו (Passportnews)",
+    "אל על ביטלה את התוכנית לקו להאנוי; Vietnam Airlines ו-VietJet לא טסות מישראל"
+   ],
+   "pros": [
+    "בלי חיבורים ובלי סיכון לפספס טיסה",
+    "הכי קצר – חוסך כמעט יום שלם לכל כיוון"
+   ],
+   "cons": [
+    "רק כמה טיסות בשבוע – פחות גמישות בתאריכים",
+    "5 מושבים יחד בחופש הגדול נגמרים מוקדם"
+   ],
+   "sources": [
+    "wego.com – לוח טיסות תל אביב–וייטנאם (2.10.2026)",
+    "lametayel.co.il",
+    "passportnews.co.il"
+   ],
+   "price": "ממתין לבדיקת Travelor (דילן)"
+  },
+  "connections": {
+   "title": "טיסות עם עצירה",
+   "hubs": [
+    {
+     "hub": "בנגקוק",
+     "note": "חברות ישראליות טסות ישיר לבנגקוק, ומשם טיסה קצרה להאנוי. בדרך כלל אלה שני כרטיסים נפרדים, ולכן צריך מרווח ביטחון בחיבור. Google Flights: תל אביב–בנגקוק הלוך-חזור 26.7–23.8 מ-₪28,279 ל-5, ובנגקוק–האנוי ב-VietJet ב-30.7 ₪1,414 ל-5"
+    },
+    {
+     "hub": "אבו דאבי",
+     "note": "אתיחאד ממשיכה לטוס אבו דאבי–תל אביב (Gulf News, 13.11.2026)"
+    },
+    {
+     "hub": "דובאי",
+     "note": "flydubai ואמירייטס מושעות בקו דובאי–תל אביב לפחות עד סוף נובמבר/15.12.2026 (Gulf News; Ynet) – לא אופציה כרגע"
+    },
+    {
+     "hub": "איסטנבול",
+     "note": "טורקיש איירליינס לא מפעילה כרגע טיסות מנתב״ג (כשרי תעופה) – לא אופציה כרגע"
+    },
+    {
+     "hub": "דוחה",
+     "note": "קטאר איירווייז לא טסה לישראל – לא אופציה"
+    },
+    {
+     "hub": "אירופה (פרנקפורט וכו׳)",
+     "note": "מה ש-Google Flights מציג כרגע לקיץ 2027: Condor דרך פרנקפורט + Vietnam Airlines דרך בנגקוק או Etihad דרך אבו דאבי, 20:30–34 שעות לכיוון"
+    }
+   ],
+   "pros": [
+    "הרבה יותר תאריכים ושעות",
+    "אפשר לנחות בעיר אחרת (Open-jaw)"
+   ],
+   "cons": [
+    "20–35 שעות דלת לדלת לפי התוצאות הנוכחיות",
+    "סיכון לפספוס חיבור; ההיצע לישראל משתנה בהתראה קצרה",
+    "כבודה לפעמים בתשלום נפרד"
+   ],
+   "sources": [
+    "https://www.google.com/travel/flights",
+    "https://gulfnews.com/business/aviation/uae-flights-status-update-latest-cancellations-and-delays-for-friday-november-13-1.500746024",
+    "https://www.ynetnews.com/travel/article/syqtohdrgg",
+    "https://www.kishrey-teufa.co.il/ironswords.html"
+   ]
+  },
+  "domestic": {
+   "title": "טיסות פנים",
+   "points": [
+    "האנוי–הואה, דה נאנג–נה טראנג (קאם ראן), נה טראנג–האנוי/סייגון – טיסות קצרות",
+    "מחירי VietJet הם מחיר בסיס בלי מזוודה; כדאי להשוות ל-Vietnam Airlines"
+   ]
+  },
+  "open_jaw_tip": "אפשר לנחות בהאנוי ולחזור מסייגון, או לחזור להאנוי בטיסת פנים. כדאי לבדוק כרטיס Multi-city אחד: שני כרטיסים בכיוון אחד יצאו בבדיקה ₪46,815 ל-5, יקר בהרבה מהלוך-חזור."
+ },
+ "estimates": {
+  "label": "הערכת עלות אינדיקטיבית לפי מחירי שוק (לא מחיר הצעה, לא מחירי נטו). נבדק 17.11.2026; המחירים משתנים ובכפוף לזמינות.",
+  "fx": {
+   "usd_ils": 3.239,
+   "ils_vnd": 7939.5,
+   "source": "https://open.er-api.com/v6/latest/ILS",
+   "date": "17.11.2026"
+  },
+  "international_flights": {
+   "label": "טיסות בינלאומיות הלוך-חזור ל-5 נוסעים (3 מבוגרים כולל בת 15 + 2 ילדות), עם עצירה",
+   "range_ils": [
+    31367,
+    33483
+   ],
+   "basis": "Google Flights, יציאות 22.7/26.7/29.7/2.8 וחזרות 19.8/23.8/25.8/26.8/30.8.2027 – המחיר כמעט זהה בכל הצירופים; 2–3 עצירות, 20:30–34 שעות",
+   "checked": "17.11.2026 12:12–13:35",
+   "source": "https://www.google.com/travel/flights",
+   "direct_arkia": "לא כלול – ממתין לבדיקה ב-Travelor"
+  },
+  "domestic_flights": {
+   "label": "טיסות פנים במסלול (סה״כ ל-5, VietJet מחיר בסיס בלי מזוודה)",
+   "items": [
+    {
+     "route": "האנוי–הואה 1.8",
+     "ils": 848
+    },
+    {
+     "route": "דה נאנג–נה טראנג 17.8",
+     "ils": 936
+    },
+    {
+     "route": "נה טראנג–האנוי או סייגון 22.8",
+     "ils": 766
+    }
+   ],
+   "total_ils": 2550,
+   "range_ils": [
+    2550,
+    3500
+   ],
+   "range_note": "הגבול העליון הוא תוספת משוערת למזוודות/Vietnam Airlines – לא נבדק בפועל",
+   "checked": "17.11.2026 13:35",
+   "source": "https://www.google.com/travel/flights"
+  },
+  "hotels": {
+   "label": "מלונות 5★ במסלול, 26 לילות, 2 חדרים (מחיר 'החל מ-' ללילה לחדר ל-2 אורחים ב-Google Hotels × 2 חדרים)",
+   "per_stop": [
+    {
+     "stop": "האנוי 29.7–1.8 (3 לילות)",
+     "hotel": "InterContinental Westlake",
+     "per_room_night_ils": 563,
+     "stop_total_2rooms_ils": 3378
+    },
+    {
+     "stop": "הואה 1–4.8 (3)",
+     "hotel": "Pilgrimage Village",
+     "per_room_night_ils": 288,
+     "stop_total_2rooms_ils": 1728
+    },
+    {
+     "stop": "דה נאנג 4–11.8 (7)",
+     "hotel": "Furama Resort Danang",
+     "per_room_night_ils": 624,
+     "stop_total_2rooms_ils": 8736
+    },
+    {
+     "stop": "הוי אן 11–17.8 (6)",
+     "hotel": "Allegro Hoi An / Anantara Hoi An",
+     "per_room_night_ils": [
+      376,
+      1033
+     ],
+     "stop_total_2rooms_ils": [
+      4512,
+      12396
+     ]
+    },
+    {
+     "stop": "נה טראנג 17–22.8 (5)",
+     "hotel": "InterContinental Nha Trang",
+     "per_room_night_ils": 585,
+     "stop_total_2rooms_ils": 5850
+    },
+    {
+     "stop": "סיום 22–25.8 (3)",
+     "hotel": "Hotel Nikko Saigon / InterContinental Westlake",
+     "per_room_night_ils": [
+      442,
+      618
+     ],
+     "stop_total_2rooms_ils": [
+      2652,
+      3708
+     ]
+    }
+   ],
+   "range_ils": [
+    26856,
+    35796
+   ],
+   "caveat": "מחירי פתיחה ל-2 מבוגרים בחדר; עם ילדים, מיטה נוספת, סוויטה משפחתית או ארוחת בוקר המחיר עשוי להיות גבוה יותר. בלי נה טראנג: פחות כ-₪5,850.",
+   "checked": "17.11.2026 13:28–13:36 (שעון ישראל)",
+   "source": "https://www.google.com/travel/hotels"
+  },
+  "transfers_activities": {
+   "label": "העברות ואטרקציות עיקריות (למשפחה)",
+   "items": [
+    {
+     "item": "רכב פרטי 7 מקומות הואה→דה נאנג/הוי אן דרך מעבר האי ואן",
+     "usd": [
+      70,
+      120
+     ],
+     "ils": [
+      227,
+      389
+     ],
+     "source": "daytripsvietnam.com/transport/hoi-an-to-hue/ ; suntravelcars.com/en/routes/from-hue/hue-to-hoi-an-private-car/",
+     "note": "$95–120 ל-7 מקומות לפי Day Trips Vietnam; מ-$70 דרך המנהרה לפי Sun Travel"
+    },
+    {
+     "item": "Ba Na Hills (3 מבוגרים + 2 ילדות 1–1.4 מ׳)",
+     "vnd": [
+      4600000,
+      5000000
+     ],
+     "ils": [
+      579,
+      630
+     ],
+     "source": "sunworld.vn – מחירון 2026",
+     "note": "מחירי 2026; ילדה מעל 1.4 מ׳ משלמת כמבוגרת"
+    },
+    {
+     "item": "VinWonders Nha Trang",
+     "vnd": [
+      4750000,
+      5000000
+     ],
+     "ils": [
+      598,
+      630
+     ],
+     "source": "vinwonders.com"
+    },
+    {
+     "item": "העיר הקיסרית + 3 קברים בהואה (כרטיס 4 אתרים)",
+     "vnd": 1790000,
+     "ils": 225,
+     "source": "https://hueworldheritage.org.vn/Thong-tin-tham-quan/Gia-ve",
+     "note": "530,000₫ למבוגר/מעל 12, 100,000₫ לילד 7–12"
+    },
+    {
+     "item": "סדנת בישול + שוק + סירת סל בהוי אן",
+     "usd": [
+      125,
+      164
+     ],
+     "ils": [
+      405,
+      531
+     ],
+     "source": "cookly.me",
+     "note": "$27–38 למבוגר, $22–25 לילד"
+    },
+    {
+     "item": "שייט פנסים בהוי אן (סירה ל-4–5)",
+     "vnd": 220000,
+     "ils": 28,
+     "source": "vietnambyregion.com"
+    },
+    {
+     "item": "הרי השיש (כניסה + מעלית בכיוון אחד, 5 אנשים)",
+     "vnd": 275000,
+     "ils": 35,
+     "source": "vietnamtourexpert.com"
+    }
+   ],
+   "subtotal_ils": [
+    2097,
+    2468
+   ],
+   "checked": "17.11.2026"
+  },
+  "not_included": [
+   "ויזה $25 לאדם (evisa.gov.vn)",
+   "ביטוח נסיעות",
+   "ארוחות",
+   "העברות שדה ונסיעות Grab",
+   "הטיסה הישירה של ארקיע (בבדיקה)"
+  ],
+  "indicative_total_ils": {
+   "range": [
+    62870,
+    75247
+   ],
+   "composition": "טיסות בינלאומיות + טיסות פנים + מלונות 2 חדרים + העברות/אטרקציות שלעיל",
+   "label": "אינדיקטיבי בלבד, למשפחה של 5, לפני ויזות, ביטוח, ארוחות ונסיעות בעיר"
+  }
+ },
+ "practical": [
+  {
+   "topic": "ויזה",
+   "text": "ויזה אלקטרונית לישראלים (בתוקף מאוגוסט 2023) באתר הרשמי evisa.gov.vn, לכל אחד מבני המשפחה בנפרד. עד 90 יום; $25 לכניסה אחת או $50 לכמה כניסות.",
+   "sources": [
+    "https://evisa.gov.vn",
+    "שגרירות ישראל בהאנוי"
+   ]
+  },
+  {
+   "topic": "דרכונים",
+   "text": "בתוקף 6 חודשים לפחות מיום הכניסה – לבדוק עכשיו גם את דרכוני הבנות."
+  },
+  {
+   "topic": "מטבע",
+   "text": "דונג וייטנאמי (₫). ₪1 ≈ 7,940₫ (17.11.2026). בדוכנים ובשווקים משלמים במזומן."
+  },
+  {
+   "topic": "אקלים",
+   "text": "חם ולח, 33–35° במרכז. סיורים בבוקר ובערב, בריכה בצהריים; כובע, קרם הגנה ומים."
+  },
+  {
+   "topic": "בריאות וביטוח",
+   "text": "ייעוץ במרפאת מטיילים כחודש וחצי לפני (ה-CDC ממליץ בין השאר על צהבת A וטיפוס הבטן), דוחה יתושים וביטוח נסיעות מקיף.",
+   "sources": [
+    "CDC – Vietnam travelers' health"
+   ]
+  },
+  {
+   "topic": "כשרות וחב״ד",
+   "text": "בתי חב״ד בהאנוי (טאי הו), בהוי אן (קרוב לדה נאנג) ובסייגון, עם ארוחות שבת בהרשמה מראש. בסייגון מסעדה ומכולת כשרה עם משלוחים לכל וייטנאם. בדה נאנג ובנה טראנג אין בית חב״ד. בית חב״ד הוי אן עובר כעת למבנה חדש – לתאם מראש.",
+   "sources": [
+    "jewishvietnam.com",
+    "בית חב״ד האנוי – 98 To Ngoc Van, טאי הו",
+    "בית חב״ד סייגון – 5A Nguyen Dinh Chieu, מחוז 1"
+   ]
+  },
+  {
+   "topic": "תחבורה",
+   "text": "Grab עם רכב 7 מקומות בערים, ונהג פרטי בין התחנות.",
+   "sources": [
+    "grab.com"
+   ]
+  },
+  {
+   "topic": "סים",
+   "text": "סים תיירים של Viettel – כ-150,000₫ ל-30 יום."
+  },
+  {
+   "topic": "שעון",
+   "text": "4 שעות לפני ישראל בקיץ (UTC+7)."
+  },
+  {
+   "topic": "בטיחות",
+   "text": "וייטנאם ברמת אזהרה 1 של המל״ל – אין המלצה מיוחדת."
+  }
+ ]
+}

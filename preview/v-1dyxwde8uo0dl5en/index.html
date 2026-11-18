@@ -51,6 +51,7 @@ header img{height:64px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.3);d
 .hero h1{font-size:clamp(2.3rem,7vw,4.6rem);line-height:1.1;margin:16px 0 8px}
 .hero .to{font-size:1.05rem;color:#E3EAF4}.hero .to b{color:var(--lgold);font-weight:500}
 .route{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 12px;margin:22px auto 6px;font-size:1.05rem}
+.route.legs{gap:10px;max-width:980px}.route .leg-c{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:30px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);font-size:.95rem;white-space:nowrap}.route .leg-c b{color:var(--lgold);font-weight:600}.route .leg-c em{font-style:normal;font-family:Rubik,sans-serif;font-weight:500;color:var(--ntq);letter-spacing:.3px}@media(max-width:600px){.route.legs{flex-direction:column;align-items:stretch;max-width:320px}.route .leg-c{justify-content:center;font-size:.9rem}}
 .route span.c{padding:6px 14px;border-radius:30px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22)}.route i{color:var(--ntq);font-style:normal}
 .counters{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:26px 0}
 .cnt{padding:12px 20px;min-width:110px;border-radius:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22)}.cnt b{display:block;font-family:"Secular One";font-size:2rem;line-height:1.1;color:var(--lgold)}.cnt span{font-size:.85rem;color:#E3EAF4}
@@ -128,7 +129,7 @@ footer .si{margin:12px 0}footer .si a{background:#fff;border-color:rgba(184,134,
 <section class="hero dark">
   <span class="eyebrow">VIETNAM 2027</span>
   <h1>החופשה שלכם<br><span class="grad">בווייטנאם</span> מתחילה כאן</h1>
-  <div class="route"><span class="c">תל אביב</span><i>✈</i><span class="c">בנגקוק</span><i>✈</i><span class="c">דה נאנג</span><i>✈</i><span class="c">קאם ראן</span><i>✈</i><span class="c">בנגקוק</span><i>✈</i><span class="c">תל אביב</span></div>
+  <div class="route legs"><span class="leg-c"><b><bdi dir="ltr">22.7</bdi></b><em><bdi dir="ltr">LY 83</bdi></em><span>תל אביב ← בנגקוק</span></span><span class="leg-c"><b><bdi dir="ltr">22.7</bdi></b><em><bdi dir="ltr">VN 626</bdi></em><span>בנגקוק ← דה נאנג</span></span><span class="leg-c"><b><bdi dir="ltr">8.8</bdi></b><em><bdi dir="ltr">VN 1941</bdi></em><span>דה נאנג ← קאם ראן</span></span><span class="leg-c"><b><bdi dir="ltr">15.8</bdi></b><em><bdi dir="ltr">VZ 969</bdi></em><span>קאם ראן ← בנגקוק</span></span><span class="leg-c"><b><bdi dir="ltr">19.8</bdi></b><em><bdi dir="ltr">LY 82</bdi></em><span>בנגקוק ← תל אביב</span></span></div>
   <div class="counters">
     <div class="cnt"><b>5</b><span>נוסעים · 3 מבוגרים + 2 ילדים</span></div>
     <div class="cnt"><b>5</b><span>טיסות</span></div>
@@ -224,7 +225,7 @@ footer .si{margin:12px 0}footer .si a{background:#fff;border-color:rgba(184,134,
   <div class="price dark">
     <p class="k">YOUR PRICE</p>
     <h2>סה״כ <span class="grad">לתשלום</span></h2>
-    <div class="total">$11,401 <small>USD</small></div>
+    <div class="total">$11,201 <small>USD</small></div>
     <p style="color:#E3EAF4">לכל 5 הנוסעים, כולל מיסים, לכל 5 הטיסות · מחלקת תיירים</p>
     <p class="pchange">המחיר עשוי להשתנות עד לביצוע ההזמנה בפועל, בהתאם לזמינות המקומות ולתעריפי חברות התעופה.</p>
     <p class="valid">תוקף ההצעה: נכונה למועד שליחתה, <bdi dir="ltr">18/11/2026 07:40</bdi>. לא הוזמנו או נשמרו מקומות.</p>

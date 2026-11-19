@@ -30,3 +30,17 @@
 .hk-photo picture{display:block;width:100%;height:100%}
 .hk-vimg{display:block;width:100%;height:auto;border-radius:14px;margin:0 0 14px;box-shadow:0 8px 22px rgba(11,31,58,.12)}
 @media(max-width:760px){.hk-photo{height:260px}}
+/* v2: primary "join the WhatsApp group" button (top, end, sticky on mobile); other WhatsApp buttons secondary */
+.pg-hanukkah a.hk-join{background:#25D366!important;color:#04130a!important;font-weight:600!important;font-size:1.1rem!important;gap:10px;padding:15px 30px!important;min-width:260px;box-shadow:0 10px 26px rgba(37,211,102,.35)!important;border:0!important}
+.pg-hanukkah a.hk-join:hover{background:#1fbe5b!important}
+.hk-join svg{width:22px;height:22px;fill:currentColor;flex:none}
+.pg-hanukkah a.hk-sec-wa{background:#fff!important;color:#0a7a3a!important;border:1.5px solid #25D366!important;box-shadow:none!important}
+.hk-end{padding-bottom:50px}
+.hk-sticky{display:none}
+@media(max-width:760px){
+ .hk-sticky{display:block;position:fixed;inset-inline:0;bottom:0;z-index:9000;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,242,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(184,134,43,.3);box-shadow:0 -6px 20px rgba(11,31,58,.08)}
+ .hk-sticky a.hk-join{width:100%;margin:0!important;padding:13px 18px!important}
+ body.pg-hanukkah{padding-bottom:84px}
+ .pg-hanukkah .oac:not(.oac-open){display:none} /* mobile: the sticky join bar replaces the floating assistant bubble on this page (assistant still in the menu) */
+ .hk-end{padding-inline:16px}
+}

@@ -1,14 +1,14 @@
-/* OSNAT TRAVEL – AI trip-planning chat widget (PREVIEW)
+/* OSNAT TRAVEL – AI trip-planning chat widget
  * Embed:  <link rel="stylesheet" href=".../ai-chat.css"><script src=".../ai-chat.js" defer
- *           data-packages="/preview/ai-chat/packages.json" data-endpoint=""></script>
+ *           data-packages="/assets/vn/ai-packages.json" data-endpoint=""></script>
  * Or set window.OSNAT_AI_CHAT = {endpoint:'https://…workers.dev/chat', packagesUrl:'…'} before the script.
  *
  * Two engines:
  *   1) endpoint set  -> POST {messages:[{role,content}], state, page} -> {reply, suggestions?, packages?:[slug], handoff?}
  *      (see /workspace/site-redesign/ai-chat-worker). Package cards are ALWAYS rendered from packages.json,
  *      so prices shown come from the site, never from the model.
- *   2) no endpoint (preview) -> local scripted/keyword engine below (LocalEngine). Also used as fallback if the backend fails.
- * Prices: only from packages.json (built from https://osnat-travel.com/packages/). Packages whose data-depart
+ *   2) no endpoint (demo mode) -> local scripted/keyword engine below (LocalEngine). Also used as fallback if the backend fails.
+ * Prices: only from ai-packages.json (built from https://osnat-travel.com/packages/). Packages whose data-depart
  * is today or earlier (Asia/Jerusalem) are never suggested. ?asof=YYYY-MM-DD overrides "today" for testing.
  */
 (function(){
@@ -16,7 +16,7 @@
 var SCRIPT=document.currentScript||{getAttribute:function(){return null}};
 var CFG=Object.assign({
   endpoint:SCRIPT.getAttribute('data-endpoint')||'',
-  packagesUrl:SCRIPT.getAttribute('data-packages')||'/preview/ai-chat/packages.json',
+  packagesUrl:SCRIPT.getAttribute('data-packages')||'/assets/vn/ai-packages.json',
   wa:'972506413749',
   autoOpen:SCRIPT.getAttribute('data-autoopen')==='1',
   storageKey:'osnat-ai-chat-v1'
@@ -27,7 +27,7 @@ var FACTS={
   payments:'אפשר לפרוס את התשלום: מלונות עד 9 תשלומים וטיסות עד 6 תשלומים, ללא ריבית.',
   fees:'אין אצלנו דמי תכנון. בונים איתכם את החופשה בלי תוספת על התכנון.',
   support:'במהלך הנסיעה אנחנו זמינים לכם בוואטסאפ 24/7.',
-  cancel:'שינויים וביטולים הם לפי התנאים של כל ספק (חברת התעופה, המלון וכו׳). אסנת תפרט לכם את התנאים של החבילה הספציפית לפני ההזמנה.'
+  cancel:'שינויים וביטולים הם לפי התנאים של כל ספק (חברת התעופה, המלון וכו׳).'
 };
 
 /* ---------- helpers ---------- */
@@ -231,8 +231,7 @@ function waLink(){var L=D.aiSummary||summaryLines(D.S);var picks=[];
 
 function card(p){return'<a class="oac-card" href="'+esc(p.url)+'" target="_top">'+
   '<span class="oac-card-img"><img src="'+esc(p.img)+'" alt="'+esc(p.title)+'" loading="lazy"><span class="oac-card-date"><bdi>'+esc(p.dates)+'</bdi>'+(p.nights?' · '+p.nights+' לילות':'')+'</span></span>'+
-  '<span class="oac-card-b"><b class="oac-card-t">'+esc(p.title)+'</b>'+(p.why?'<span class="oac-card-why">'+esc(p.why)+'</span>':'')+
-  '<span class="oac-card-li">'+p.bullets.map(esc).join(' · ')+'</span>'+
+  '<span class="oac-card-b"><b class="oac-card-t">'+esc(p.title)+'</b>'+
   '<span class="oac-card-p"><b>'+esc(p.price)+'</b> '+esc(p.priceNote)+(p.pricePair?' <small>'+esc(p.pricePair)+'</small>':'')+'</span>'+
   '<span class="oac-card-cta">לפרטי החבילה</span></span></a>'}
 function dateHe(iso){return iso?(+iso.slice(8,10))+'.'+(+iso.slice(5,7))+'.'+iso.slice(0,4):''}
@@ -278,8 +277,15 @@ function build(){
   chipsEl.onclick=function(e){var b=e.target.closest('.oac-chip');if(b)send(b.textContent)};
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)toggle(false)});
   if(!D.log.length)botSay(LocalEngine.start(D.S));
-  pkReady.then(render);render();
+  pkReady.then(render);render();dodge();setTimeout(dodge,800);window.addEventListener('resize',dodge);
   if(CFG.autoOpen||D.open)toggle(true)}
+function dodge(){ // lift the bubble above any other fixed element sitting in the bottom-left corner
+  var fab=root.querySelector('.oac-fab'),lift=0,H=window.innerHeight;
+  [].forEach.call(document.querySelectorAll('body *'),function(e){if(root.contains(e))return;
+    var cs=getComputedStyle(e);if(cs.position!=='fixed'||cs.display==='none'||cs.visibility==='hidden'||!e.offsetWidth)return;
+    var r=e.getBoundingClientRect();if(r.width>=window.innerWidth*0.6||r.height>=H*0.5)return; // skip nav bars / overlays
+    if(r.left<180&&r.bottom>H-140)lift=Math.max(lift,H-r.top)});
+  root.style.bottom=lift?(lift+12)+'px':''}
 function toggle(v){open=v==null?!open:!!v;panel.hidden=!open;root.classList.toggle('oac-open',open);
   root.querySelector('.oac-fab').setAttribute('aria-expanded',open);D.open=open;store.save(D);
   if(open){body.scrollTop=body.scrollHeight;if(window.matchMedia('(min-width:700px)').matches)input.focus()}}

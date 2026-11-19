@@ -1,0 +1,150 @@
+{
+ "source": "https://osnat-travel.com/packages/",
+ "checked": "2026-11-19",
+ "packages": [
+  {
+   "slug": "tbilisi-biltmore",
+   "url": "/tbilisi-biltmore/",
+   "title": "טביליסי, גאורגיה",
+   "country": "גאורגיה",
+   "depart": "2027-01-24",
+   "dates": "24–28.1.2027",
+   "nights": 4,
+   "bullets": [
+    "טיסות ישירות אל על · כבודת יד 8 ק״ג",
+    "The Biltmore Tbilisi ⭐5",
+    "ארוחת בוקר"
+   ],
+   "price": "2,775 ₪",
+   "priceNote": "לאדם בחדר זוגי",
+   "pricePair": "5,550 ₪ לזוג",
+   "pp": 2775,
+   "img": "/tbilisi-biltmore/img/hero.jpg",
+   "vibe": [
+    "city",
+    "nature"
+   ],
+   "holiday": ""
+  },
+  {
+   "slug": "budapest-exe",
+   "url": "/budapest-exe/",
+   "title": "בודפשט, הונגריה",
+   "country": "הונגריה",
+   "depart": "2027-01-10",
+   "dates": "10–13.1.2027",
+   "nights": 3,
+   "bullets": [
+    "טיסות ישירות ישראייר · תיק אישי",
+    "Exe Budapest Center ⭐4",
+    "ארוחת בוקר"
+   ],
+   "price": "1,550 ₪",
+   "priceNote": "לאדם בחדר זוגי",
+   "pricePair": "3,100 ₪ לזוג",
+   "pp": 1550,
+   "img": "/budapest-exe/img/hero.jpg",
+   "vibe": [
+    "city"
+   ],
+   "holiday": ""
+  },
+  {
+   "slug": "baku-hanukkah",
+   "url": "/baku-hanukkah/",
+   "title": "באקו בחנוכה",
+   "country": "אזרבייג׳ן",
+   "depart": "2026-12-07",
+   "dates": "7–11.12.2026",
+   "nights": 4,
+   "bullets": [
+    "טיסות ישירות ישראייר + טרולי",
+    "Qafqaz Baku City Hotel & Residences ⭐4",
+    "ארוחת בוקר כלולה"
+   ],
+   "price": "2,153 ₪",
+   "priceNote": "לאדם",
+   "pricePair": "4,306 ₪ לזוג",
+   "pp": 2153,
+   "img": "/baku-hanukkah/img/hero-baku-day.jpg",
+   "vibe": [
+    "city"
+   ],
+   "holiday": "hanukkah"
+  },
+  {
+   "slug": "tbilisi",
+   "url": "/tbilisi/",
+   "title": "טביליסי בחנוכה",
+   "country": "גאורגיה",
+   "depart": "2026-12-08",
+   "dates": "8–12.12.2026",
+   "nights": 4,
+   "bullets": [
+    "טיסות ישירות אל על",
+    "Wyndham Grand Tbilisi ⭐5",
+    "ארוחת בוקר כלולה"
+   ],
+   "price": "2,745 ₪",
+   "priceNote": "לאדם",
+   "pricePair": "5,490 ₪ לזוג",
+   "pp": 2745,
+   "img": "/tbilisi/img/79.jpg",
+   "vibe": [
+    "city",
+    "nature"
+   ],
+   "holiday": "hanukkah"
+  },
+  {
+   "slug": "batumi-wyndham",
+   "url": "/batumi-wyndham/",
+   "title": "באטומי, גאורגיה",
+   "country": "גאורגיה",
+   "depart": "2026-12-09",
+   "dates": "9–16.12.2026",
+   "nights": 7,
+   "bullets": [
+    "טיסות ישירות אל על + מזוודה 23 ק״ג וטרולי",
+    "Wyndham Batumi ⭐5",
+    "ארוחת בוקר"
+   ],
+   "price": "2,500 ₪",
+   "priceNote": "לאדם",
+   "pricePair": "בהרכב זוגי",
+   "pp": 2500,
+   "img": "/batumi-wyndham/img/view2.jpg",
+   "vibe": [
+    "sea",
+    "city",
+    "nature"
+   ],
+   "holiday": ""
+  },
+  {
+   "slug": "abu-dhabi",
+   "url": "/abu-dhabi/",
+   "title": "אבו דאבי",
+   "country": "איחוד האמירויות",
+   "depart": "2026-12-17",
+   "dates": "17–21.12.2026",
+   "nights": 4,
+   "bullets": [
+    "טיסות ישירות אתיחאד",
+    "Marriott Hotel Downtown Abu Dhabi ⭐5",
+    "ארוחת בוקר כלולה"
+   ],
+   "price": "3,695 ₪",
+   "priceNote": "לאדם",
+   "pricePair": "7,390 ₪ לזוג",
+   "pp": 3695,
+   "img": "/abu-dhabi/img/12-86.jpg",
+   "vibe": [
+    "sea",
+    "city",
+    "sun"
+   ],
+   "holiday": ""
+  }
+ ]
+}

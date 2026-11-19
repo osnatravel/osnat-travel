@@ -66,4 +66,5 @@ footer{text-align:center;padding:30px 16px 50px;color:#56657c}footer a{display:i
 function norm(s){return (s||'').toLowerCase().replace(/[\u0591-\u05C7"'׳״`]/g,'').replace(/\s+/g,' ').trim()}
 function run(){var t=norm(q.value),n=0;cards.forEach(function(c){var ok=(!cur||c.getAttribute('data-country')===cur)&&(!t||norm(c.getAttribute('data-search')+' '+c.textContent).indexOf(t)>-1);c.hidden=!ok;if(ok)n++});none.hidden=n>0;cnt.textContent=n+' חבילות'}
 chips.forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-c');chips.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});run()}});
-q.addEventListener('input',run);document.getElementById('pf-reset').onclick=function(){q.value='';chips[0].click()};run()})();</script></body></html>
+q.addEventListener('input',run);document.getElementById('pf-reset').onclick=function(){q.value='';chips[0].click()};run()})();</script><!--vn-ai-chat--><link rel="stylesheet" href="/assets/vn/ai-chat.css"><script src="/assets/vn/ai-chat.js" data-packages="/assets/vn/ai-packages.json" data-endpoint="" defer></script>
+</body></html>

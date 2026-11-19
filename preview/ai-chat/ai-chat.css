@@ -1,4 +1,4 @@
-/* OSNAT TRAVEL – AI trip-planning chat widget (PREVIEW). Uses the site palette (--vn-*) with fallbacks. */
+/* OSNAT TRAVEL – AI trip-planning chat widget. Uses the site palette (--vn-*) with fallbacks. */
 .oac{--oac-ink:var(--vn-ink,#0B1F3A);--oac-mut:var(--vn-mut,#4A5A70);--oac-gold-d:var(--vn-gold-d,#B8862B);--oac-gold:var(--vn-gold,#C8A96B);--oac-gold-l:var(--vn-gold-l,#F5D78E);--oac-teal:var(--vn-teal,#0E9F96);--oac-bg:var(--vn-bg,#FBF8F2);--oac-ivory:var(--vn-ivory,#F7F4ED);--oac-line:var(--vn-line,rgba(11,31,58,.08));
  position:fixed;left:20px;bottom:20px;z-index:100001;direction:rtl;font-family:Rubik,Assistant,Arial,sans-serif;color:var(--oac-ink);line-height:1.55}
 .oac *{box-sizing:border-box}
@@ -36,8 +36,6 @@
 .oac-card-date{position:absolute;bottom:8px;right:8px;background:rgba(255,255,255,.92);border:1px solid rgba(184,134,43,.4);color:var(--oac-ink);border-radius:999px;padding:3px 10px;font-size:.76rem;font-weight:500}
 .oac-card-b{display:flex;flex-direction:column;gap:3px;padding:10px 14px 12px}
 .oac-card-t{font-family:"Secular One",Rubik,sans-serif;font-weight:400;font-size:1.08rem;color:var(--oac-ink)}
-.oac-card-why{font-size:.8rem;color:var(--oac-teal)}
-.oac-card-li{font-size:.78rem;color:var(--oac-mut)}
 .oac-card-p{margin-top:4px;padding-top:6px;border-top:1px solid var(--oac-line);font-size:.8rem;color:var(--oac-mut)}
 .oac-card-p b{font-family:"Secular One",sans-serif;font-weight:400;font-size:1.25rem;background:linear-gradient(90deg,#B8862B,#D9A441,#0E9F96);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .oac-card-p small{display:block;color:#8a96a8;font-size:.74rem}
@@ -55,7 +53,7 @@
 .oac-send svg{transform:scaleX(-1)}
 .oac-wa{display:block;text-align:center;padding:9px;font-size:.84rem;color:#0a7a3a;text-decoration:none;background:#EEF6F7;border-top:1px solid var(--oac-line);font-weight:500}
 @media (max-width:640px){
- .oac{left:14px;bottom:14px}
+ .oac{left:20px}
  .oac-fab-t{display:none}.oac-fab{padding:10px;border-radius:50%}
  .oac-panel{left:0;right:0;top:0;bottom:0;width:100%;max-width:none;height:100%;height:100dvh;border-radius:0;border:0}
 }

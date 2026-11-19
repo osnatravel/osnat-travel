@@ -40,5 +40,5 @@ body.on-has-nav{padding-top:76px}body.on-has-nav.on-overlay{padding-top:0}
 .on-nav.on-top a.on-ai{color:#fff;text-shadow:none}
 .on-links a.on-ai-m{display:none}
 @media(max-width:1440px){.on-brand i{display:none}}
-@media(max-width:1240px){.on-brand{display:none}}
+@media(max-width:1400px){.on-brand{display:none}}
 @media(max-width:760px){.on-end a.on-ai-d{display:none}.on-nav.open .on-links a.on-ai-m{display:flex;height:auto;padding:12px 16px;margin-top:6px;font-size:18px;color:#fff}}

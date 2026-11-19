@@ -14,7 +14,7 @@
  var n=document.createElement('nav');n.className='on-nav';n.setAttribute('dir','rtl');n.setAttribute('aria-label','ניווט ראשי');
  n.innerHTML='<a class="on-logo" href="'+P+'/" aria-label="OSNAT TRAVEL – דף הבית"><img src="/assets/logo.png" alt="OSNAT TRAVEL"></a>'+
   '<button class="on-burger" type="button" aria-label="תפריט" aria-expanded="false">'+s('menu')+'</button>'+
-  '<div class="on-links"><a href="'+P+'/blog/"'+cur('/blog/')+'>בלוג</a><a href="'+P+'/packages/"'+cur('/packages/')+'>חבילות</a><a href="'+P+'/#about">אודות</a><a class="on-ai on-ai-m" href="'+P+'/ai-chat/" data-osnat-chat'+cur('/ai-chat/')+'><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg>העוזר החכם</a></div>'+
+  '<div class="on-links"><a href="'+P+'/blog/"'+cur('/blog/')+'>בלוג</a><a href="'+P+'/packages/"'+cur('/packages/')+'>חבילות</a><a href="'+P+'/#about">אודות</a><a href="'+P+'/ai-chat/"'+cur('/ai-chat/')+'>העוזר החכם</a></div>'+
   '<div class="on-brand" aria-hidden="true"><i></i><span>✦</span><b>OSNAT TRAVEL AGENCY</b><span>✦</span><i class="on-r"></i></div>'+
   '<div class="on-end"><a class="on-ai on-ai-d" href="'+P+'/ai-chat/" data-osnat-chat'+cur('/ai-chat/')+'><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg>העוזר החכם</a><a class="on-ic fb" href="https://www.facebook.com/OSNAT.Travel/" target="_blank" rel="noopener" aria-label="Facebook">'+s('fb')+'</a>'+
   '<a class="on-ic ig" href="https://www.instagram.com/osnat.travel.agency/" target="_blank" rel="noopener" aria-label="Instagram">'+s('ig')+'</a>'+

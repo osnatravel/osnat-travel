@@ -3,6 +3,27 @@
  "checked": "2026-11-19",
  "packages": [
   {
+   "slug": "prague-artnouveau",
+   "url": "/prague-artnouveau/",
+   "title": "פראג, צ׳כיה",
+   "country": "צ׳כיה",
+   "depart": "2027-01-14",
+   "dates": "14–18.1.2027",
+   "nights": 4,
+   "bullets": [
+    "טיסות ישירות Smartwings · כבודת יד 8 ק״ג",
+    "Art Nouveau Palace Hotel ⭐5",
+    "ארוחת בוקר"
+   ],
+   "price": "2,245 ₪",
+   "priceNote": "לאדם בחדר זוגי",
+   "pricePair": "4,490 ₪ לזוג",
+   "pp": 2245,
+   "img": "/prague-artnouveau/img/hero.jpg",
+   "vibe": [],
+   "holiday": ""
+  },
+  {
    "slug": "tbilisi-biltmore",
    "url": "/tbilisi-biltmore/",
    "title": "טביליסי, גאורגיה",

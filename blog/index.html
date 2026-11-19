@@ -51,5 +51,5 @@ var POSTS=[
   credit:'Photo: <a href="https://commons.wikimedia.org/wiki/File:Budapest_Parliament_4604.JPG" target="_blank" rel="noopener">Dirk Beyer</a> / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>'}
 ];
 document.getElementById('posts').innerHTML=POSTS.map(function(p){return '<article class="card"><a class="ph" href="'+p.url+'"><span class="tag">'+p.tag+'</span><img src="'+p.img+'" alt="'+p.title+'" loading="lazy"></a><div class="bd"><h2><a href="'+p.url+'">'+p.title+'</a></h2><p>'+p.teaser+'</p><a class="more" href="'+p.url+'">לקריאת הכתבה ←</a></div>'+(p.credit?'<div class="cr">'+p.credit+'</div>':'')+'</article>'}).join('');
-</script><!--vn-ai-chat--><link rel="stylesheet" href="/assets/vn/ai-chat.css"><script src="/assets/vn/ai-chat.js" data-packages="/assets/vn/ai-packages.json" data-endpoint="" defer></script>
+</script><!--vn-ai-chat--><link rel="stylesheet" href="/assets/vn/ai-chat.css"><script src="/assets/vn/ai-chat.js" data-packages="/assets/vn/ai-packages.json" data-endpoint="https://osnat-ai-chat.osnat-travel.workers.dev" defer></script>
 </body></html>

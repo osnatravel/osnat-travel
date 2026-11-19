@@ -265,7 +265,7 @@ function build(){
   root.innerHTML='<button type="button" class="oac-fab" aria-label="פתיחת צ׳אט תכנון חופשה" aria-expanded="false"><span class="oac-fab-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 6.5a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01z"/></svg></span><span class="oac-fab-t">מתכננים חופשה?</span></button>'+
   '<div class="oac-panel" role="dialog" aria-label="צ׳אט תכנון חופשה" hidden>'+
    '<div class="oac-head"><img src="/assets/logo.png" alt="OSNAT TRAVEL AGENCY" class="oac-logo"><div class="oac-head-t"><span class="oac-eyebrow">TRIP PLANNER</span><b>מתכננים <span class="grad">חופשה</span></b>'+
-   '<small>'+(CFG.endpoint?'עוזר דיגיטלי · עונה מיד':'עוזר דיגיטלי · מצב הדגמה (ללא AI חי)')+'</small></div>'+
+   '<small>'+(CFG.endpoint?'עוזר דיגיטלי מבוסס AI':'עוזר דיגיטלי')+'</small></div>'+
    '<button type="button" class="oac-x" aria-label="סגירה">×</button></div>'+
    '<div class="oac-body" aria-live="polite"></div><div class="oac-chips"></div>'+
    '<form class="oac-form"><input type="text" class="oac-in" placeholder="כתבו כאן חופשי…" aria-label="הודעה" autocomplete="off" maxlength="400"><button type="submit" class="oac-send" aria-label="שליחה"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 3 3 10.5l6.5 2.5L12 20z"/></svg></button></form>'+

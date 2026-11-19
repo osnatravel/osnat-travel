@@ -38,7 +38,8 @@
 .hk-end{padding-bottom:50px}
 .hk-sticky{display:none}
 @media(max-width:760px){
- .hk-sticky{display:block;position:fixed;inset-inline:0;bottom:0;z-index:9000;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,242,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(184,134,43,.3);box-shadow:0 -6px 20px rgba(11,31,58,.08)}
+ .hk-sticky{display:block;transform:translateY(110%);transition:transform .25s;position:fixed;inset-inline:0;bottom:0;z-index:9000;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,242,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(184,134,43,.3);box-shadow:0 -6px 20px rgba(11,31,58,.08)}
+ .hk-sticky.hk-on{transform:none}
  .hk-sticky a.hk-join{width:100%;margin:0!important;padding:13px 18px!important}
  body.pg-hanukkah{padding-bottom:84px}
  .pg-hanukkah .oac:not(.oac-open){display:none} /* mobile: the sticky join bar replaces the floating assistant bubble on this page (assistant still in the menu) */

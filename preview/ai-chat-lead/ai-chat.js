@@ -283,6 +283,7 @@ function render(){
   store.save(D)}
 function botSay(r){if(r.lead){D.lead=D.lead||{};for(var k in r.lead){var v=String(r.lead[k]||'').trim();if(v)D.lead[k]=v}}
   if(r.ready)D.log.forEach(function(m){m.ready=false});
+  if(r.packages&&r.packages.length){var prev=null;D.log.forEach(function(m){if(m.packages&&m.packages.length)prev=m.packages.slice().sort().join()});if(prev===r.packages.slice().sort().join()){r=Object.assign({},r,{packages:null})}} // don't repeat the same cards every turn
   D.log.push({who:'bot',text:r.reply,suggestions:r.suggestions||[],packages:r.packages||null,after:r.after||'',handoff:!!r.handoff,ready:!!r.ready});
   D.history.push({role:'assistant',content:r.reply+(r.packages&&r.packages.length?'\n[packages: '+r.packages.join(', ')+']':'')});
   if(r.summary)D.aiSummary=r.summary}

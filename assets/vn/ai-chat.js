@@ -1,4 +1,4 @@
-/* OSNAT TRAVEL – AI trip-planning chat widget
+/* OSNAT TRAVEL – AI trip-planning chat widget (LEAD version: guided questions + summary card -> WhatsApp / email)
  * Embed:  <link rel="stylesheet" href=".../ai-chat.css"><script src=".../ai-chat.js" defer
  *           data-packages="/assets/vn/ai-packages.json" data-endpoint=""></script>
  * Or set window.OSNAT_AI_CHAT = {endpoint:'https://…workers.dev/chat', packagesUrl:'…'} before the script.
@@ -18,8 +18,9 @@ var CFG=Object.assign({
   endpoint:SCRIPT.getAttribute('data-endpoint')||'',
   packagesUrl:SCRIPT.getAttribute('data-packages')||'/assets/vn/ai-packages.json',
   wa:'972506413749',
+  email:'travel.osnat@gmail.com',
   autoOpen:SCRIPT.getAttribute('data-autoopen')==='1',
-  storageKey:'osnat-ai-chat-v1'
+  storageKey:'osnat-ai-chat-lead-v1'
 },window.OSNAT_AI_CHAT||{});
 
 /* ---------- agency facts (fixed, the only FAQ source) ---------- */
@@ -54,22 +55,32 @@ function pkMonth(p){return +p.depart.slice(5,7)}
    Slots: who, kids, when, vibe, budget, prefs. One question at a time;
    free text may fill several slots at once; FAQ can be asked at any point.
    ===================================================================== */
-var STEPS=['who','kids','when','vibe','budget','prefs'];
+var STEPS=['dest','who','kids','when','vibe','budget','prefs','name','phone'];
 var Q={
+  dest:{q:'לאן תרצו לטוס? אפשר לכתוב יעד, או "עוד לא יודעים".',chips:['גאורגיה','בודפשט','אבו דאבי','באקו','עוד לא יודעים']},
   who:{q:'מי יוצא לחופשה?',chips:['זוג','משפחה עם ילדים','חברים','לבד','ירח דבש']},
   kids:{q:'כיף! כמה ילדים מצטרפים ובאילו גילאים? (למשל: 2 ילדים, בני 5 ו־9)',chips:['ילד אחד','2 ילדים','3 ילדים ומעלה','יש תינוק/ת']},
   when:{q:'מתי בא לכם לטוס?',chips:['דצמבר','חנוכה','ינואר','גמיש']},
   vibe:{q:'איזו חופשה אתם מדמיינים?',chips:['ים ושמש','עיר, אוכל ושופינג','טבע ונופים','תפתיעו אותי']},
   budget:{q:'מה התקציב בערך, לאדם?',chips:['עד 2,000 ₪','2,000–3,000 ₪','מעל 3,000 ₪','גמיש']},
-  prefs:{q:'עוד משהו שחשוב לכם?',chips:['מלון 5 כוכבים','מזוודה כלולה','חופשה קצרה','שבוע שלם','אין העדפה']}
+  prefs:{q:'איזה סגנון ורמת מלון, ויש בקשות מיוחדות? (למשל טיסה ישירה מתל אביב, מזוודה, חדר משפחה)',chips:['מלון 5 כוכבים','מזוודה כלולה','טיסה ישירה','אין העדפה']},
+  name:{q:'כמעט סיימנו. איך קוראים לך?',chips:[]},
+  phone:{q:'ומה מספר הטלפון שלך, כדי שאסנת תוכל לחזור אליך?',chips:[]}
 };
-function newState(){return{step:'who',who:'',honeymoon:false,adults:0,kids:null,kidAges:[],baby:false,month:0,holiday:'',flex:false,vibe:[],surprise:false,budgetMax:0,budgetMin:0,budgetFlex:false,budgetText:'',prefs:[],notes:[],done:false,asked:{}}}
+function newState(){return{step:'dest',dest:'',name:'',phone:'',who:'',honeymoon:false,adults:0,kids:null,kidAges:[],baby:false,month:0,holiday:'',flex:false,vibe:[],surprise:false,budgetMax:0,budgetMin:0,budgetFlex:false,budgetText:'',prefs:[],notes:[],done:false,asked:{}}}
 
 function parseNum(t){ // first money-ish numbers
   var out=[];t.replace(/(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s*(אלף|k|K)?/g,function(m,n,k){var v=parseFloat(n.replace(/,/g,''));if(k)v*=1000;out.push(v)});return out}
 
 function understand(S,raw){
   var t=norm(raw),got=[],faq=[];
+  if(S.step==='name'&&!S.name){var nm=raw.replace(/^(קוראים לי|שמי|אני)\s*/,'').trim();if(/[א-תa-zA-Z]{2}/.test(nm)&&nm.length<40&&!/\d{5}/.test(nm)){S.name=nm;return{got:['name'],faq:[]}}}
+  var ph=raw.replace(/[\s\-()]/g,'').match(/(\+?972|0)5\d{8}|(\+?972|0)[2-9]\d{7}/);
+  if(ph&&(S.step==='phone'||S.step==='name'||S.done)){S.phone=ph[0];got.push('phone')}
+  else if(S.step==='phone'&&/\d{6,}/.test(raw.replace(/\D/g,''))){S.phoneBad=true}
+  var DEST=['גאורגיה','טביליסי','באטומי','בטומי','בודפשט','הונגריה','אבו דאבי','דובאי','באקו','אזרבייג׳ן','אזרבייג\'ן','קפריסין','לימסול','רומניה','בוקרשט','פראג','יוון','אתונה','תאילנד','איטליה','רומא','פריז','לונדון','ברצלונה','מלדיביים','סיישל','וייטנאם','יפן','ניו יורק'];
+  for(var di=0;di<DEST.length;di++){if(t.indexOf(norm(DEST[di]))>-1){S.dest=DEST[di];got.push('dest');break}}
+
   // FAQ intents
   if(has(t,/תשלומ|ריבית|פריסה|קרדיט|לפרוס/))faq.push('payments');
   if(has(t,/דמי (טיפול|תכנון)|עמלה|עמלות|דמי שירות|כמה עולה התכנון|תכנון בתשלום/))faq.push('fees');
@@ -130,16 +141,18 @@ function understand(S,raw){
   if(p.length){S.prefs=Array.from(new Set(S.prefs.concat(p)));got.push('prefs')}
   if(S.step==='prefs'&&has(t,/אין|לא משנה|זהו|זה הכל|בלי|סבבה/)){S.prefsNone=true;got.push('prefs')}
   // keep free-text notes for the WhatsApp summary
+  if(S.step==='dest'&&!S.dest){if(has(t,/לא יודע|לא יודעים|לא בטוח|פתוחים|תפתיע|כל מקום/)){S.dest='פתוחים להצעות';got.push('dest')}else if(!got.length&&!faq.length&&raw.trim().length>1&&raw.trim().length<40&&!has(t,/\d/)){S.dest=raw.trim();got.push('dest')}}
   if(raw.trim().length>14&&!got.length&&!faq.length)S.notes.push(raw.trim());
   return{got:got,faq:faq}
 }
 function filled(S,k){switch(k){
-  case'who':return!!S.who;case'kids':return S.who!=='family'||S.kids!=null||S.kidAges.length>0||S.baby||!!S.asked.kidsSkip;
-  case'when':return!!S.month||S.flex;case'vibe':return S.vibe.length>0||S.surprise;
+  case'dest':return!!S.dest;case'name':return!!S.name;case'phone':return!!S.phone;case'who':return!!S.who;case'kids':return S.who!=='family'||S.kids!=null||S.kidAges.length>0||S.baby||!!S.asked.kidsSkip;
+  case'when':return!!S.month||S.flex;case'vibe':return S.vibe.length>0||S.surprise||(!!S.dest&&S.dest!=='פתוחים להצעות');
   case'budget':return!!(S.budgetMax||S.budgetMin||S.budgetFlex);case'prefs':return S.prefs.length>0||!!S.prefsNone}}
 function nextStep(S){for(var i=0;i<STEPS.length;i++)if(!filled(S,STEPS[i]))return STEPS[i];return null}
 
 function score(S,p){var s=0,why=[],b=p.bullets.join(' ');
+  if(S.dest&&S.dest!=='פתוחים להצעות'&&S.dest!=='-'){var dn=norm(S.dest),pt=norm(p.title+' '+p.country);s+=(pt.indexOf(dn)>-1||dn.indexOf(norm(p.country))>-1)?8:-5}
   if(S.holiday&&p.holiday===S.holiday){s+=4;why.push('בחופשת חנוכה')}
   if(S.month){if(pkMonth(p)===S.month)s+=4;else s-=3}
   S.vibe.forEach(function(v){if(p.vibe.indexOf(v)>-1){s+=3}});
@@ -168,8 +181,17 @@ function summaryLines(S){var L=[];
   if(S.notes.length)L.push('הערות: '+S.notes.slice(-3).join(' | '));
   return L}
 
+var LEAD_FIELDS=[['destination','יעד'],['dates','תאריכים'],['travellers','מי נוסע'],['budget','תקציב'],['style','סגנון ורמת מלון'],['flights','טיסות'],['requests','בקשות מיוחדות'],['name','שם'],['phone','טלפון']];
+function leadFromState(S){var L={},sl=summaryLines(S),get=function(p){for(var i=0;i<sl.length;i++)if(sl[i].indexOf(p)===0)return sl[i].slice(p.length).trim();return''};
+  L.destination=S.dest&&S.dest!=='-'?S.dest:'';L.dates=get('מתי:');L.travellers=get('מי נוסע:');L.budget=get('תקציב:');
+  L.style=[get('אופי החופשה:'),get('העדפות:')].filter(Boolean).join(' · ');L.flights=S.prefs.indexOf('direct')>-1?'טיסה ישירה מתל אביב':'';
+  L.requests=S.notes.slice(-3).join(' | ');L.name=S.name&&S.name!=='-'?S.name:'';L.phone=S.phone&&S.phone!=='-'?S.phone:'';return L}
+function leadText(L,picks){var out=['היי אסנת, הגעתי מהעוזר החכם באתר. זה סיכום החופשה שאני מחפש/ת:'];
+  LEAD_FIELDS.forEach(function(f){var v=(L&&L[f[0]]||'').trim();if(v)out.push(f[1]+': '+v)});
+  if(picks&&picks.length)out.push('חבילות מהאתר שהוצגו לי בצ׳אט: '+picks.join('; '));
+  return out.join('\n')}
 var LocalEngine={
-  start:function(S){return{reply:'היי! אני העוזר הדיגיטלי של OSNAT TRAVEL. אשאל כמה שאלות קצרות, אחת בכל פעם, ואמליץ על חבילות מתאימות מתוך החבילות שלנו. אפשר לכתוב חופשי או ללחוץ על תשובה.\n\n'+Q.who.q,suggestions:Q.who.chips}},
+  start:function(S){return{reply:'היי! אני העוזר החכם של OSNAT TRAVEL. ספרו לי איזו חופשה אתם רוצים, ואשאל כמה שאלות קצרות, אחת בכל פעם. בסוף תקבלו סיכום שאפשר לשלוח לאסנת בוואטסאפ או במייל.\n\n'+Q.dest.q,suggestions:Q.dest.chips}},
   reply:function(S,text){
     var r=understand(S,text),out=[],cards=null,handoff=false;
     r.faq.forEach(function(f){
@@ -184,7 +206,8 @@ var LocalEngine={
       if(S.done){out.push('אפשר לשנות כל פרט (למשל "דווקא ינואר" או "תקציב עד 2,500") ואעדכן את ההמלצות, או להמשיך עם אסנת בוואטסאפ.');return{reply:out.join('\n\n'),suggestions:['להתחיל מחדש','לדבר עם אסנת'],handoff:true}}
       S.asked[S.step]=(S.asked[S.step]||0)+1;
       if(S.asked[S.step]>=2){ // don't loop: skip the slot
-        if(S.step==='who')S.who='any';else if(S.step==='kids')S.asked.kidsSkip=1;else if(S.step==='when')S.flex=true;else if(S.step==='vibe')S.surprise=true;else if(S.step==='budget')S.budgetFlex=true;else if(S.step==='prefs')S.prefsNone=true;
+        if(S.step==='phone'&&S.phoneBad){S.phoneBad=false;out.push('המספר לא נראה לי תקין. אפשר לכתוב אותו שוב, למשל 050-1234567?');return{reply:out.join('\n\n'),suggestions:[]}}
+        if(S.step==='dest')S.dest='פתוחים להצעות';else if(S.step==='name')S.name='-';else if(S.step==='phone')S.phone='-';else if(S.step==='who')S.who='any';else if(S.step==='kids')S.asked.kidsSkip=1;else if(S.step==='when')S.flex=true;else if(S.step==='vibe')S.surprise=true;else if(S.step==='budget')S.budgetFlex=true;else if(S.step==='prefs')S.prefsNone=true;
         nx=nextStep(S);out.push('רשמתי, נמשיך הלאה.')}
       else{out.push('לא בטוח שהבנתי. '+Q[S.step].q);return{reply:out.join('\n\n'),suggestions:Q[S.step].chips}}
     }
@@ -200,22 +223,22 @@ var LocalEngine={
     var tail=[];
     if(S.who==='family')tail.push('המחירים בכרטיסים הם לאדם בהרכב זוגי. מחיר למשפחה'+(S.kidAges.length?' עם ילדים בגילאי '+S.kidAges.join(', '):'')+' אסנת תחשב אישית.');
     if(S.budgetMax&&cards.every(function(s){var p=pkBy(s);return p&&p.pp>S.budgetMax}))tail.push('שימו לב: אין כרגע חבילה באתר בתקציב הזה. אסנת יכולה לבנות משהו מותאם.');
-    tail.push('אהבתם? לחיצה על הכפתור שולחת לאסנת בוואטסאפ סיכום של כל מה שסיפרתם.');
-    return{reply:out.join('\n\n'),packages:cards,after:tail.join('\n\n'),suggestions:['לדבר עם אסנת','כמה תשלומים אפשר?','להתחיל מחדש'],handoff:true}
+    tail.push('וזה הסיכום של מה שסיפרתם. אפשר לשלוח אותו לאסנת בוואטסאפ או במייל:');
+    return{reply:out.join('\n\n'),packages:cards,after:tail.join('\n\n'),suggestions:['כמה תשלומים אפשר?','להתחיל מחדש'],lead:leadFromState(S),ready:true}
   }
 };
-function ack(nx){return{kids:'',when:'מעולה.',vibe:'רשמתי.',budget:'יופי.',prefs:'כמעט סיימנו.'}[nx]}
+function ack(nx){return{kids:'',when:'מעולה.',vibe:'רשמתי.',budget:'יופי.',prefs:'רשמתי.'}[nx]}
 
 /* =====================================================================
    RemoteEngine – real AI backend (Cloudflare Worker -> OpenAI gpt-4o-mini).
    ===================================================================== */
 function remoteReply(history,S){
   return fetch(CFG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({messages:history,page:location.pathname,summary:summaryLines(S)})})
+    body:JSON.stringify({messages:history,page:location.pathname,summary:summaryLines(S),lead:D.lead||null})})
   .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
   .then(function(d){return{reply:String(d.reply||''),suggestions:(d.suggestions||[]).slice(0,5),
     packages:(d.packages||[]).filter(function(s){return!!pkBy(s)}).slice(0,3),handoff:!!d.handoff||(d.packages||[]).length>0,
-    summary:Array.isArray(d.summary)?d.summary:null}})
+    summary:Array.isArray(d.summary)?d.summary:null,lead:(d.lead&&typeof d.lead==='object')?d.lead:null,ready:!!d.ready}})
 }
 
 /* ---------- UI ---------- */
@@ -224,10 +247,19 @@ var store={load:function(){try{return JSON.parse(sessionStorage.getItem(CFG.stor
 var D=store.load()||{S:newState(),log:[],history:[],aiSummary:null};
 var root,panel,body,input,chipsEl,waBtn,open=false,busy=false;
 
-function waLink(){var L=D.aiSummary||summaryLines(D.S);var picks=[];
-  D.log.forEach(function(m){(m.packages||[]).forEach(function(s){var p=pkBy(s);if(p&&picks.indexOf(p.title+' ('+p.dates+')')<0)picks.push(p.title+' ('+p.dates+')')})});
-  var msg='היי אסנת, הגעתי מהצ׳אט באתר ואשמח להצעה לחופשה.'+(L.length?'\n'+L.join('\n'):'')+(picks.length?'\nחבילות שעניינו אותי: '+picks.slice(-3).join('; '):'');
-  return'https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(msg)}
+function curLead(){var a=leadFromState(D.S),b=D.lead||{},o={};LEAD_FIELDS.forEach(function(f){var v=String(b[f[0]]||'').trim();o[f[0]]=v||a[f[0]]||''});return o}
+function picks(){var p=[];D.log.forEach(function(m){(m.packages||[]).forEach(function(s){var k=pkBy(s);if(k&&p.indexOf(k.title+' ('+k.dates+')')<0)p.push(k.title+' ('+k.dates+')')})});return p.slice(-3)}
+function msgText(){return leadText(curLead(),picks())}
+function waLink(){return'https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(msgText())}
+function mailLink(){var L=curLead();return'mailto:'+CFG.email+'?subject='+encodeURIComponent('פנייה מהעוזר החכם באתר'+(L.name?' – '+L.name:'')+(L.destination?' – '+L.destination:''))+'&body='+encodeURIComponent(msgText())}
+function summaryCard(){var L=curLead();
+  return'<div class="oac-sum"><span class="oac-eyebrow">TRIP SUMMARY</span><b class="oac-sum-t">סיכום <span class="grad">החופשה</span></b><dl>'+
+   LEAD_FIELDS.map(function(f){var v=L[f[0]];return v?'<div><dt>'+esc(f[1])+'</dt><dd>'+esc(v)+'</dd></div>':''}).join('')+'</dl>'+
+   (picks().length?'<p class="oac-sum-pk">חבילות מהאתר שהוצגו בצ׳אט: '+esc(picks().join('; '))+'</p>':'')+
+   '<div class="oac-sum-act"><a class="oac-sum-wa" href="'+esc(waLink())+'" target="_blank" rel="noopener">שליחה לאסנת בוואטסאפ</a>'+
+   '<a class="oac-sum-mail" href="'+esc(mailLink())+'">שליחה במייל</a>'+
+   '<button type="button" class="oac-sum-copy">העתקת הסיכום</button></div>'+
+   '<p class="oac-sum-note">הסיכום נשלח מהוואטסאפ או מהמייל שלכם. רוצים לתקן משהו? כתבו לי כאן ואעדכן את הסיכום.</p></div>'}
 
 function card(p){return'<a class="oac-card" href="'+esc(p.url)+'" target="_top">'+
   '<span class="oac-card-img"><img src="'+esc(p.img)+'" alt="'+esc(p.title)+'" loading="lazy"><span class="oac-card-date"><bdi>'+esc(p.dates)+'</bdi>'+(p.nights?' · '+p.nights+' לילות':'')+'</span></span>'+
@@ -241,18 +273,22 @@ function render(){
     if(m.packages&&m.packages.length){var cs=m.packages.map(pkBy).filter(Boolean);
       h+='<div class="oac-cards">'+cs.map(card).join('')+'</div><p class="oac-note">המחירים כפי שמופיעים באתר, נכון ל-'+dateHe(PK_CHECKED)+', בכפוף לזמינות וט.ל.ח</p>'}
     if(m.after)h+='<div class="oac-msg oac-bot"><div class="oac-bub">'+esc(m.after).replace(/\n\n/g,'<span class="oac-sp"></span>').replace(/\n/g,'<br>')+'</div></div>';
-    if(m.handoff)h+='<a class="oac-wa-inline" href="'+esc(waLink())+'" target="_blank" rel="noopener">שליחת הסיכום לאסנת בוואטסאפ</a>';
+    if(m.ready)h+=summaryCard();
+    else if(m.handoff)h+='<a class="oac-wa-inline" href="'+esc(waLink())+'" target="_blank" rel="noopener">שליחת הסיכום לאסנת בוואטסאפ</a>';
     return h}).join('')+(busy?'<div class="oac-msg oac-bot"><div class="oac-bub oac-typing"><i></i><i></i><i></i></div></div>':'');
   var last=D.log[D.log.length-1];
   chipsEl.innerHTML=(last&&last.who==='bot'&&!busy?(last.suggestions||[]):[]).map(function(c){return'<button type="button" class="oac-chip">'+esc(c)+'</button>'}).join('');
   waBtn.href=waLink();
   body.scrollTop=body.scrollHeight;
   store.save(D)}
-function botSay(r){D.log.push({who:'bot',text:r.reply,suggestions:r.suggestions||[],packages:r.packages||null,after:r.after||'',handoff:!!r.handoff});
+function botSay(r){if(r.lead){D.lead=D.lead||{};for(var k in r.lead){var v=String(r.lead[k]||'').trim();if(v)D.lead[k]=v}}
+  if(r.ready)D.log.forEach(function(m){m.ready=false});
+  if(r.packages&&r.packages.length){var prev=null;D.log.forEach(function(m){if(m.packages&&m.packages.length)prev=m.packages.slice().sort().join()});if(prev===r.packages.slice().sort().join()){r=Object.assign({},r,{packages:null})}} // don't repeat the same cards every turn
+  D.log.push({who:'bot',text:r.reply,suggestions:r.suggestions||[],packages:r.packages||null,after:r.after||'',handoff:!!r.handoff,ready:!!r.ready});
   D.history.push({role:'assistant',content:r.reply+(r.packages&&r.packages.length?'\n[packages: '+r.packages.join(', ')+']':'')});
   if(r.summary)D.aiSummary=r.summary}
 function send(text){text=String(text||'').trim();if(!text||busy)return;
-  if(/^להתחיל מחדש$/.test(text)){D={S:newState(),log:[],history:[],aiSummary:null};botSay(LocalEngine.start(D.S));render();return}
+  if(/^להתחיל מחדש$/.test(text)){D={S:newState(),log:[],history:[],aiSummary:null,lead:null};botSay(LocalEngine.start(D.S));render();return}
   if(/^לדבר עם אסנת$/.test(text)){window.open(waLink(),'_blank','noopener');}
   D.log.push({who:'me',text:text});D.history.push({role:'user',content:text});busy=true;render();
   pkReady.then(function(){
@@ -262,10 +298,10 @@ function send(text){text=String(text||'').trim();if(!text||busy)return;
 
 function build(){
   root=document.createElement('div');root.className='oac';root.setAttribute('dir','rtl');root.setAttribute('lang','he');
-  root.innerHTML='<button type="button" class="oac-fab" aria-label="פתיחת צ׳אט תכנון חופשה" aria-expanded="false"><span class="oac-fab-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 6.5a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01z"/></svg></span><span class="oac-fab-t">מתכננים חופשה?</span></button>'+
+  root.innerHTML='<button type="button" class="oac-fab" aria-label="פתיחת העוזר החכם של OSNAT TRAVEL" aria-expanded="false"><span class="oac-fab-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 6.5a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01z"/></svg></span><span class="oac-fab-t"><span class="oac-fab-long">העוזר החכם של <b>OSNAT TRAVEL</b></span><span class="oac-fab-short">העוזר החכם</span></span></button>'+
   '<div class="oac-panel" role="dialog" aria-label="צ׳אט תכנון חופשה" hidden>'+
    '<div class="oac-head"><img src="/assets/logo.png" alt="OSNAT TRAVEL AGENCY" class="oac-logo"><div class="oac-head-t"><span class="oac-eyebrow">TRIP PLANNER</span><b>מתכננים <span class="grad">חופשה</span></b>'+
-   '<small>'+(CFG.endpoint?'עוזר דיגיטלי מבוסס AI':'עוזר דיגיטלי')+'</small></div>'+
+   '<small>'+(CFG.endpoint?'העוזר החכם של OSNAT TRAVEL · מבוסס AI':'העוזר החכם של OSNAT TRAVEL')+'</small></div>'+
    '<button type="button" class="oac-x" aria-label="סגירה">×</button></div>'+
    '<div class="oac-body" aria-live="polite"></div><div class="oac-chips"></div>'+
    '<form class="oac-form"><input type="text" class="oac-in" placeholder="כתבו כאן חופשי…" aria-label="הודעה" autocomplete="off" maxlength="400"><button type="submit" class="oac-send" aria-label="שליחה"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 3 3 10.5l6.5 2.5L12 20z"/></svg></button></form>'+
@@ -274,6 +310,8 @@ function build(){
   panel=root.querySelector('.oac-panel');body=root.querySelector('.oac-body');input=root.querySelector('.oac-in');chipsEl=root.querySelector('.oac-chips');waBtn=root.querySelector('.oac-wa');
   root.querySelector('.oac-fab').onclick=function(){toggle()};root.querySelector('.oac-x').onclick=function(){toggle(false)};
   root.querySelector('.oac-form').onsubmit=function(e){e.preventDefault();var v=input.value;input.value='';send(v)};
+  body.addEventListener('click',function(e){var b=e.target.closest('.oac-sum-copy');if(!b)return;var t=msgText();
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='הועתק ✓'},function(){window.prompt('העתיקו את הסיכום:',t)})});
   chipsEl.onclick=function(e){var b=e.target.closest('.oac-chip');if(b)send(b.textContent)};
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)toggle(false)});
   if(!D.log.length)botSay(LocalEngine.start(D.S));
@@ -291,6 +329,7 @@ function toggle(v){open=v==null?!open:!!v;panel.hidden=!open;root.classList.togg
   if(open){body.scrollTop=body.scrollHeight;if(window.matchMedia('(min-width:700px)').matches)input.focus()}}
 
 window.OsnatChat={open:function(){toggle(true)},close:function(){toggle(false)},send:function(t){toggle(true);send(t)},
-  reset:function(){D={S:newState(),log:[],history:[],aiSummary:null};botSay(LocalEngine.start(D.S));render()},config:CFG,_state:function(){return D}};
+  reset:function(){D={S:newState(),log:[],history:[],aiSummary:null,lead:null};botSay(LocalEngine.start(D.S));render()},config:CFG,_state:function(){return D}};
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('[data-osnat-chat]');if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.button)return;e.preventDefault();toggle(true)}); // site buttons open the assistant; href=/ai-chat/ is the no-JS fallback
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);else build();
 })();

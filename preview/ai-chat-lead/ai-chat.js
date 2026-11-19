@@ -13,6 +13,7 @@
  */
 (function(){
 'use strict';
+var panel0;
 var SCRIPT=document.currentScript||{getAttribute:function(){return null}};
 var CFG=Object.assign({
   endpoint:SCRIPT.getAttribute('data-endpoint')||'',
@@ -306,7 +307,8 @@ function build(){
    '<div class="oac-body" aria-live="polite"></div><div class="oac-chips"></div>'+
    '<form class="oac-form"><input type="text" class="oac-in" placeholder="כתבו כאן חופשי…" aria-label="הודעה" autocomplete="off" maxlength="400"><button type="submit" class="oac-send" aria-label="שליחה"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 3 3 10.5l6.5 2.5L12 20z"/></svg></button></form>'+
    '<a class="oac-wa" target="_blank" rel="noopener" href="#">💬 להמשיך עם אסנת בוואטסאפ</a></div>';
-  document.body.appendChild(root);
+  var host=document.getElementById('oac-inline'); // dedicated /ai-chat/ page: chat embedded in the page instead of a floating bubble
+  if(host){root.classList.add('oac-inline');host.appendChild(root);open=true;panel0=root.querySelector('.oac-panel');panel0.hidden=false;root.classList.add('oac-open');panel0.setAttribute('role','region')}else document.body.appendChild(root);
   panel=root.querySelector('.oac-panel');body=root.querySelector('.oac-body');input=root.querySelector('.oac-in');chipsEl=root.querySelector('.oac-chips');waBtn=root.querySelector('.oac-wa');
   root.querySelector('.oac-fab').onclick=function(){toggle()};root.querySelector('.oac-x').onclick=function(){toggle(false)};
   root.querySelector('.oac-form').onsubmit=function(e){e.preventDefault();var v=input.value;input.value='';send(v)};
@@ -316,19 +318,20 @@ function build(){
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)toggle(false)});
   if(!D.log.length)botSay(LocalEngine.start(D.S));
   pkReady.then(render);render();dodge();setTimeout(dodge,800);window.addEventListener('resize',dodge);
-  if(CFG.autoOpen||D.open)toggle(true)}
-function dodge(){ // lift the bubble above any other fixed element sitting in the bottom-left corner
+  if(!host&&(CFG.autoOpen||D.open))toggle(true)}
+function dodge(){if(root.classList.contains('oac-inline'))return; // lift the bubble above any other fixed element sitting in the bottom-left corner
   var fab=root.querySelector('.oac-fab'),lift=0,H=window.innerHeight;
   [].forEach.call(document.querySelectorAll('body *'),function(e){if(root.contains(e))return;
     var cs=getComputedStyle(e);if(cs.position!=='fixed'||cs.display==='none'||cs.visibility==='hidden'||!e.offsetWidth)return;
     var r=e.getBoundingClientRect();if(r.width>=window.innerWidth*0.6||r.height>=H*0.5)return; // skip nav bars / overlays
     if(r.left<180&&r.bottom>H-140)lift=Math.max(lift,H-r.top)});
   root.style.bottom=lift?(lift+12)+'px':''}
-function toggle(v){open=v==null?!open:!!v;panel.hidden=!open;root.classList.toggle('oac-open',open);
+function toggle(v){if(root.classList.contains('oac-inline')){open=true;panel.hidden=false;var nv=document.querySelector('.on-nav'),off=(nv?nv.offsetHeight:0)+14;window.scrollTo({top:Math.max(0,root.getBoundingClientRect().top+window.scrollY-off),behavior:'smooth'});setTimeout(function(){input.focus({preventScroll:true})},350);return}open=v==null?!open:!!v;panel.hidden=!open;root.classList.toggle('oac-open',open);
   root.querySelector('.oac-fab').setAttribute('aria-expanded',open);D.open=open;store.save(D);
   if(open){body.scrollTop=body.scrollHeight;if(window.matchMedia('(min-width:700px)').matches)input.focus()}}
 
 window.OsnatChat={open:function(){toggle(true)},close:function(){toggle(false)},send:function(t){toggle(true);send(t)},
   reset:function(){D={S:newState(),log:[],history:[],aiSummary:null,lead:null};botSay(LocalEngine.start(D.S));render()},config:CFG,_state:function(){return D}};
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('[data-osnat-chat]');if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.button)return;e.preventDefault();toggle(true)}); // site buttons open the assistant; href=/ai-chat/ is the no-JS fallback
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);else build();
 })();

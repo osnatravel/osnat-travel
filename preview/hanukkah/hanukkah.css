@@ -1,4 +1,4 @@
-/* נס חנוכה – חבר מביא חבר (preview). Page-only additions on top of vn-theme (pg-packages). */
+/* נס חנוכה – חבר מביא חבר Page-only additions on top of vn-theme (pg-packages). */
 .pg-hanukkah .hk-hero{position:relative;padding:0 20px 50px!important;overflow:hidden}
 .hk-photo{position:relative;height:clamp(200px,34vw,360px);margin:0 -20px;overflow:hidden}
 .hk-photo img{width:100%!important;height:100%!important;object-fit:cover;object-position:center 30%;border-radius:0!important;box-shadow:none!important;padding:0!important;background:none!important;display:block}
@@ -45,3 +45,6 @@
  .pg-hanukkah .oac:not(.oac-open){display:none} /* mobile: the sticky join bar replaces the floating assistant bubble on this page (assistant still in the menu) */
  .hk-end{padding-inline:16px}
 }
+
+/* ₪: Secular One draws the shekel sign like "שח" – use Rubik for the sign only */
+.hk-ils,.price .hk-ils{display:inline!important;font:inherit;font-family:Rubik,sans-serif!important;font-weight:700!important;color:inherit!important;margin:0!important;padding:0!important}

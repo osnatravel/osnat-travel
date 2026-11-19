@@ -1,0 +1,47 @@
+/* OSNAT TRAVEL – shared sticky navbar, Vietnam-page theme  */
+.on-nav{position:fixed;top:0;inset-inline:0;z-index:100000;direction:rtl;font-family:Rubik,Assistant,Arial,sans-serif;display:flex;align-items:center;gap:14px;min-height:76px;padding:6px 5%;background:rgba(251,248,242,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,31,58,.08);box-shadow:0 6px 24px rgba(11,31,58,.06);box-sizing:border-box;transition:background .3s,box-shadow .3s,border-color .3s}
+.on-nav *{box-sizing:border-box}.on-nav a{text-decoration:none}
+.on-logo img{display:block;width:60px;height:60px;border-radius:12px;background:#fff;box-shadow:0 6px 18px rgba(11,31,58,.18)}
+.on-links{display:flex;gap:4px;margin-inline-start:6px}
+.on-links a{color:#4A5A70;font-size:16px;font-weight:500;padding:7px 15px;border-radius:30px;border:1px solid transparent;transition:.25s}
+.on-links a:hover,.on-links a.cur{color:#0B1F3A;border-color:#B8862B;background:rgba(184,134,43,.12)}
+.on-brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;white-space:nowrap;pointer-events:none;direction:ltr}
+.on-brand b{font-family:Cinzel,serif;font-weight:600;font-size:1.2rem;letter-spacing:.32em;color:#0B1F3A}
+.on-brand span{color:#B8862B;font-size:.8rem}.on-brand i{display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,#B8862B)}.on-brand i.on-r{background:linear-gradient(270deg,transparent,#B8862B)}
+.on-end{margin-inline-start:auto;display:flex;align-items:center;gap:10px}
+.on-ic{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(184,134,43,.45);background:rgba(255,255,255,.9);color:#B8862B;transition:.3s}
+.on-ic svg{width:17px;height:17px;fill:currentColor}
+.on-ic:hover{transform:translateY(-3px);color:#fff}
+.on-ic.fb:hover{background:#1877F2;border-color:#1877F2;box-shadow:0 0 0 4px rgba(24,119,242,.18),0 8px 22px rgba(24,119,242,.55)}
+.on-ic.ig:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:#d6249f;box-shadow:0 0 0 4px rgba(214,36,159,.18),0 8px 22px rgba(214,36,159,.5)}
+.on-ic.wa:hover{background:#25D366;border-color:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.18),0 8px 22px rgba(37,211,102,.55)}
+.on-home{width:42px;height:42px;background:linear-gradient(135deg,#B8862B,#F5D78E);color:#fff;border-color:transparent;margin-inline-start:4px}.on-home svg{width:20px;height:20px}
+.on-burger{display:none;width:40px;height:40px;border:1px solid rgba(184,134,43,.5);border-radius:12px;background:#fff;color:#B8862B;cursor:pointer;padding:0;place-items:center}.on-burger svg{width:22px;height:22px;fill:currentColor}
+/* transparent over the homepage photo hero, like the Vietnam header before scroll */
+.on-nav.on-top{background:transparent;box-shadow:none;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.on-nav.on-top .on-links a{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35)}.on-nav.on-top .on-links a:hover{background:rgba(255,255,255,.16);border-color:#F5D78E}
+.on-nav.on-top .on-brand b{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45)}.on-nav.on-top .on-brand span{color:#F5D78E}.on-nav.on-top .on-brand i{background:linear-gradient(90deg,transparent,#F5D78E)}.on-nav.on-top .on-brand i.on-r{background:linear-gradient(270deg,transparent,#F5D78E)}
+.on-nav.on-top .on-ic{background:rgba(255,255,255,.14);border-color:rgba(245,215,142,.7);color:#F5D78E;backdrop-filter:blur(6px)}.on-nav.on-top .on-home{background:linear-gradient(135deg,#B8862B,#F5D78E);color:#fff}
+.on-nav.on-top .on-burger{background:rgba(255,255,255,.14);border-color:rgba(245,215,142,.7);color:#F5D78E}
+body.on-has-nav{padding-top:76px}body.on-has-nav.on-overlay{padding-top:0}
+.on-nav~.hb-bar,.hb-bar{display:none!important}
+@media(max-width:1100px){.on-brand{display:none}}
+@media(max-width:760px){
+ .on-nav{min-height:64px;gap:8px;padding:6px 4%}body.on-has-nav{padding-top:64px}
+ .on-logo img{width:48px;height:48px}.on-burger{display:grid}
+ .on-links{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;background:rgba(251,248,242,.97);padding:10px 4% 16px;margin:0;border-bottom:1px solid rgba(11,31,58,.08);box-shadow:0 12px 24px rgba(11,31,58,.08)}
+ .on-nav.open .on-links{display:flex}.on-links a{font-size:18px;padding:12px 16px;color:#0B1F3A}
+ .on-end{gap:5px}.on-ic{width:32px;height:32px}.on-ic svg{width:15px;height:15px}.on-home{width:38px;height:38px;margin-inline-start:2px}
+}
+/* 'העוזר החכם' – opens the AI assistant: pill next to the icons on desktop, last item of the burger menu on mobile */
+.on-nav a.on-ai{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:38px;padding:0 16px;border-radius:30px;color:#fff;font-size:15px;font-weight:500;white-space:nowrap;background:linear-gradient(135deg,#B8862B,#D9A441 55%,#0E9F96);border:1px solid transparent;box-shadow:0 6px 16px rgba(184,134,43,.28);transition:.25s}
+.on-nav a.on-ai svg{width:14px;height:14px;fill:#F5D78E;flex:none}
+.on-nav a.on-ai:hover,.on-nav a.on-ai.cur{color:#fff;border-color:transparent;background:linear-gradient(135deg,#9E7224,#C8932F 55%,#0B867E);transform:translateY(-2px)}
+.on-nav.on-top a.on-ai{color:#fff;text-shadow:none}
+.on-links a.on-ai-m{display:none}
+@media(max-width:1440px){.on-brand i{display:none}}
+@media(max-width:1500px){.on-brand{display:none}}
+@media(max-width:760px){.on-end a.on-ai-d{display:none}.on-nav.open .on-links a.on-ai-m{display:flex;height:auto;padding:12px 16px;margin-top:6px;font-size:18px;color:#fff}}
+
+/* 5 links: tighter link padding and no decorative lines until there is room for the centred brand */
+@media(min-width:761px) and (max-width:1860px){.on-brand i{display:none}.on-links a{padding:7px 11px}}

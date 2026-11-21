@@ -22,7 +22,7 @@
 <link rel="icon" href="img/opt/logo-sm.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@400;500;700&family=Secular+One&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 
@@ -194,9 +194,130 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
 
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 .hidden{display:none!important}
+
+/* stay dates on hotel cards */
+.hotel-btn .stay{display:block;font-size:.78rem;font-weight:600;color:#0E9F96;margin-top:.22rem;line-height:1.35}
+.hotel-stay{margin:-.35rem 0 .75rem;color:#0E9F96;font-weight:700;font-size:.95rem}
+.stay-note{display:block;width:100%;max-width:400px;margin:0 auto .7rem;padding:.7rem 1rem;border-radius:16px;
+  background:rgba(251,248,242,.92);color:#0B1F3A;border:1px dashed rgba(184,134,43,.55);
+  font-size:.88rem;font-weight:600;text-align:right;line-height:1.45;cursor:pointer;font-family:inherit}
+.stay-note .stay{display:block;color:#0E9F96;font-size:.8rem;margin-top:.15rem;font-weight:600}
+.stay-note, .stay-note *{text-shadow:none}
+
+/* top bar — site navbar, adapted to the trip app */
+.on-nav{position:fixed;top:0;inset-inline:0;z-index:80;direction:rtl;font-family:Rubik,Assistant,Arial,sans-serif;
+  display:flex;align-items:center;gap:10px;min-height:64px;padding:6px 4%;
+  background:rgba(251,248,242,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(11,31,58,.08);box-shadow:0 6px 24px rgba(11,31,58,.06);box-sizing:border-box}
+.on-nav *{box-sizing:border-box}.on-nav a{text-decoration:none}
+.on-logo img{display:block;width:48px;height:48px;border-radius:12px;background:#fff;box-shadow:0 6px 18px rgba(11,31,58,.18);object-fit:contain}
+.on-links{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;
+  background:#FBF8F2;padding:10px 4% 16px;margin:0;
+  border-bottom:1px solid rgba(11,31,58,.08);box-shadow:0 12px 24px rgba(11,31,58,.08)}
+.on-nav.open .on-links{display:flex}
+.on-links a,.on-links button{color:#0B1F3A;font-size:18px;font-weight:500;padding:12px 16px;border-radius:30px;
+  border:1px solid transparent;background:transparent;font-family:inherit;text-align:right;cursor:pointer}
+.on-links a:hover,.on-links a.cur,.on-links button:hover,.on-links button.cur{color:#0B1F3A;border-color:#B8862B;background:rgba(184,134,43,.12)}
+.on-end{margin-inline-start:auto;display:flex;align-items:center;gap:8px}
+.on-ic{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(184,134,43,.45);background:rgba(255,255,255,.9);color:#B8862B;transition:.3s}
+.on-ic svg{width:17px;height:17px;fill:currentColor}
+.on-ic:hover{transform:translateY(-3px);color:#fff}
+.on-ic.wa:hover{background:#25D366;border-color:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.18),0 8px 22px rgba(37,211,102,.55)}
+.on-burger{display:grid;width:40px;height:40px;border:1px solid rgba(184,134,43,.5);border-radius:12px;
+  background:#fff;color:#B8862B;cursor:pointer;padding:0;place-items:center}
+.on-burger svg{width:22px;height:22px;fill:currentColor}
+@media(min-width:761px){
+  .on-nav{min-height:76px;padding:6px 5%;gap:14px}
+  .on-logo img{width:60px;height:60px}
+  .on-burger{display:none}
+  .on-links{display:flex;position:static;flex-direction:row;background:transparent;padding:0;margin-inline-start:6px;
+    border:0;box-shadow:none;gap:4px}
+  .on-links a,.on-links button{font-size:16px;padding:7px 15px;color:#4A5A70}
+  .on-ic{width:38px;height:38px}
+}
+/* slides clear the fixed bar */
+.slide{padding:calc(64px + 1.15rem) 1.4rem 6.4rem}
+@media(min-width:761px){.slide{padding:calc(76px + 1.2rem) 1.4rem 6.4rem}}
+
+/* site-like AI chat */
+.oac{--oac-ink:#0B1F3A;--oac-mut:#4A5A70;--oac-gold-d:#B8862B;--oac-gold:#C8A96B;--oac-gold-l:#F5D78E;--oac-teal:#0E9F96;--oac-bg:#FBF8F2;--oac-ivory:#F7F4ED;--oac-line:rgba(11,31,58,.08);
+ position:fixed;left:16px;bottom:5.2rem;z-index:90;direction:rtl;font-family:Rubik,Assistant,Arial,sans-serif;color:var(--oac-ink);line-height:1.55}
+.oac *{box-sizing:border-box}
+.oac-fab{display:flex;align-items:center;gap:10px;border:0;cursor:pointer;padding:8px 14px 8px 8px;border-radius:40px;
+  background:linear-gradient(135deg,var(--oac-gold-d),#D9A441 55%,var(--oac-teal));color:#fff;font:500 14px Rubik,sans-serif;
+  box-shadow:0 14px 34px rgba(11,31,58,.22);transition:transform .25s,box-shadow .25s}
+.oac-fab:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(14,159,150,.28)}
+.oac-fab-ic{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2)}
+.oac-open .oac-fab{display:none}
+.oac-panel{margin:0;padding:0;position:fixed;left:16px;bottom:5.2rem;width:400px;max-width:calc(100vw - 32px);
+  height:min(660px,calc(100vh - 150px));display:flex;flex-direction:column;background:var(--oac-bg);
+  border:1px solid rgba(184,134,43,.35);border-radius:24px;box-shadow:0 24px 60px rgba(11,31,58,.22);
+  overflow:hidden;animation:oac-in .25s ease-out}
+.oac-panel[hidden]{display:none}
+@keyframes oac-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.oac-head{margin:0;position:static;display:flex;align-items:center;gap:12px;padding:14px 16px;
+  background:linear-gradient(180deg,#fff,var(--oac-ivory));border-bottom:1px solid var(--oac-line)}
+.oac-logo{width:44px;height:44px;object-fit:contain;border-radius:12px;background:#fff;box-shadow:0 4px 12px rgba(11,31,58,.1);padding:3px}
+.oac-head-t{flex:1;display:flex;flex-direction:column;line-height:1.25}
+.oac-eyebrow{color:var(--oac-teal);font-size:.66rem;letter-spacing:3px;font-weight:500;text-transform:uppercase}
+.oac-head-t b{font-family:"Secular One",Rubik,sans-serif;font-weight:400;font-size:1.25rem;color:#0B1F3A;-webkit-text-fill-color:#0B1F3A}
+.oac-head-t .grad{background:linear-gradient(90deg,#B8862B,#D9A441,#0E9F96);-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent}
+.oac-head-t small{color:var(--oac-mut);font-size:.74rem}
+.oac-x{border:0;background:transparent;font-size:28px;line-height:1;color:var(--oac-mut);cursor:pointer;padding:4px 8px;border-radius:10px}
+.oac-x:hover{background:rgba(11,31,58,.06)}
+.oac-body{flex:1;overflow-y:auto;padding:16px 14px 8px;background:radial-gradient(400px 260px at 100% 0,rgba(14,159,150,.07),transparent),linear-gradient(180deg,var(--oac-bg),#F3EEE3 70%,#EEF6F7);scroll-behavior:smooth}
+.oac-msg{display:flex;margin:0 0 10px}
+.oac-bub{max-width:86%;padding:10px 14px;border-radius:18px;font-size:.93rem;white-space:pre-wrap;word-wrap:break-word}
+.oac-bot .oac-bub{background:#fff;border:1px solid var(--oac-line);border-top-right-radius:6px;box-shadow:0 4px 14px rgba(11,31,58,.05)}
+.oac-me{justify-content:flex-end}
+.oac-me .oac-bub{background:linear-gradient(135deg,var(--oac-teal),#12b3a8);color:#fff;border-top-left-radius:6px}
+.oac-typing{display:flex;gap:4px;padding:14px 16px}
+.oac-typing i{width:7px;height:7px;border-radius:50%;background:var(--oac-gold);animation:oac-dot 1s infinite}
+.oac-typing i:nth-child(2){animation-delay:.15s}.oac-typing i:nth-child(3){animation-delay:.3s}
+@keyframes oac-dot{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.oac-chips{display:flex;flex-wrap:wrap;gap:6px;padding:6px 12px 2px;background:#F3EEE3}
+.oac-chip{border:1px solid rgba(14,159,150,.45);background:#fff;color:var(--oac-ink);border-radius:30px;padding:6px 13px;font:400 .84rem Rubik,sans-serif;cursor:pointer;transition:background .2s,color .2s}
+.oac-chip:hover{background:var(--oac-teal);color:#fff}
+.oac-form{display:flex;gap:8px;padding:10px 12px;background:#F3EEE3}
+.oac-in{flex:1;min-width:0;border:1px solid rgba(14,159,150,.55);border-radius:30px;padding:11px 16px;font:400 16px Rubik,sans-serif;background:#fff;color:var(--oac-ink);outline:0}
+.oac-in:focus{border-color:var(--oac-teal);box-shadow:0 0 0 3px rgba(14,159,150,.15)}
+.oac-send{flex:none;width:44px;height:44px;border:0;border-radius:50%;cursor:pointer;background:linear-gradient(135deg,var(--oac-gold-d),var(--oac-teal));color:#fff;display:grid;place-items:center}
+.oac-send svg{transform:scaleX(-1)}
+.oac-wa{display:block;text-align:center;padding:9px;font-size:.84rem;color:#0a7a3a;text-decoration:none;background:#EEF6F7;border-top:1px solid var(--oac-line);font-weight:500}
+@media (max-width:640px){
+ .oac-panel{left:0;right:0;top:0;bottom:0;width:100%;max-width:none;height:100%;height:100dvh;border-radius:0;border:0}
+}
+@media (prefers-reduced-motion:reduce){.oac-panel,.oac-typing i,.oac-fab{animation:none;transition:none}}
+
+/* hide chrome on final / when a modal is open */
+body.final-on .on-nav,body.final-on .oac,
+body.modal-on .oac{display:none!important}
+
+/* raise modals above the top bar */
+.modal{z-index:120}
+
 </style>
 </head>
 <body>
+
+<nav class="on-nav" dir="rtl" aria-label="ניווט ראשי">
+  <a class="on-logo" href="#" data-go-slide="0" aria-label="OSNAT TRAVEL – שקף הפתיחה"><img src="img/opt/logo.webp" alt="OSNAT TRAVEL"></a>
+  <button class="on-burger" type="button" aria-label="תפריט" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+  </button>
+  <div class="on-links">
+    <button type="button" data-go-slide="3">מסלול</button>
+    <button type="button" data-go-slide="1">טיסות</button>
+    <button type="button" data-go-slide="3">מלונות</button>
+    <button type="button" data-go-slide="11">שירות</button>
+  </div>
+  <div class="on-end">
+    <a class="on-ic wa" href="https://wa.me/972506413749" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.15 12C2.15 6.55 6.6 2.1 12.06 2.1c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 7c0 5.45-4.44 9.89-9.89 9.89zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.49-8.41z"/></svg>
+    </a>
+  </div>
+</nav>
 <div id="slider-wrapper" class="w-full h-screen overflow-hidden relative" style="width:100%;height:100vh;height:100dvh;overflow:hidden;position:relative">
   <div id="slider-container" class="slider-container">
     
@@ -283,29 +404,30 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <div class="slide" data-slide-name="פוקט">
       <div class="overlay"></div>
       <img src="img/opt/kata-beach-1.webp" alt="חוף בפוקט" class="slide-bg">
-      <div class="city-chip animate-element"><div class="glass-panel" style="border-radius:999px;padding:.4rem 1rem;display:flex;align-items:center;gap:.45rem;font-size:.85rem"><i class="fa-solid fa-sun"></i><span>פוקט</span></div></div>
       <div class="animate-element" style="width:100%;max-width:26rem">
         <p class="eyebrow">היעד הראשון</p>
         <h1 class="city-title">פוקט</h1>
         <div class="dates-line"><span dir="ltr">30.11 – 6.12</span></div>
         <div class="glass-panel nights-chip" style="border-radius:999px;padding:.45rem 1.2rem"><i class="fa-solid fa-bed" style="margin-left:.35rem"></i> 6 לילות</div>
         
-    <button type="button" data-modal-target="modal-hotel-katathani" class="hotel-btn">
+        <button type="button" data-modal-target="modal-hotel-katathani" class="hotel-btn">
       <span class="hotel-btn-main">
         <i class="fa-solid fa-hotel" style="color:#B8862B;font-size:1.2rem;margin-top:.15rem"></i>
         <span style="min-width:0;flex:1">
           <span class="sub">המלון שלנו</span>
           <span class="nm">Katathani Phuket Beach Resort</span>
+          <span class="stay">מ-30.11 עד 4.12 · 4 לילות</span>
         </span>
       </span>
       <i class="fa-solid fa-chevron-left" style="color:#C8A96B"></i>
     </button>
-    <button type="button" data-modal-target="modal-hotel-marriott" class="hotel-btn">
+        <button type="button" data-modal-target="modal-hotel-marriott" class="hotel-btn">
       <span class="hotel-btn-main">
         <i class="fa-solid fa-hotel" style="color:#B8862B;font-size:1.2rem;margin-top:.15rem"></i>
         <span style="min-width:0;flex:1">
           <span class="sub">המלון שלנו</span>
           <span class="nm">Phuket Marriott Resort &amp; Spa, Merlin Beach</span>
+          <span class="stay">מ-4.12 עד 6.12 · 2 לילות</span>
         </span>
       </span>
       <i class="fa-solid fa-chevron-left" style="color:#C8A96B"></i>
@@ -315,19 +437,19 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <div class="slide" data-slide-name="קראבי">
       <div class="overlay"></div>
       <img src="img/opt/limestone-bay.webp" alt="מפרץ בקראבי" class="slide-bg">
-      <div class="city-chip animate-element"><div class="glass-panel" style="border-radius:999px;padding:.4rem 1rem;display:flex;align-items:center;gap:.45rem;font-size:.85rem"><i class="fa-solid fa-umbrella-beach"></i><span>קראבי</span></div></div>
       <div class="animate-element" style="width:100%;max-width:26rem">
         <p class="eyebrow">היעד השני</p>
         <h1 class="city-title">קראבי</h1>
         <div class="dates-line"><span dir="ltr">6.12 – 11.12</span></div>
         <div class="glass-panel nights-chip" style="border-radius:999px;padding:.45rem 1.2rem"><i class="fa-solid fa-bed" style="margin-left:.35rem"></i> 5 לילות</div>
         
-    <button type="button" data-modal-target="modal-hotel-centara" class="hotel-btn">
+        <button type="button" data-modal-target="modal-hotel-centara" class="hotel-btn">
       <span class="hotel-btn-main">
         <i class="fa-solid fa-hotel" style="color:#B8862B;font-size:1.2rem;margin-top:.15rem"></i>
         <span style="min-width:0;flex:1">
           <span class="sub">המלון שלנו</span>
           <span class="nm">Centara Anda Dhevi Resort &amp; Spa Krabi</span>
+          <span class="stay">מ-6.12 עד 11.12 · 5 לילות</span>
         </span>
       </span>
       <i class="fa-solid fa-chevron-left" style="color:#C8A96B"></i>
@@ -337,19 +459,19 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <div class="slide" data-slide-name="בנגקוק התחלה">
       <div class="overlay"></div>
       <img src="img/opt/bangkok-temple.webp" alt="מקדש בבנגקוק" class="slide-bg">
-      <div class="city-chip animate-element"><div class="glass-panel" style="border-radius:999px;padding:.4rem 1rem;display:flex;align-items:center;gap:.45rem;font-size:.85rem"><i class="fa-solid fa-city"></i><span>בנגקוק</span></div></div>
       <div class="animate-element" style="width:100%;max-width:26rem">
         <p class="eyebrow">היעד השלישי</p>
         <h1 class="city-title">בנגקוק</h1>
         <div class="dates-line"><span dir="ltr">11.12 – 13.12</span></div>
         <div class="glass-panel nights-chip" style="border-radius:999px;padding:.45rem 1.2rem"><i class="fa-solid fa-bed" style="margin-left:.35rem"></i> 2 לילות</div>
         
-    <button type="button" data-modal-target="modal-hotel-pathumwan" class="hotel-btn">
+        <button type="button" data-modal-target="modal-hotel-pathumwan" class="hotel-btn">
       <span class="hotel-btn-main">
         <i class="fa-solid fa-hotel" style="color:#B8862B;font-size:1.2rem;margin-top:.15rem"></i>
         <span style="min-width:0;flex:1">
           <span class="sub">המלון שלנו</span>
           <span class="nm">Pathumwan Princess</span>
+          <span class="stay">מ-11.12 עד 13.12 · 2 לילות</span>
         </span>
       </span>
       <i class="fa-solid fa-chevron-left" style="color:#C8A96B"></i>
@@ -365,12 +487,13 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <div class="dates-line"><span dir="ltr">13.12 – 14.12</span></div>
     <div class="glass-panel nights-chip" style="border-radius:999px;padding:.45rem 1.2rem"><i class="fa-solid fa-bed" style="margin-left:.35rem"></i> לילה אחד</div>
     
-    <button type="button" data-modal-target="modal-coco" class="hotel-btn">
+        <button type="button" data-modal-target="modal-coco" class="hotel-btn">
       <span class="hotel-btn-main">
         <i class="fa-solid fa-van-shuttle" style="color:#B8862B;font-size:1.2rem;margin-top:.15rem"></i>
         <span style="min-width:0;flex:1">
           <span class="sub">טיול פרטי עם Coco Tours</span>
           <span class="nm">לצפייה בפרטי הסיור</span>
+          <span class="stay">מ-13.12 עד 14.12 · לילה אחד</span>
         </span>
       </span>
       <i class="fa-solid fa-chevron-left" style="color:#C8A96B"></i>
@@ -381,19 +504,23 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <div class="slide" data-slide-name="פטאיה">
       <div class="overlay"></div>
       <img src="img/opt/koh-larn.webp" alt="אי קוה לאן ליד פטאיה" class="slide-bg">
-      <div class="city-chip animate-element"><div class="glass-panel" style="border-radius:999px;padding:.4rem 1rem;display:flex;align-items:center;gap:.45rem;font-size:.85rem"><i class="fa-solid fa-umbrella-beach"></i><span>פטאיה</span></div></div>
       <div class="animate-element" style="width:100%;max-width:26rem">
         <p class="eyebrow">היעד החמישי</p>
         <h1 class="city-title">פטאיה</h1>
         <div class="dates-line"><span dir="ltr">14.12 – 18.12</span></div>
         <div class="glass-panel nights-chip" style="border-radius:999px;padding:.45rem 1.2rem"><i class="fa-solid fa-bed" style="margin-left:.35rem"></i> 4 לילות</div>
         
+        <button type="button" data-modal-target="modal-coco" class="stay-note">
+      <span>לילה בסיור הפרטי · מלון הסיור</span>
+      <span class="stay">מ-13.12 עד 14.12 · לילה אחד · פרטים יעודכנו בקרוב</span>
+    </button>
     <button type="button" data-modal-target="modal-hotel-space" class="hotel-btn">
       <span class="hotel-btn-main">
         <i class="fa-solid fa-hotel" style="color:#B8862B;font-size:1.2rem;margin-top:.15rem"></i>
         <span style="min-width:0;flex:1">
           <span class="sub">המלון שלנו</span>
           <span class="nm">Grande Centre Point Space Pattaya</span>
+          <span class="stay">מ-14.12 עד 18.12 · 4 לילות</span>
         </span>
       </span>
       <i class="fa-solid fa-chevron-left" style="color:#C8A96B"></i>
@@ -403,19 +530,19 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <div class="slide" data-slide-name="בנגקוק סיום">
       <div class="overlay"></div>
       <img src="img/opt/bangkok-temple.webp" alt="מקדש בבנגקוק" class="slide-bg">
-      <div class="city-chip animate-element"><div class="glass-panel" style="border-radius:999px;padding:.4rem 1rem;display:flex;align-items:center;gap:.45rem;font-size:.85rem"><i class="fa-solid fa-city"></i><span>בנגקוק</span></div></div>
       <div class="animate-element" style="width:100%;max-width:26rem">
         <p class="eyebrow">היעד השישי</p>
         <h1 class="city-title">בנגקוק</h1>
         <div class="dates-line"><span dir="ltr">18.12 – 20.12</span></div>
         <div class="glass-panel nights-chip" style="border-radius:999px;padding:.45rem 1.2rem"><i class="fa-solid fa-bed" style="margin-left:.35rem"></i> 2 לילות</div>
         
-    <button type="button" data-modal-target="modal-hotel-amari" class="hotel-btn">
+        <button type="button" data-modal-target="modal-hotel-amari" class="hotel-btn">
       <span class="hotel-btn-main">
         <i class="fa-solid fa-hotel" style="color:#B8862B;font-size:1.2rem;margin-top:.15rem"></i>
         <span style="min-width:0;flex:1">
           <span class="sub">המלון שלנו</span>
           <span class="nm">Amari Bangkok</span>
+          <span class="stay">מ-18.12 עד 20.12 · 2 לילות</span>
         </span>
       </span>
       <i class="fa-solid fa-chevron-left" style="color:#C8A96B"></i>
@@ -531,6 +658,7 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <button type="button" class="modal-close" data-close-button aria-label="סגירה">&times;</button>
     
     <h3>Katathani Phuket Beach Resort</h3>
+    <p class="hotel-stay">מ-30.11 עד 4.12 · 4 לילות</p>
     
     
 <p class="muted"><span dir="ltr">14 Kata Noi Rd, Phuket</span><br>טלפון <span dir="ltr">+66 76 318 350</span><br>ארבע לילות, מ־30 בנובמבר עד 4 בדצמבר. שני חדרי <span dir="ltr">Family Room</span> באגף <span dir="ltr">Vhari</span> עם ארוחת בוקר.</p>
@@ -552,6 +680,7 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <button type="button" class="modal-close" data-close-button aria-label="סגירה">&times;</button>
     
     <h3>Phuket Marriott Resort &amp; Spa, Merlin Beach</h3>
+    <p class="hotel-stay">מ-4.12 עד 6.12 · 2 לילות</p>
     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="muted">5 כוכבים</span></div>
     
 <p class="muted">Phuket Marriott Resort &amp; Spa, Merlin Beach. שתי לילות, 4 עד 6 בדצמבר. שני חדרי Large Guest Room Pool View (<span dir="ltr">43</span> מ״ר), עם ארוחת בוקר.</p>
@@ -570,6 +699,7 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <button type="button" class="modal-close" data-close-button aria-label="סגירה">&times;</button>
     
     <h3>Centara Anda Dhevi Resort &amp; Spa Krabi</h3>
+    <p class="hotel-stay">מ-6.12 עד 11.12 · 5 לילות</p>
     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="muted">4 כוכבים</span></div>
     
 <p class="muted">Centara Anda Dhevi Resort &amp; Spa Krabi. חמש לילות, 6 עד 11 בדצמבר. שני חדרי Deluxe (כ־<span dir="ltr">34</span> מ״ר), עם ארוחת בוקר. על חוף Ao Nang, במרחק הליכה ממסעדות.</p>
@@ -588,6 +718,7 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <button type="button" class="modal-close" data-close-button aria-label="סגירה">&times;</button>
     
     <h3>Pathumwan Princess</h3>
+    <p class="hotel-stay">מ-11.12 עד 13.12 · 2 לילות</p>
     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="muted">5 כוכבים</span></div>
     
 <p class="muted">Pathumwan Princess, בנגקוק. שתי לילות, 11 עד 13 בדצמבר. שני חדרי Deluxe Classic (<span dir="ltr">33</span> מ״ר), עם ארוחת בוקר. המלון מעל קניון MBK, במרחק הליכה ל־Siam Discovery ול־Siam Paragon, ובגשר אל CentralWorld.</p>
@@ -605,6 +736,7 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <button type="button" class="modal-close" data-close-button aria-label="סגירה">&times;</button>
     
     <h3>Grande Centre Point Space Pattaya</h3>
+    <p class="hotel-stay">מ-14.12 עד 18.12 · 4 לילות</p>
     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="muted">5 כוכבים</span></div>
     
 <p class="muted">Grande Centre Point Space Pattaya. ארבע לילות, 14 עד 18 בדצמבר. שני חדרי Space Premium (<span dir="ltr">45</span> מ״ר), עם ארוחת בוקר. המלון כ־20 דקות ממרכז פטאיה.</p>
@@ -622,6 +754,7 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <button type="button" class="modal-close" data-close-button aria-label="סגירה">&times;</button>
     
     <h3>Amari Bangkok</h3>
+    <p class="hotel-stay">מ-18.12 עד 20.12 · 2 לילות</p>
     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="muted">5 כוכבים</span></div>
     
 <p class="muted">Amari Bangkok. שתי לילות, 18 עד 20 בדצמבר. שני חדרי Deluxe (<span dir="ltr">40</span> מ״ר, נוף לעיר, לגן או לבריכה), עם ארוחת בוקר. הליכה ל־Pantip, Platinum, CentralWorld, Podium ופרטונם.</p>
@@ -782,12 +915,15 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     </div>
 </div>
 <div class="day-block">
-  <h4>2 בדצמבר · יום חופשי בפוקט</h4>
+  <h4>2 בדצמבר · צילומי משפחה</h4>
   <div class="timeline-item">
-      
+      <div class="timeline-title">צילומי משפחה</div>
+      <div class="timeline-desc">שעה ומקום: פרטים יעודכנו בקרוב.</div>
+      <div class="todo">פרטים יעודכנו בקרוב</div>
+    </div>
+  <div class="timeline-item">
       <div class="timeline-title">המלצות ליום <span class="badge idea">המלצה</span></div>
       <div class="timeline-desc">חופי קארון ופטונג, העיירה הישנה, נקודת התצפית של קארון, הבודהה הגדול או חוף פרידום. אלה המלצות בלבד.</div>
-      
     </div>
 </div>
 <div class="day-block">
@@ -971,6 +1107,15 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     <button type="button" class="modal-close" data-close-button aria-label="סגירה">&times;</button>
     <h3>לו״ז יומי · <span class="grad">פטאיה</span></h3>
 <div class="day-block">
+  <h4>13–14 בדצמבר · לילה בסיור הפרטי</h4>
+  <div class="timeline-item">
+      <div class="timeline-title">מלון הסיור עם Coco Tours <span class="badge booked">בהזמנה</span></div>
+      <div class="timeline-desc">לילה אחד, מ-13.12 עד 14.12, לפני ההגעה לפטאיה. שם המלון טרם עודכן.</div>
+      <div class="todo">פרטים יעודכנו בקרוב</div>
+    </div>
+</div>
+
+<div class="day-block">
   <h4>14 בדצמבר · הגעה לפטאיה</h4>
   <div class="timeline-item">
       
@@ -1103,6 +1248,8 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
     
 <div class="loc-label"><i class="fa-solid fa-map-location-dot"></i> טיול פרטי</div>
 <h3><span class="grad">אמפאווה</span> וקנצ׳נבורי</h3>
+    <p class="hotel-stay">מ-13.12 עד 14.12 · לילה אחד</p>
+    <div class="todo">מלון הסיור בלילה של 13–14.12: פרטים יעודכנו בקרוב</div>
 <p class="muted">סיור פרטי של יומיים ולילה אחד עם <span dir="ltr">Coco Tours</span>. התאריכים 13 ו־14 בדצמבר. הפרטים שלהלן מאושרים מההצעה. שעות מפורטות ושם המלון יעודכנו כשיתקבלו.</p>
 <div class="timeline-item">
       <div class="timeline-time">13 בדצמבר</div>
@@ -1144,18 +1291,35 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
   </div>
 </div>
 
-<button type="button" id="chat-toggle" class="chat-toggle" aria-label="OSNAT AI"><i class="fa-solid fa-robot" style="font-size:1.35rem;color:#fff"></i></button>
-<div id="chat-window" class="chat-window">
-  <div class="chat-header">
-    <span><i class="fa-solid fa-robot" style="margin-left:.35rem"></i> OSNAT AI</span>
-    <button type="button" onclick="toggleChat()" style="background:rgba(255,255,255,.2);border:0;color:#fff;border-radius:8px;padding:.2rem .55rem;cursor:pointer;font-family:inherit">סגור</button>
-  </div>
-  <div id="chat-messages" class="chat-messages">
-    <div class="msg bot">שלום, כאן OSNAT AI. אפשר לשאול אותי על המסלול, הטיסות, המלונות, האטרקציות והאוכל.</div>
-  </div>
-  <div class="chat-input-area">
-    <input type="text" id="chat-input" class="chat-input" placeholder="שאלו אותי משהו..." onkeypress="handleEnter(event)">
-    <button type="button" class="chat-send" onclick="sendMessage()" aria-label="שליחה"><i class="fa-solid fa-paper-plane" style="font-size:.8rem"></i></button>
+<div class="oac" id="oac" dir="rtl" lang="he">
+  <button type="button" class="oac-fab" id="chat-toggle" aria-label="פתיחת העוזר החכם של OSNAT TRAVEL" aria-expanded="false">
+    <span class="oac-fab-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 6.5a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01zm5 0a1.5 1.5 0 1 0 0 .01z"/></svg></span>
+    <span class="oac-fab-t">העוזר החכם</span>
+  </button>
+  <div class="oac-panel" id="chat-window" role="dialog" aria-label="העוזר לטיול" hidden>
+    <div class="oac-head">
+      <img src="img/opt/logo.webp" alt="OSNAT TRAVEL AGENCY" class="oac-logo">
+      <div class="oac-head-t">
+        <span class="oac-eyebrow">TRIP ASSISTANT</span>
+        <b><span style="color:#0B1F3A;-webkit-text-fill-color:#0B1F3A">העוזר</span> <span class="grad">לטיול</span></b>
+        <small>העוזר החכם של OSNAT TRAVEL • מבוסס AI</small>
+      </div>
+      <button type="button" class="oac-x" id="chat-close" aria-label="סגירה">×</button>
+    </div>
+    <div class="oac-body" id="chat-messages" aria-live="polite">
+      <div class="oac-msg oac-bot"><div class="oac-bub">היי! אני העוזר החכם של OSNAT TRAVEL לטיול שלכם בתאילנד. שאלו אותי על המסלול, המלונות, אטרקציות ואוכל.</div></div>
+    </div>
+    <div class="oac-chips" id="chat-chips">
+      <button type="button" class="oac-chip">מה התוכנית מחר?</button>
+      <button type="button" class="oac-chip">מה אוכלים בפוקט?</button>
+      <button type="button" class="oac-chip">אטרקציות בבנגקוק</button>
+      <button type="button" class="oac-chip">מתי הטיסה חזרה?</button>
+    </div>
+    <form class="oac-form" id="chat-form">
+      <input type="text" id="chat-input" class="oac-in" placeholder="כתבו כאן חופשי…" aria-label="הודעה" autocomplete="off" maxlength="400">
+      <button type="submit" class="oac-send" aria-label="שליחה"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 3 3 10.5l6.5 2.5L12 20z"/></svg></button>
+    </form>
+    <a class="oac-wa" target="_blank" rel="noopener" href="https://wa.me/972506413749">להמשיך עם אסנת בוואטסאפ</a>
   </div>
 </div>
 
@@ -1241,6 +1405,14 @@ function updateUI(){
   else if(currentSlide===SERVICE_INDEX) items[3].classList.add("active"), items[4].classList.add("active");
   else if(currentSlide===1||currentSlide===2||currentSlide===9||currentSlide===10) items[2].classList.add("active");
   else items[1].classList.add("active");
+  document.querySelectorAll(".on-links [data-go-slide]").forEach(el=>{
+    const i=Number(el.getAttribute("data-go-slide"));
+    const on=(el.textContent.trim()==="מסלול"&&currentSlide>=3&&currentSlide<=8)
+      ||(el.textContent.trim()==="טיסות"&&(currentSlide===1||currentSlide===2||currentSlide===9||currentSlide===10))
+      ||(el.textContent.trim()==="מלונות"&&(currentSlide===3||currentSlide===4||currentSlide===5||currentSlide===7||currentSlide===8))
+      ||(el.textContent.trim()==="שירות"&&currentSlide===SERVICE_INDEX);
+    el.classList.toggle("cur",!!on);
+  });
 }
 
 prevBtn.addEventListener("click",()=>{if(currentSlide>0) goToSlide(currentSlide-1)});
@@ -1312,36 +1484,46 @@ document.addEventListener("keydown",e=>{
   if(e.key==="Escape") document.querySelectorAll(".modal.open").forEach(closeModal);
 });
 
+const oacRoot=document.getElementById("oac");
 const chatWindow=document.getElementById("chat-window");
 const chatToggle=document.getElementById("chat-toggle");
+const chatClose=document.getElementById("chat-close");
 const chatMessages=document.getElementById("chat-messages");
 const chatInput=document.getElementById("chat-input");
+const chatForm=document.getElementById("chat-form");
 let isChatOpen=false;
-function toggleChat(){
-  isChatOpen=!isChatOpen;
-  chatWindow.classList.toggle("open",isChatOpen);
-  chatToggle.style.transform=isChatOpen?"scale(0)":"scale(1)";
-  if(isChatOpen) setTimeout(()=>chatInput.focus(),200);
+function toggleChat(v){
+  isChatOpen=v==null?!isChatOpen:!!v;
+  chatWindow.hidden=!isChatOpen;
+  oacRoot.classList.toggle("oac-open",isChatOpen);
+  chatToggle.setAttribute("aria-expanded",isChatOpen);
+  if(isChatOpen){
+    chatMessages.scrollTop=chatMessages.scrollHeight;
+    if(window.matchMedia("(min-width:700px)").matches) setTimeout(()=>chatInput.focus(),150);
+  }
 }
 window.toggleChat=toggleChat;
-chatToggle.addEventListener("click",toggleChat);
-function handleEnter(e){ if(e.key==="Enter") sendMessage(); }
-window.handleEnter=handleEnter;
+chatToggle.addEventListener("click",()=>toggleChat());
+chatClose.addEventListener("click",()=>toggleChat(false));
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&isChatOpen) toggleChat(false); });
 function addMessage(text,sender){
-  const d=document.createElement("div");
-  d.className="msg "+sender;
-  d.textContent=text;
-  chatMessages.appendChild(d);
+  const wrap=document.createElement("div");
+  wrap.className="oac-msg "+(sender==="user"?"oac-me":"oac-bot");
+  const bub=document.createElement("div");
+  bub.className="oac-bub";
+  bub.textContent=text;
+  wrap.appendChild(bub);
+  chatMessages.appendChild(wrap);
   chatMessages.scrollTop=chatMessages.scrollHeight;
 }
-async function sendMessage(){
-  const text=chatInput.value.trim();
+async function sendMessage(preset){
+  const text=(preset!=null?preset:chatInput.value).trim();
   if(!text) return;
-  addMessage(text,"user");
   chatInput.value="";
+  addMessage(text,"user");
   const tip=document.createElement("div");
-  tip.className="typing";
-  tip.textContent="מקליד...";
+  tip.className="oac-msg oac-bot";
+  tip.innerHTML='<div class="oac-bub"><span class="oac-typing"><i></i><i></i><i></i></span></div>';
   chatMessages.appendChild(tip);
   chatMessages.scrollTop=chatMessages.scrollHeight;
   const slideName=slides[currentSlide].getAttribute("data-slide-name")||"";
@@ -1350,6 +1532,31 @@ async function sendMessage(){
   addMessage(reply,"bot");
 }
 window.sendMessage=sendMessage;
+chatForm.addEventListener("submit",e=>{ e.preventDefault(); sendMessage(); });
+document.getElementById("chat-chips").addEventListener("click",e=>{
+  const b=e.target.closest(".oac-chip");
+  if(b){ toggleChat(true); sendMessage(b.textContent); }
+});
+
+/* top bar */
+(function(){
+  const nav=document.querySelector(".on-nav");
+  if(!nav) return;
+  const burger=nav.querySelector(".on-burger");
+  burger.addEventListener("click",()=>{
+    const o=nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded",o);
+  });
+  nav.querySelectorAll("[data-go-slide]").forEach(el=>{
+    el.addEventListener("click",e=>{
+      e.preventDefault();
+      const i=Number(el.getAttribute("data-go-slide"));
+      if(!Number.isNaN(i)) goToSlide(i);
+      nav.classList.remove("open");
+      burger.setAttribute("aria-expanded","false");
+    });
+  });
+})();
 
 document.querySelectorAll(".ai-plan-btn").forEach(btn=>{
   btn.addEventListener("click",async()=>{

@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>תאילנד 2026 · OSNAT TRAVEL AGENCY</title>
 <meta name="robots" content="noindex,nofollow,noarchive">
 <meta property="og:type" content="website">
@@ -40,12 +40,20 @@
   --teal:#0E9F96; --teal-l:#5FF0E3;
   --cream:#FBF8F2; --ivory:#F7F4ED; --sand:#F3EEE3;
   --muted:#4A5A70;
+  --sat:env(safe-area-inset-top, 0px);
+  --sab:env(safe-area-inset-bottom, 0px);
+  --nav-bar:64px;
+  --nav-h:calc(var(--nav-bar) + var(--sat));
+  --bottom-bar:64px;
+  --bottom-h:calc(var(--bottom-bar) + var(--sab));
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;overflow:hidden;background:#0B1F3A;color:#fff;
-  font-family:Assistant,Arial,sans-serif;font-weight:400;direction:rtl}
+html,body{margin:0;width:100%;height:100%;height:100dvh;overflow:hidden;background:#0B1F3A;color:#fff;
+  font-family:Assistant,Arial,sans-serif;font-weight:400;direction:rtl;
+  position:fixed;inset:0;overscroll-behavior:none}
+#slider-wrapper{position:fixed!important;inset:0;width:100%!important;height:auto!important;overflow:hidden!important}
 h1,h2,h3{font-family:Assistant,Arial,sans-serif;font-weight:800;letter-spacing:0}
-.slider-container{direction:rtl;display:flex;transition:transform .6s cubic-bezier(.19,1,.22,1);height:100vh;height:100dvh}
+.slider-container{direction:rtl;display:flex;transition:transform .6s cubic-bezier(.19,1,.22,1);height:100%;width:100%}
 .slide{direction:rtl;flex-shrink:0;width:100%;height:100%;position:relative;display:flex;
   flex-direction:column;justify-content:flex-start;align-items:center;color:#fff;
   padding:4.6rem 1.4rem 6.4rem;text-align:center;overflow:hidden}
@@ -140,10 +148,11 @@ h1,h2,h3{font-family:Assistant,Arial,sans-serif;font-weight:800;letter-spacing:0
 .fac{list-style:none;padding:0;margin:.3rem 0 0;text-align:right}
 .fac li{padding:.35rem 0;border-bottom:1px solid #F3EEE3;font-size:.9rem;color:#4A5A70}
 .fac i{color:#B8862B;width:1.15rem;margin-left:.35rem;text-align:center}
-#nav-dots{position:fixed;bottom:6.2rem;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.55rem;z-index:20}
+#nav-dots{position:fixed;bottom:calc(var(--bottom-h) + 18px);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.55rem;z-index:20}
 .bottom-nav{position:fixed;bottom:0;inset-inline:0;z-index:50;background:rgba(11,31,58,.92);backdrop-filter:blur(14px);
-  border-top:1px solid rgba(200,169,107,.35);padding:.55rem .2rem calc(.45rem + env(safe-area-inset-bottom))}
-.bottom-nav ul{display:flex;justify-content:space-around;align-items:center;margin:0;padding:0;list-style:none}
+  border-top:1px solid rgba(200,169,107,.35);padding:8px .2rem 0;padding-bottom:var(--sab);
+  box-sizing:border-box;min-height:0;height:auto}
+.bottom-nav ul{display:flex;justify-content:space-around;align-items:center;margin:0;padding:0;list-style:none;height:var(--bottom-bar);min-height:var(--bottom-bar)}
 .bottom-nav button{flex:1;background:none;border:0;color:rgba(245,215,142,.55);font-family:inherit;font-size:.68rem;font-weight:500;
   display:flex;flex-direction:column;align-items:center;gap:.15rem;cursor:pointer}
 .bottom-nav button i{font-size:1.05rem}
@@ -214,9 +223,12 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
 
 /* top bar — site navbar, adapted to the trip app */
 .on-nav{position:fixed;top:0;inset-inline:0;z-index:80;direction:rtl;font-family:Rubik,Assistant,Arial,sans-serif;
-  display:flex;align-items:center;gap:8px;min-height:64px;padding:6px 3.2%;
+  display:flex;align-items:center;gap:8px;min-height:var(--nav-h);
+  padding:6px 3.2%;padding-top:calc(6px + var(--sat));
+  background:transparent;border-bottom:0;box-shadow:none;box-sizing:border-box}
+.on-nav::before{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--nav-bar);z-index:-1;
   background:rgba(251,248,242,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(11,31,58,.08);box-shadow:0 6px 24px rgba(11,31,58,.06);box-sizing:border-box}
+  border-bottom:1px solid rgba(11,31,58,.08);box-shadow:0 6px 24px rgba(11,31,58,.06);pointer-events:none}
 .on-nav *{box-sizing:border-box}.on-nav a{text-decoration:none}
 .on-logo img{display:block;width:48px;height:48px;border-radius:12px;background:#fff;box-shadow:0 6px 18px rgba(11,31,58,.18);object-fit:contain}
 .on-links{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;
@@ -242,7 +254,8 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
   background:#fff;color:#B8862B;cursor:pointer;padding:0;place-items:center}
 .on-burger svg{width:22px;height:22px;fill:currentColor}
 @media(min-width:761px){
-  .on-nav{min-height:76px;padding:6px 5%;gap:14px}
+  :root{--nav-bar:76px;--nav-h:calc(76px + var(--sat))}
+  .on-nav{min-height:var(--nav-h);padding:6px 5%;padding-top:calc(6px + var(--sat));gap:14px}
   .on-logo img{width:60px;height:60px}
   .on-burger{display:none}
   .on-links{display:flex;position:static;flex-direction:row;background:transparent;padding:0;margin-inline-start:6px;
@@ -252,16 +265,16 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
   .on-nav button.on-ai{height:38px;padding:0 16px;font-size:15px;gap:7px}
   .on-nav button.on-ai svg{width:14px;height:14px}
 }
-/* slides clear the fixed bar */
-.slide{padding:calc(64px + 1.15rem) 1.4rem 6.4rem}
-@media(min-width:761px){.slide{padding:calc(76px + 1.2rem) 1.4rem 6.4rem}}
+/* slides clear the fixed bar + safe areas */
+.slide{padding:calc(var(--nav-h) + 1.15rem) 1.4rem calc(var(--bottom-h) + 1.15rem)}
+@media(min-width:761px){.slide{padding:calc(var(--nav-h) + 1.2rem) 1.4rem calc(var(--bottom-h) + 1.2rem)}}
 
 /* site-like AI chat */
 .oac{--oac-ink:#0B1F3A;--oac-mut:#4A5A70;--oac-gold-d:#B8862B;--oac-gold:#C8A96B;--oac-gold-l:#F5D78E;--oac-teal:#0E9F96;--oac-bg:#FBF8F2;--oac-ivory:#F7F4ED;--oac-line:rgba(11,31,58,.08);
  position:static;z-index:90;direction:rtl;font-family:Rubik,Assistant,Arial,sans-serif;color:var(--oac-ink);line-height:1.55}
 .oac *{box-sizing:border-box}
-.oac-panel{margin:0;padding:0;position:fixed;left:16px;top:90px;width:400px;max-width:calc(100vw - 32px);
-  height:min(660px,calc(100vh - 110px));display:flex;flex-direction:column;background:var(--oac-bg);
+.oac-panel{margin:0;padding:0;position:fixed;left:16px;top:calc(var(--nav-h) + 12px);width:400px;max-width:calc(100vw - 32px);
+  height:min(660px,calc(100dvh - var(--nav-h) - 24px));display:flex;flex-direction:column;background:var(--oac-bg);
   border:1px solid rgba(184,134,43,.35);border-radius:24px;box-shadow:0 24px 60px rgba(11,31,58,.22);
   overflow:hidden;animation:oac-in .25s ease-out;z-index:90}
 .oac-panel[hidden]{display:none}
@@ -296,7 +309,9 @@ body.modal-on .chat-toggle,body.modal-on .chat-window{display:none!important}
 .oac-send svg{transform:scaleX(-1)}
 .oac-wa{display:block;text-align:center;padding:9px;font-size:.84rem;color:#0a7a3a;text-decoration:none;background:#EEF6F7;border-top:1px solid var(--oac-line);font-weight:500}
 @media (max-width:640px){
- .oac-panel{left:0;right:0;top:0;bottom:0;width:100%;max-width:none;height:100%;height:100dvh;border-radius:0;border:0}
+ .oac-panel{left:0;right:0;top:0;bottom:0;width:100%;max-width:none;height:auto;border-radius:0;border:0}
+ .oac-head{padding-top:calc(14px + var(--sat))}
+ .oac-wa{padding-bottom:calc(9px + var(--sab))}
 }
 @media (prefers-reduced-motion:reduce){.oac-panel,.oac-typing i{animation:none;transition:none}}
 
@@ -306,6 +321,9 @@ body.modal-on .oac{display:none!important}
 
 /* raise modals above the top bar */
 .modal{z-index:120}
+@media (display-mode: standalone), (display-mode: fullscreen){
+  html,body,#slider-wrapper{position:fixed;inset:0}
+}
 
 </style>
 </head>
@@ -332,7 +350,7 @@ body.modal-on .oac{display:none!important}
     </a>
   </div>
 </nav>
-<div id="slider-wrapper" class="w-full h-screen overflow-hidden relative" style="width:100%;height:100vh;height:100dvh;overflow:hidden;position:relative">
+<div id="slider-wrapper" class="w-full overflow-hidden relative">
   <div id="slider-container" class="slider-container">
     
 <div class="slide slide-center active-slide" data-slide-name="פתיחה">

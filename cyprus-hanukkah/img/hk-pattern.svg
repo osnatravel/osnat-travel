@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(14 10)" stroke="#1d4ed8" stroke-width="1.6" opacity=".42">
+      <path d="M18 32 V16"/>
+      <path d="M4 16 V24 M7.5 14.5 V24 M11 14.5 V24 M14.5 13 V24 M18 10 V24 M21.5 13 V24 M25 14.5 V24 M28.5 14.5 V24 M32 16 V24"/>
+      <path d="M4 24 H32"/>
+      <path d="M18 32 H11 V34 H25 V32 Z"/>
+    </g>
+    <g transform="translate(86 78)" stroke="#C8A96B" stroke-width="1.7" opacity=".5">
+      <path d="M14 3 L24 14 L14 32 L4 14 Z"/>
+      <path d="M14 32 V40"/>
+    </g>
+    <g transform="translate(92 16)" stroke="#D9A441" stroke-width="1.5" opacity=".5">
+      <path d="M9 0 V18 M0 9 H18 M2.6 2.6 L15.4 15.4 M15.4 2.6 L2.6 15.4"/>
+    </g>
+    <g transform="translate(18 88)" stroke="#1d4ed8" stroke-width="1.4" opacity=".38">
+      <path d="M7 0 V14 M0 7 H14 M2 2 L12 12 M12 2 L2 12"/>
+    </g>
+  </g>
+</svg>

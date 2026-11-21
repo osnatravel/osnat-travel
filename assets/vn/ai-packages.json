@@ -1,7 +1,31 @@
 {
   "source": "https://osnat-travel.com/packages/",
-  "checked": "2026-11-20",
+  "checked": "2026-11-21",
   "packages": [
+    {
+      "slug": "cyprus-hanukkah",
+      "url": "/cyprus-hanukkah/",
+      "title": "חנוכה בקפריסין",
+      "country": "קפריסין",
+      "depart": "2026-12-08",
+      "dates": "8–11.12.2026",
+      "nights": 3,
+      "bullets": [
+        "טיסות ישירות ארקיע + מזוודה",
+        "Atlantica Miramare Beach ⭐4",
+        "ארוחת בוקר"
+      ],
+      "price": "1,625 ₪",
+      "priceNote": "לאדם",
+      "pricePair": "3,250 ₪ לזוג",
+      "pp": 1625,
+      "img": "/cyprus-hanukkah/img/hero.jpg",
+      "vibe": [
+        "sea",
+        "sun"
+      ],
+      "holiday": "hanukkah"
+    },
     {
       "slug": "batumi-wyndham-jan",
       "url": "/batumi-wyndham-jan/",

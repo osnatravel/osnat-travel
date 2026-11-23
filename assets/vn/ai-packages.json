@@ -3,6 +3,29 @@
   "checked": "2026-11-23",
   "packages": [
     {
+      "slug": "milan-valentine",
+      "url": "/milan-valentine/",
+      "title": "יום האהבה במילאנו",
+      "country": "איטליה",
+      "depart": "2027-02-10",
+      "dates": "14–18.2.2027",
+      "nights": 4,
+      "bullets": [
+        "טיסות ישירות אל על · תיק יד 8 ק״ג",
+        "Hotel Manin ⭐4",
+        "ארוחת בוקר"
+      ],
+      "price": "2,845 ₪",
+      "priceNote": "לאדם",
+      "pricePair": "",
+      "pp": 2845,
+      "img": "/milan-valentine/img/hero.jpg",
+      "vibe": [
+        "city"
+      ],
+      "holiday": ""
+    },
+    {
       "slug": "amsterdam-leonardo-eden",
       "url": "/amsterdam-leonardo-eden/",
       "title": "אמסטרדם, הולנד",

@@ -1,6 +1,6 @@
 # Photo credits — preview/milan-manin (Milan Hotel Manin preview)
 
-This notes file is not linked from the page. The photos are also credited in the public footer.
+This notes file is not linked from the page. The visible footer credit was removed on 23.11.2026; attribution is kept here and in an HTML comment in index.html.
 The hero and the Open Graph background show the Naviglio Grande canal (Milan), not the hotel. The hotel card and the hotel gallery use official Hotel Manin photos (added 23.11.2026). The Duomo photo used earlier was removed from the page.
 
 ## Destination photos
@@ -14,7 +14,7 @@ The hero and the Open Graph background show the Naviglio Grande canal (Milan), n
 
 ## Hotel photos (official, Hotel Manin)
 
-- Credit shown on the page: "תמונות: Hotel Manin (hotelmanin.it)" (gallery) and in the footer.
+- Credit shown on the page: "תמונות: Hotel Manin (hotelmanin.it)" under the gallery. The footer credit note was removed at Shmuel's request (23.11.2026); the CC BY 2.0 attribution for the hero photo is kept here and in an HTML comment in the page source.
 - Gallery page: https://www.hotelmanin.it/en/gallery (public, no login), fetched 23.11.2026.
 - Files were the largest public size offered (1280x960 "medium" thumbs on the hotel's CDN), re-saved as progressive JPEG, ~120-210 KB, no crop or retouching.
 - Photo titles on the hotel CDN include "Daniela - Manin" (photographer/credit as given by the hotel).

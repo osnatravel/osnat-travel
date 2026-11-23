@@ -80,17 +80,37 @@ footer.vl-foot small{display:inline-block;margin-top:4px}
 }
 .vl-hotelph{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:18px;display:block;margin:14px 0 0;border:1px solid var(--vl-line-soft)}
 /* ===== גלריית המלון ===== */
-.vl-gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0 0}
-.vl-gal figure{position:relative;margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--vl-line-soft);background:#FBEEF0;box-shadow:0 6px 16px rgba(11,31,58,.08)}
-.vl-gal figure:first-child{grid-column:1/-1}
-.vl-gal a{display:block}
-.vl-gal img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
-.vl-gal figure:first-child img{aspect-ratio:16/9}
-.vl-gal a:hover img{transform:scale(1.04)}
-.vl-gal figcaption{position:absolute;bottom:8px;inset-inline-start:8px;padding:3px 11px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid var(--vl-line-soft);color:#7A2E45;font-size:.8rem;font-weight:500}
-.vl-credit{font-size:.8rem;color:#4A5A70;text-align:center;margin:12px 0 0}
-@media(prefers-reduced-motion:reduce){.vl-gal img{transition:none}.vl-gal a:hover img{transform:none}}
-@media(max-width:600px){.vl-gal{gap:8px}.vl-gal figcaption{font-size:.72rem;padding:2px 9px}}
+.vl-car{position:relative;margin:14px 0 0}
+.vl-track{display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:2px 0 4px;border-radius:16px;outline:none}
+.vl-track::-webkit-scrollbar{display:none}
+.vl-track:focus-visible{box-shadow:0 0 0 3px rgba(178,71,95,.45)}
+.vl-track figure{position:relative;flex:0 0 70%;max-width:640px;margin:0;scroll-snap-align:start;border-radius:16px;overflow:hidden;border:1px solid var(--vl-line-soft);background:#FBEEF0;box-shadow:0 6px 16px rgba(11,31,58,.08)}
+.vl-track a{display:block;cursor:zoom-in}
+.vl-track img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none}
+.vl-track figcaption{position:absolute;bottom:8px;inset-inline-start:8px;padding:3px 11px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid var(--vl-line-soft);color:#7A2E45;font-size:.8rem;font-weight:500}
+.vl-arr{position:absolute;top:50%;translate:0 -60%;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--vl-line);background:rgba(255,255,255,.94);color:#7A2E45;font:700 1.35rem/1 Rubik,sans-serif;cursor:pointer;box-shadow:0 6px 16px rgba(11,31,58,.16);display:flex;align-items:center;justify-content:center;transition:opacity .2s,background .2s}
+.vl-arr:hover{background:#FBEEF0}
+.vl-arr:disabled{opacity:0;pointer-events:none}
+.vl-arr.prev{right:8px}.vl-arr.next{left:8px}
+.vl-carnav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px}
+.vl-dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.vl-dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:#EBC9D1;cursor:pointer;transition:width .25s,background .25s}
+.vl-dots button[aria-current="true"]{width:22px;background:linear-gradient(90deg,#B8862B,#B2475F)}
+.vl-count{font-size:.82rem;color:#7A2E45;font-weight:500;min-width:3.2em;text-align:center}
+.vl-credit{font-size:.8rem;color:#4A5A70;text-align:center;margin:10px 0 0}
+/* lightbox */
+.vl-lb{position:fixed;inset:0;z-index:2147483000;background:rgba(11,31,58,.97);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:none;flex-direction:column}
+.vl-lb.open{display:flex}
+.vl-lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior:contain}
+.vl-lb-track::-webkit-scrollbar{display:none}
+.vl-lb-track figure{flex:0 0 100%;margin:0;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 12px 20px;box-sizing:border-box}
+.vl-lb-track img{max-width:min(100%,1280px);max-height:calc(100vh - 140px);width:auto;height:auto;object-fit:contain;border-radius:10px}
+.vl-lb-track figcaption{color:#F6DCE1;margin-top:10px;font-size:.95rem}
+.vl-lb-x{position:absolute;top:12px;left:12px;z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;font-size:1.5rem;cursor:pointer}
+.vl-lb-c{position:absolute;top:20px;right:0;left:0;text-align:center;color:#EFD9B4;font-size:.9rem;pointer-events:none}
+.vl-lb .vl-arr{top:50%}
+@media(max-width:720px){.vl-track figure{flex-basis:100%}.vl-car .vl-arr{display:none}.vl-track figcaption{font-size:.74rem;padding:2px 9px}.vl-lb .vl-arr{display:none}}
+@media(prefers-reduced-motion:reduce){.vl-track,.vl-lb-track{scroll-behavior:auto}.vl-dots button,.vl-arr{transition:none}}
 </style>
 </head>
 <body class="pg-deal vl-page" data-depart="2027-02-10">
@@ -154,7 +174,9 @@ footer.vl-foot small{display:inline-block;margin-top:4px}
 <section class="vl-dcard" aria-label="גלריית תמונות של המלון">
 <p class="k">HOTEL GALLERY</p>
 <h2>גלריית <span class="vl-grad">המלון</span></h2>
-<div class="vl-gal">
+<div class="vl-car" aria-roledescription="קרוסלה" aria-label="תמונות המלון">
+<button class="vl-arr prev" type="button" aria-label="לתמונה הקודמת">&#8250;</button>
+<div class="vl-track" tabindex="0">
 <figure><a href="img/hotel-garden-terrace.jpg" target="_blank" rel="noopener"><img src="img/hotel-garden-terrace.jpg" alt="Hotel Manin, הגן" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הגן</figcaption></figure>
 <figure><a href="img/hotel-garden-evening.jpg" target="_blank" rel="noopener"><img src="img/hotel-garden-evening.jpg" alt="Hotel Manin, הגן בערב" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הגן בערב</figcaption></figure>
 <figure><a href="img/hotel-restaurant-outdoor.jpg" target="_blank" rel="noopener"><img src="img/hotel-restaurant-outdoor.jpg" alt="Hotel Manin, המסעדה, ישיבה בחוץ" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>המסעדה, ישיבה בחוץ</figcaption></figure>
@@ -164,6 +186,9 @@ footer.vl-foot small{display:inline-block;margin-top:4px}
 <figure><a href="img/hotel-reception.jpg" target="_blank" rel="noopener"><img src="img/hotel-reception.jpg" alt="Hotel Manin, הקבלה" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הקבלה</figcaption></figure>
 <figure><a href="img/hotel-entrance-night.jpg" target="_blank" rel="noopener"><img src="img/hotel-entrance-night.jpg" alt="Hotel Manin, הכניסה למלון בערב" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הכניסה למלון בערב</figcaption></figure>
 <figure><a href="img/hotel-facade-day.jpg" target="_blank" rel="noopener"><img src="img/hotel-facade-day.jpg" alt="Hotel Manin, המלון ביום" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>המלון ביום</figcaption></figure>
+</div>
+<button class="vl-arr next" type="button" aria-label="לתמונה הבאה">&#8249;</button>
+<div class="vl-carnav"><div class="vl-dots" role="group" aria-label="בחירת תמונה"></div><span class="vl-count" dir="ltr" aria-live="polite"></span></div>
 </div>
 <p class="vl-credit">תמונות: <bdi dir="ltr">Hotel Manin (hotelmanin.it)</bdi></p>
 </section>
@@ -224,9 +249,35 @@ footer.vl-foot small{display:inline-block;margin-top:4px}
 <footer class="vl-foot">
 <b>OSNAT TRAVEL AGENCY | חופשות בהתאמה אישית</b><br/>
 <bdi>050-6413749</bdi><br/>
-<small>המחיר נכון ל-<bdi>22.11.2026</bdi>, בכפוף לזמינות וט.ל.ח</small><br/>
-<small style="opacity:.7;font-size:11px">תמונת תעלת הנאווילי בשקיעה: <bdi class="en" dir="ltr">Deensel</bdi>, ויקישיתוף, <bdi dir="ltr">CC BY 2.0</bdi>. תמונות המלון: <bdi class="en" dir="ltr">Hotel Manin (hotelmanin.it)</bdi>.</small>
+<small>המחיר נכון ל-<bdi>22.11.2026</bdi>, בכפוף לזמינות וט.ל.ח</small>
+<!-- Photo credit (CC BY 2.0 attribution): hero photo and og background "Milan Naviglio Grande at sunset HD 01.jpg" by Deensel (https://www.flickr.com/photos/deensel/), Wikimedia Commons https://commons.wikimedia.org/wiki/File:Milan_Naviglio_Grande_at_sunset_HD_01.jpg, licensed CC BY 2.0 https://creativecommons.org/licenses/by/2.0/ - brightened, cropped, resized. Hotel photos: Hotel Manin (hotelmanin.it). Full list: PHOTO-CREDITS.md -->
 </footer>
+<script>
+(()=>{const car=document.querySelector('.vl-car');if(!car)return;
+const tr=car.querySelector('.vl-track'),its=[...tr.children],N=its.length,dots=car.querySelector('.vl-dots'),cnt=car.querySelector('.vl-count'),pv=car.querySelector('.vl-arr.prev'),nx=car.querySelector('.vl-arr.next');
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+const cur=(t,list)=>{const r=t.getBoundingClientRect();let b=0,d=1e9;list.forEach((e,i)=>{const x=Math.abs(e.getBoundingClientRect().right-r.right);if(x<d){d=x;b=i}});return b};
+const go=(t,list,i)=>{i=Math.max(0,Math.min(list.length-1,i));t.scrollBy({left:list[i].getBoundingClientRect().right-t.getBoundingClientRect().right,behavior:rm})};
+its.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','תמונה '+(i+1)+' מתוך '+N);b.onclick=()=>go(tr,its,i);dots.appendChild(b)});
+const upd=()=>{const i=cur(tr,its);[...dots.children].forEach((d,k)=>d.setAttribute('aria-current',k===i));cnt.textContent=(i+1)+' / '+N;pv.disabled=i===0;const end=Math.abs(tr.scrollLeft)+tr.clientWidth>=tr.scrollWidth-4;nx.disabled=i===N-1||end};
+let raf;tr.addEventListener('scroll',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(upd)},{passive:true});addEventListener('resize',upd);upd();
+pv.onclick=()=>go(tr,its,cur(tr,its)-1);nx.onclick=()=>go(tr,its,cur(tr,its)+1);
+tr.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();go(tr,its,cur(tr,its)+1)}else if(e.key==='ArrowRight'){e.preventDefault();go(tr,its,cur(tr,its)-1)}});
+/* lightbox */
+const lb=document.createElement('div');lb.className='vl-lb';lb.dir='rtl';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','גלריית המלון');
+lb.innerHTML='<button class="vl-lb-x" type="button" aria-label="סגירה">&times;</button><div class="vl-lb-c" dir="ltr"></div><button class="vl-arr prev" type="button" aria-label="לתמונה הקודמת">&#8250;</button><div class="vl-lb-track"></div><button class="vl-arr next" type="button" aria-label="לתמונה הבאה">&#8249;</button>';
+const lt=lb.querySelector('.vl-lb-track'),lc=lb.querySelector('.vl-lb-c');
+its.forEach(f=>{const a=f.querySelector('a'),i=f.querySelector('img'),g=document.createElement('figure');g.innerHTML='<img alt="" loading="lazy" decoding="async"><figcaption></figcaption>';g.querySelector('img').src=a.getAttribute('href');g.querySelector('img').alt=i.alt;g.querySelector('figcaption').textContent=f.querySelector('figcaption').textContent;lt.appendChild(g)});
+document.body.appendChild(lb);const lits=[...lt.children];let last;
+const lupd=()=>{lc.textContent=(cur(lt,lits)+1)+' / '+N};lt.addEventListener('scroll',()=>requestAnimationFrame(lupd),{passive:true});
+const open=i=>{last=document.activeElement;lb.classList.add('open');document.documentElement.style.overflow='hidden';lt.style.scrollBehavior='auto';lt.scrollBy({left:lits[i].getBoundingClientRect().right-lt.getBoundingClientRect().right});lt.style.scrollBehavior='';lupd();lb.querySelector('.vl-lb-x').focus()};
+const close=()=>{lb.classList.remove('open');document.documentElement.style.overflow='';last&&last.focus()};
+its.forEach((f,i)=>f.querySelector('a').addEventListener('click',e=>{e.preventDefault();open(i)}));
+lb.querySelector('.vl-lb-x').onclick=close;lb.querySelector('.prev').onclick=()=>go(lt,lits,cur(lt,lits)-1);lb.querySelector('.next').onclick=()=>go(lt,lits,cur(lt,lits)+1);
+lt.addEventListener('click',e=>{if(e.target===lt||e.target.tagName==='FIGURE')close()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')go(lt,lits,cur(lt,lits)+1);else if(e.key==='ArrowRight')go(lt,lits,cur(lt,lits)-1)});
+})();
+</script>
 <script defer="" src="/assets/vn/pkg-expiry.js"></script>
 <!--vn-ai-chat--><link rel="stylesheet" href="/assets/vn/ai-chat.css"><script src="/assets/vn/ai-chat.js" data-packages="/assets/vn/ai-packages.json" data-endpoint="https://osnat-ai-chat.osnat-travel.workers.dev" defer></script>
 </body>

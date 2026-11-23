@@ -1,7 +1,30 @@
 {
   "source": "https://osnat-travel.com/packages/",
-  "checked": "2026-11-21",
+  "checked": "2026-11-23",
   "packages": [
+    {
+      "slug": "amsterdam-leonardo-eden",
+      "url": "/amsterdam-leonardo-eden/",
+      "title": "אמסטרדם, הולנד",
+      "country": "הולנד",
+      "depart": "2027-03-07",
+      "dates": "7–11.3.2027",
+      "nights": 4,
+      "bullets": [
+        "טיסות ישירות אל על · תיק יד 8 ק״ג",
+        "Leonardo Eden Hotel Amsterdam City Center ⭐4",
+        "ארוחת בוקר"
+      ],
+      "price": "2,995 ₪",
+      "priceNote": "לאדם",
+      "pricePair": "5,990 ₪ לזוג",
+      "pp": 2995,
+      "img": "/amsterdam-leonardo-eden/img/hero.jpg",
+      "vibe": [
+        "city"
+      ],
+      "holiday": ""
+    },
     {
       "slug": "cyprus-hanukkah",
       "url": "/cyprus-hanukkah/",

@@ -78,6 +78,19 @@ footer.vl-foot small{display:inline-block;margin-top:4px}
  .vl-sub{font-size:1rem}
  .vl-sub .en{display:inline-block}
 }
+.vl-hotelph{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:18px;display:block;margin:14px 0 0;border:1px solid var(--vl-line-soft)}
+/* ===== גלריית המלון ===== */
+.vl-gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0 0}
+.vl-gal figure{position:relative;margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--vl-line-soft);background:#FBEEF0;box-shadow:0 6px 16px rgba(11,31,58,.08)}
+.vl-gal figure:first-child{grid-column:1/-1}
+.vl-gal a{display:block}
+.vl-gal img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
+.vl-gal figure:first-child img{aspect-ratio:16/9}
+.vl-gal a:hover img{transform:scale(1.04)}
+.vl-gal figcaption{position:absolute;bottom:8px;inset-inline-start:8px;padding:3px 11px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid var(--vl-line-soft);color:#7A2E45;font-size:.8rem;font-weight:500}
+.vl-credit{font-size:.8rem;color:#4A5A70;text-align:center;margin:12px 0 0}
+@media(prefers-reduced-motion:reduce){.vl-gal img{transition:none}.vl-gal a:hover img{transform:none}}
+@media(max-width:600px){.vl-gal{gap:8px}.vl-gal figcaption{font-size:.72rem;padding:2px 9px}}
 </style>
 </head>
 <body class="pg-deal vl-page" data-depart="2027-02-10">
@@ -134,9 +147,25 @@ footer.vl-foot small{display:inline-block;margin-top:4px}
 <li>בסיס אירוח: לינה וארוחת בוקר</li>
 <li data-exp="date">ביטול חינם במלון עד <bdi>10.02.2027</bdi></li>
 </ul>
-<img alt="הדואומו במילאנו בשקיעה. התמונה היא של העיר, ולא של המלון." class="vl-ph" src="img/duomo-sunset.jpg"/>
-<p class="vl-caption">הדואומו במילאנו בשקיעה. התמונה היא של העיר, ולא של המלון.</p>
-<p class="vl-missing">תמונות של המלון: חסר</p>
+<img alt="Hotel Manin, חזית המלון בערב" class="vl-hotelph" src="img/hotel-facade-night.jpg" width="1280" height="960" loading="lazy" decoding="async"/>
+<p class="vl-caption">חזית <bdi dir="ltr">Hotel Manin</bdi> בערב</p>
+</section>
+
+<section class="vl-dcard" aria-label="גלריית תמונות של המלון">
+<p class="k">HOTEL GALLERY</p>
+<h2>גלריית <span class="vl-grad">המלון</span></h2>
+<div class="vl-gal">
+<figure><a href="img/hotel-garden-terrace.jpg" target="_blank" rel="noopener"><img src="img/hotel-garden-terrace.jpg" alt="Hotel Manin, הגן" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הגן</figcaption></figure>
+<figure><a href="img/hotel-garden-evening.jpg" target="_blank" rel="noopener"><img src="img/hotel-garden-evening.jpg" alt="Hotel Manin, הגן בערב" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הגן בערב</figcaption></figure>
+<figure><a href="img/hotel-restaurant-outdoor.jpg" target="_blank" rel="noopener"><img src="img/hotel-restaurant-outdoor.jpg" alt="Hotel Manin, המסעדה, ישיבה בחוץ" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>המסעדה, ישיבה בחוץ</figcaption></figure>
+<figure><a href="img/hotel-restaurant.jpg" target="_blank" rel="noopener"><img src="img/hotel-restaurant.jpg" alt="Hotel Manin, המסעדה" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>המסעדה</figcaption></figure>
+<figure><a href="img/hotel-bar.jpg" target="_blank" rel="noopener"><img src="img/hotel-bar.jpg" alt="Hotel Manin, הבר" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הבר</figcaption></figure>
+<figure><a href="img/hotel-lounge.jpg" target="_blank" rel="noopener"><img src="img/hotel-lounge.jpg" alt="Hotel Manin, הלאונג׳" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הלאונג׳</figcaption></figure>
+<figure><a href="img/hotel-reception.jpg" target="_blank" rel="noopener"><img src="img/hotel-reception.jpg" alt="Hotel Manin, הקבלה" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הקבלה</figcaption></figure>
+<figure><a href="img/hotel-entrance-night.jpg" target="_blank" rel="noopener"><img src="img/hotel-entrance-night.jpg" alt="Hotel Manin, הכניסה למלון בערב" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>הכניסה למלון בערב</figcaption></figure>
+<figure><a href="img/hotel-facade-day.jpg" target="_blank" rel="noopener"><img src="img/hotel-facade-day.jpg" alt="Hotel Manin, המלון ביום" width="1280" height="960" loading="lazy" decoding="async"/></a><figcaption>המלון ביום</figcaption></figure>
+</div>
+<p class="vl-credit">תמונות: <bdi dir="ltr">Hotel Manin (hotelmanin.it)</bdi></p>
 </section>
 
 <section class="vl-dcard">
@@ -196,7 +225,7 @@ footer.vl-foot small{display:inline-block;margin-top:4px}
 <b>OSNAT TRAVEL AGENCY | חופשות בהתאמה אישית</b><br/>
 <bdi>050-6413749</bdi><br/>
 <small>המחיר נכון ל-<bdi>22.11.2026</bdi>, בכפוף לזמינות וט.ל.ח</small><br/>
-<small style="opacity:.7;font-size:11px">תמונת תעלת הנאווילי בשקיעה: <bdi class="en" dir="ltr">Deensel</bdi>, ויקישיתוף, <bdi dir="ltr">CC BY 2.0</bdi>. תמונת הדואומו בשקיעה: <bdi class="en" dir="ltr">Vanessa Namdar</bdi>, ויקישיתוף, <bdi dir="ltr">CC BY-SA 4.0</bdi>. התמונות הן של העיר מילאנו, ולא של המלון.</small>
+<small style="opacity:.7;font-size:11px">תמונת תעלת הנאווילי בשקיעה: <bdi class="en" dir="ltr">Deensel</bdi>, ויקישיתוף, <bdi dir="ltr">CC BY 2.0</bdi>. תמונות המלון: <bdi class="en" dir="ltr">Hotel Manin (hotelmanin.it)</bdi>.</small>
 </footer>
 <script defer="" src="/assets/vn/pkg-expiry.js"></script>
 <!--vn-ai-chat--><link rel="stylesheet" href="/assets/vn/ai-chat.css"><script src="/assets/vn/ai-chat.js" data-packages="/assets/vn/ai-packages.json" data-endpoint="https://osnat-ai-chat.osnat-travel.workers.dev" defer></script>

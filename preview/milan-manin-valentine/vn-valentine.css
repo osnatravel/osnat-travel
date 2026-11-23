@@ -1,0 +1,105 @@
+/* קו עיצובי: ולנטיין / רומנטי · OSNAT TRAVEL AGENCY
+   הרחבה ל-vn-theme.css, לא תחליף לו. כל המחלקות החדשות מתחילות ב-.vl-
+   קבוע ולא משתנה: הלוגו הרשמי, פלטת --vn-*, תיבת המחיר .vn-pb, פורמט מחיר 11,990 ₪ (סימן ₪ ב-Rubik). */
+
+:root{
+  --vl-rose:#B2475F;          /* ורד עמוק */
+  --vl-wine:#7A2E45;          /* יין */
+  --vl-blush:#F6DCE1;          /* ורוד אבקתי */
+  --vl-petal:#FBEEF0;          /* עלה ורד */
+  --vl-champagne:#EFD9B4;          /* שמפניה */
+  --vl-glow:#B2475F22;
+  --vl-line:#B2475F66;
+  --vl-line-soft:#B2475F33;
+}
+
+/* ===== בסיס ===== */
+.vl-page{position:relative;color:var(--vn-ink,#0B1F3A);background:var(--vn-bg,#FBF8F2)}
+.vl-page::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(620px 380px at 92% 0%,var(--vl-glow),transparent 70%),radial-gradient(520px 360px at 6% 88%,rgba(14,159,150,.08),transparent 70%)}
+.vl-wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+.vl-demo-banner{text-align:center;padding:10px 16px;font-size:.88rem;font-weight:500;color:var(--vn-ink,#0B1F3A);background:#F6DCE1;border-bottom:1px solid var(--vl-line-soft)}
+.vl-sample{display:inline-block;margin-inline-start:6px;padding:1px 8px;border-radius:999px;font-size:.72rem;font-weight:500;font-family:Rubik,sans-serif;
+  color:var(--vn-mut,#4A5A70);background:#fff;border:1px dashed var(--vl-line);vertical-align:middle;-webkit-text-fill-color:currentColor}
+
+/* ===== גיבור: איור CSS/SVG במקום צילום בתצוגת הקו ===== */
+.vl-hero{position:relative;text-align:center;padding:0 20px 44px;overflow:hidden}
+.vl-art{position:relative;height:clamp(200px,30vw,320px);margin:0 -20px;overflow:hidden;background:linear-gradient(135deg,#FBEEF0 0%,#F6DCE1 38%,#EFD9B4 72%,#F7F4ED 100%)}
+.vl-art::before{content:"";position:absolute;inset:0;background:url(assets/motifs/pattern.svg) repeat;background-size:240px 240px;opacity:.9}
+.vl-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,242,0) 45%,rgba(251,248,242,.6) 78%,var(--vn-bg,#FBF8F2) 100%)}
+.vl-art .vl-hero-motif{position:absolute;z-index:1;inset-inline-start:50%;top:22%;width:clamp(90px,12vw,140px);height:auto;transform:translateX(50%)}
+.vl-art-label{position:absolute;z-index:2;top:12px;inset-inline-end:14px;padding:3px 10px;border-radius:999px;font-size:.72rem;font-weight:500;background:rgba(255,255,255,.92);color:var(--vn-mut,#4A5A70);border:1px solid var(--vl-line-soft)}
+/* הלוגו הרשמי בגרסה השקופה (logo-transparent.png): יושב ישירות על הרקע, בלי ריבוע, מסגרת, פינות מעוגלות או צל. רק שינוי גודל יחסי */
+.vl-hero-logo{position:relative;z-index:2;display:block;width:120px;height:120px;margin:-60px auto 0;background:none;border:0;border-radius:0;padding:0;box-shadow:none}
+.vl-hero .k,.vl-hero .vn-eyebrow{margin-top:16px!important}
+.vl-hero h1{font-family:"Secular One",Rubik,sans-serif;font-weight:400;font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.05;margin:8px 0 6px;color:var(--vn-ink,#0B1F3A)}
+.vl-grad{background:linear-gradient(90deg,#B8862B,#D08A7E,#B2475F);-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent}
+.vl-slogan{margin:10px 0 0;font-family:"Secular One",Rubik,sans-serif;font-size:clamp(1.25rem,3vw,1.6rem);color:var(--vn-ink,#0B1F3A)}
+.vl-demo-note{max-width:660px;margin:14px auto 0;color:var(--vn-mut,#4A5A70);font-size:1rem;line-height:1.6}
+
+/* ===== תגית וסרט ===== */
+.vl-badge{display:inline-block;padding:6px 22px;border-radius:999px;background:linear-gradient(180deg,#FBEEF0 0%,#F6DCE1 45%,#E9B9C3 100%);color:#7A2E45;
+  font-family:"Secular One",Rubik,sans-serif;font-weight:400;font-size:1.05rem;line-height:1.2;border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 6px 14px var(--vl-line-soft),inset 0 1px 0 rgba(255,255,255,.6)}
+.vl-ribbon{position:absolute;top:14px;inset-inline-start:0;z-index:2;padding:6px 16px 6px 18px;
+  border-start-end-radius:999px;border-end-end-radius:999px;background:linear-gradient(180deg,#FBEEF0 0%,#F6DCE1 45%,#E9B9C3 100%);color:#7A2E45;
+  font-family:Rubik,sans-serif;font-weight:500;font-size:.86rem;box-shadow:0 6px 14px var(--vl-line-soft);border:1px solid rgba(255,255,255,.85);border-inline-start:0}
+
+/* ===== כרטיס חבילה (אותו מבנה כמו /packages/) ===== */
+.vl-grid{max-width:1150px;margin:0 auto 10px;padding:0 16px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(300px,360px));justify-content:center}
+.vl-card{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--vn-glass,rgba(255,255,255,.72));border:1px solid var(--vl-line);
+  border-radius:22px;box-shadow:0 10px 30px rgba(11,31,58,.08);transition:transform .35s,box-shadow .35s,border-color .35s}
+.vl-card:hover{transform:translateY(-6px);border-color:#B2475F;box-shadow:0 18px 40px var(--vl-line-soft)}
+.vl-card .img{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,#FBEEF0 0%,#F6DCE1 38%,#EFD9B4 72%,#F7F4ED 100%)}
+.vl-card .img::before{content:"";position:absolute;inset:0;background:url(assets/motifs/pattern.svg) repeat;background-size:200px 200px}
+.vl-card .img img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
+.vl-photo-label{position:absolute;top:14px;inset-inline-end:12px;z-index:2;padding:3px 10px;border-radius:999px;font-size:.72rem;font-weight:500;background:rgba(255,255,255,.92);color:var(--vn-mut,#4A5A70);border:1px solid var(--vl-line-soft)}
+.vl-card .date{position:absolute;bottom:12px;inset-inline-end:12px;z-index:2;background:rgba(255,255,255,.94);color:var(--vn-ink,#0B1F3A);border:1px solid var(--vl-line);font-weight:500;padding:6px 12px;border-radius:999px;font-size:.88rem}
+.vl-card .body{padding:16px 20px 20px;display:flex;flex-direction:column;flex:1;text-align:right;background:linear-gradient(180deg,rgba(255,255,255,.6),#EFD9B4)}
+.vl-card h2{margin:0 0 8px;font-family:"Secular One",Rubik,sans-serif;font-weight:400;font-size:1.5rem;line-height:1.35;color:var(--vn-ink,#0B1F3A)}
+.vl-card ul{list-style:none;padding:0;margin:0 0 14px;color:var(--vn-mut,#4A5A70)}
+.vl-card li{padding:3px 0}
+.vl-card li::before{content:"✦ ";color:#7A2E45}
+.vl-card .price{margin-top:auto;border-top:1px solid var(--vl-line-soft);padding-top:12px}
+.vl-card .price b{font-family:"Secular One",Rubik,sans-serif;font-weight:400;font-size:1.7rem;background:linear-gradient(90deg,#B8862B,#D08A7E,#B2475F);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vl-card .price span{color:var(--vn-mut,#4A5A70);margin-inline-start:6px}
+.vl-card .price small{display:block;color:#6B7A8F;font-size:.82rem;margin-top:2px}
+.vl-card .cta{margin-top:14px;display:block;text-align:center;padding:13px 16px;border-radius:40px;text-decoration:none;font-weight:500;font-size:1.05rem;
+  background:linear-gradient(135deg,#B8862B,#F5D78E);color:#fff;box-shadow:0 8px 20px rgba(184,134,43,.28);transition:transform .3s}
+.vl-card .cta:hover{transform:translateY(-3px)}
+/* ₪ תמיד ב-Rubik: Secular One מצייר את הסימן כמו «שח» */
+.vl-ils,.vl-card .price .vl-ils,.vn-pb .vl-ils,.vn-pb.vl-pb .pb-cur{display:inline!important;font-family:Rubik,Arial,sans-serif!important;font-weight:700!important;font-style:normal;-webkit-text-fill-color:currentColor;background:none}
+.vl-card .price b .vl-ils{color:#B8862B;-webkit-text-fill-color:#B8862B}
+
+/* ===== וריאנט תיבת מחיר (.vn-pb.vl-pb). המבנה של .vn-pb נשמר ===== */
+.vn-pb.vl-pb{display:flex;flex-direction:column;align-items:center;gap:6px;width:min(100%,400px);padding:22px 24px 20px;text-align:center;box-sizing:border-box;
+  position:relative;overflow:hidden;border-radius:24px;color:var(--vn-ink,#0B1F3A);background:linear-gradient(180deg,rgba(255,255,255,.98),#EFD9B4)!important;
+  border:1.5px solid var(--vl-line)!important;box-shadow:0 18px 44px rgba(11,31,58,.14),0 0 40px var(--vl-glow),inset 0 0 0 4px rgba(255,255,255,.65)!important}
+.vn-pb.vl-pb .vl-badge{margin-bottom:4px}
+.vn-pb.vl-pb .pb-k{color:var(--vn-teal,#0E9F96)}
+.vn-pb.vl-pb .pb-cur{color:#B8862B}
+.vn-pb.vl-pb .pb-meta,.vn-pb.vl-pb .pb-note{max-width:100%;overflow-wrap:anywhere}
+.vl-pb-stand{display:flex;flex-direction:column;align-items:center;padding:10px 16px 50px}
+
+/* ===== מקטעים ומוטיבים ===== */
+.vl-sec{padding:28px 0 10px;text-align:center}
+.vl-motif-row{display:flex;align-items:center;justify-content:center;gap:28px;margin:10px 0 0}
+.vl-motif-row svg{width:46px;height:46px}
+.vl-swatches{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:14px auto 0;max-width:900px}
+.vl-sw{width:150px;border-radius:14px;overflow:hidden;border:1px solid var(--vn-line,rgba(11,31,58,.08));background:#fff;text-align:center;font-size:.8rem}
+.vl-sw i{display:block;height:54px}
+.vl-sw b{display:block;padding:6px 4px 0;font-weight:500;color:var(--vn-ink,#0B1F3A)}
+.vl-sw code{display:block;padding:0 4px 8px;color:var(--vn-mut,#4A5A70);direction:ltr}
+
+/* ===== כותרת תחתית ===== */
+.vl-footer{text-align:center;padding:28px 20px 48px;color:var(--vn-mut,#4A5A70);border-top:1px solid var(--vn-line,rgba(11,31,58,.08));margin-top:20px}
+.vl-footer b{color:var(--vn-ink,#0B1F3A);font-weight:500}
+.vl-footer .vl-credit{margin-top:10px;font-size:.78rem;color:#6B7A8F}
+
+@media(max-width:720px){
+  .vl-grid{grid-template-columns:1fr;padding:0 14px}
+  .vl-art{height:220px}
+  .vl-hero-logo{width:120px;height:120px;margin-top:-50px}
+  .vn-pb.vl-pb{width:100%;padding:18px 16px 16px}
+}
+@media(prefers-reduced-motion:reduce){.vl-card,.vl-card .cta{transition:none}.vl-card:hover,.vl-card .cta:hover{transform:none}}

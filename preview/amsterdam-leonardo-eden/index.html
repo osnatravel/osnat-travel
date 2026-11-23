@@ -52,6 +52,19 @@ li{margin:6px 18px 6px 0}
 footer{text-align:center;padding:24px;background:#102A43;color:#fff}
 bdi{white-space:nowrap}
 .hero .sub-bottom{margin-top:18px!important}
+
+.hgal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px}
+@media(min-width:640px){.hgal{grid-template-columns:repeat(3,1fr)}}
+.hgal figure{margin:0}
+.hgal button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:12px}
+.hgal img{width:100%;height:120px;object-fit:cover;border-radius:12px;display:block}
+@media(min-width:640px){.hgal img{height:168px}}
+.hgal figcaption{font-size:12px;color:#486581;text-align:center;margin-top:6px;line-height:1.4}
+.lb{position:fixed;inset:0;z-index:200000;background:rgba(11,22,38,.86);display:none;align-items:center;justify-content:center;padding:20px;flex-direction:column}
+.lb.open{display:flex}
+.lb img{max-width:min(1100px,92vw);max-height:82vh;object-fit:contain;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.lb-cap{color:#fff;margin-top:12px;font-size:14px;text-align:center}
+.lb-x{position:absolute;top:14px;inset-inline-start:14px;background:#fff;border:0;width:40px;height:40px;border-radius:50%;font-size:26px;line-height:40px;cursor:pointer;color:#102A43}
 </style>
 </head>
 <body class="pg-deal" data-depart="2027-02-16">
@@ -112,6 +125,50 @@ bdi{white-space:nowrap}
 <p class="caption">תעלה באמסטרדם. התמונה היא של העיר, ולא של המלון.</p>
 </div>
 
+<div class="card" style="--c:#E0457B">
+<p class="k">GALLERY</p>
+<h2 class="vh">מלון <bdi class="en" dir="ltr">Leonardo <span class="grad">Eden</span></bdi></h2>
+<div class="hgal">
+<figure>
+<button data-alt="חזית מלון Leonardo Eden" data-cap="חזית המלון" data-full="img/hotel-1.jpg" type="button">
+<img alt="חזית מלון Leonardo Eden" loading="lazy" src="img/hotel-1.jpg"/>
+</button>
+<figcaption>חזית המלון</figcaption>
+</figure>
+<figure>
+<button data-alt="חדר במלון Leonardo Eden" data-cap="חדר במלון" data-full="img/hotel-2.jpg" type="button">
+<img alt="חדר במלון Leonardo Eden" loading="lazy" src="img/hotel-2.jpg"/>
+</button>
+<figcaption>חדר במלון</figcaption>
+</figure>
+<figure>
+<button data-alt="חדר במלון Leonardo Eden" data-cap="חדר במלון" data-full="img/hotel-3.jpg" type="button">
+<img alt="חדר במלון Leonardo Eden" loading="lazy" src="img/hotel-3.jpg"/>
+</button>
+<figcaption>חדר במלון</figcaption>
+</figure>
+<figure>
+<button data-alt="ארוחת בוקר במלון Leonardo Eden" data-cap="ארוחת בוקר" data-full="img/hotel-4.jpg" type="button">
+<img alt="ארוחת בוקר במלון Leonardo Eden" loading="lazy" src="img/hotel-4.jpg"/>
+</button>
+<figcaption>ארוחת בוקר</figcaption>
+</figure>
+<figure>
+<button data-alt="אזור ישיבה במלון Leonardo Eden" data-cap="אזור ישיבה" data-full="img/hotel-5.jpg" type="button">
+<img alt="אזור ישיבה במלון Leonardo Eden" loading="lazy" src="img/hotel-5.jpg"/>
+</button>
+<figcaption>אזור ישיבה</figcaption>
+</figure>
+<figure>
+<button data-alt="נוף מהחדר במלון Leonardo Eden" data-cap="נוף מהחדר" data-full="img/hotel-6.jpg" type="button">
+<img alt="נוף מהחדר במלון Leonardo Eden" loading="lazy" src="img/hotel-6.jpg"/>
+</button>
+<figcaption>נוף מהחדר</figcaption>
+</figure>
+</div>
+<p class="caption">מלון <bdi class="en" dir="ltr">Leonardo Eden</bdi></p>
+</div>
+
 <div class="card" style="--c:#1877F2">
 <p class="k">RETURN FLIGHT</p>
 <h2 class="vh">טיסת <span class="grad">חזור</span></h2>
@@ -167,8 +224,26 @@ bdi{white-space:nowrap}
 <b>OSNAT TRAVEL AGENCY | חופשות בהתאמה אישית</b><br/>
 <bdi>050-6413749</bdi><br/>
 <small>המחיר נכון ל-<bdi>23.11.2026</bdi>, בכפוף לזמינות וט.ל.ח</small><br/>
-<small style="opacity:.7;font-size:11px">תמונת התעלה: <bdi class="en" dir="ltr">Chait Goli</bdi>, <bdi class="en" dir="ltr">Pexels</bdi>. התמונה היא של תעלה באמסטרדם, ולא של המלון.</small>
+<small style="opacity:.7;font-size:11px">תמונות המלון: מתוך עמוד המלון ב-<bdi class="en" dir="ltr">Travelor</bdi>. תמונת התעלה: <bdi class="en" dir="ltr">Chait Goli</bdi>, <bdi class="en" dir="ltr">Pexels</bdi>. תמונת התעלה היא של תעלה באמסטרדם, ולא של המלון.</small>
 </footer>
+
+<div class="lb" id="lb">
+<button aria-label="סגירה" class="lb-x" id="lb-x" type="button">×</button>
+<img alt="" id="lb-img"/>
+<p class="lb-cap" id="lb-cap"></p>
+</div>
+<script>
+(function(){
+var lb=document.getElementById("lb"),img=document.getElementById("lb-img"),cap=document.getElementById("lb-cap"),last;
+function op(btn){last=document.activeElement;img.src=btn.getAttribute("data-full");img.alt=btn.getAttribute("data-alt")||"";cap.textContent=btn.getAttribute("data-cap")||"";lb.classList.add("open");document.body.style.overflow="hidden";document.getElementById("lb-x").focus()}
+function cl(){lb.classList.remove("open");img.removeAttribute("src");document.body.style.overflow="";if(last)last.focus()}
+[].forEach.call(document.querySelectorAll(".hgal button"),function(b){b.addEventListener("click",function(){op(b)})});
+document.getElementById("lb-x").onclick=cl;
+lb.addEventListener("click",function(e){if(e.target===lb)cl()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&lb.classList.contains("open"))cl()});
+})();
+</script>
+
 <script defer="" src="/assets/vn/pkg-expiry.js"></script>
 <!--vn-ai-chat--><link rel="stylesheet" href="/assets/vn/ai-chat.css"><script src="/assets/vn/ai-chat.js" data-packages="/assets/vn/ai-packages.json" data-endpoint="https://osnat-ai-chat.osnat-travel.workers.dev" defer></script>
 </body>
